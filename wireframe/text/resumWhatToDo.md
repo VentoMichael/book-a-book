@@ -20,10 +20,10 @@
 Pour chaque ouvrage, il faut idéalement fournir : 
 - le titre 
 - l(es) auteur(s) 
-- détails d’édition (texte libre)
+-  (texte libre)
 - la maison d’édition 
 - l’ISBN 
-- le prix public
+- le prix public    
 - le prix proposé
 - une image de la couverture 
 
