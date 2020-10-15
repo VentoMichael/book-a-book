@@ -15,6 +15,10 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('book_id')->references('id')->on('books')->onDelete('cascade');
+            $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->boolean('is_purchase')->default(0);
+            $table->boolean('is_paid')->default(0);
             $table->timestamps();
         });
     }
