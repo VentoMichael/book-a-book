@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Fortify;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,29 @@ use Illuminate\Support\Facades\Route;
 
 // If admin
 Route::get('/', function () {
-    return view('admin.index');
+    return view('welcome');
+});
+
+//Route::get('/login', function () {
+//    return view('authentication.login');
+//})->name('login');
+//
+//Route::get('/register', function () {
+//    return view('authentication.register');
+//});
+
+Fortify::loginView(function () {
+    return view('auth.login');
+});
+
+Fortify::registerView(function () {
+    return view('auth.register');
+});
+
+Fortify::requestPasswordResetLinkView(function () {
+    return view('auth.forgot-password');
+});
+
+Fortify::resetPasswordView(function () {
+    return view('auth.reset-password');
 });
