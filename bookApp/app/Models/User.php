@@ -44,22 +44,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $location = 'img/picture/';
 
     public function users()
     {
         return $this->belongsToMany('App\Models\User', 'purchases');
     }
 
-    public function getAvatarAttribute($image){
-        if ($image) {
-            return $this->location.$image;
-        }
-        return 'f';
-    }
     public function roles()
     {
-        return $this->belongsToMany(Role::class, 'user_role');
+        return $this->belongsToMany(Role::class, 'role_users');
     }
 
     public function isAdministrator()
@@ -67,7 +60,7 @@ class User extends Authenticatable
         return $this->roles->pluck('name')->contains('administrator');
     }
 
-    public function getIsTeamManagerAttribute()
+    public function getIsStudentAttribute()
     {
         return $this->roles->pluck('name')->contains('student');
     }

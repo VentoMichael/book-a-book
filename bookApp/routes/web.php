@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
 
@@ -15,9 +16,7 @@ use Laravel\Fortify\Fortify;
 */
 
 // If admin
-Route::get('/', function () {
-    return view('admin.dashboard');
-});
+Route::get('/', [\App\Http\Controllers\UserController::class, 'index']);
 
 //Route::get('/login', function () {
 //    return view('authentication.login');
@@ -32,7 +31,8 @@ Fortify::loginView(function () {
 });
 
 Fortify::registerView(function () {
-    return view('auth.register');
+    $inputs = [];
+    return view('auth.register',compact('inputs'));
 });
 
 Fortify::requestPasswordResetLinkView(function () {
