@@ -6,12 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
 <div>
     <h1>
-        <img src="svg/logo.svg" alt="Book a book application">
+        <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
     </h1>
     <label for="search" class="search">Search the site:</label>
     <input type="search" id="search" name="search"
@@ -34,15 +34,15 @@
     </h2>
     <div>
         <div>
-            <span class="svg/book.svg"></span>
+            <span class="{{asset('svg/book.svg')}}"></span>
             <p>Numero de livre commandé</p>
         </div>
         <div>
-            <span class="svg/group.svg"></span>
+            <span class="{{asset('svg/group.svg')}}"></span>
             <p>Numero du groupe</p>
         </div>
         <div>
-            <img src="svg/group.svg" alt="Photo d'étudiant 1">
+            <img src="{{asset('svg/group.svg')}}" alt="Photo d'étudiant 1">
         </div>
     </div>
 </section>
