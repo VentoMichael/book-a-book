@@ -40,4 +40,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $location = 'img/picture/';
+
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User', 'purchases');
+    }
+
+    public function getAvatarAttribute($image){
+        if ($image) {
+            return $this->location.$image;
+        }
+        return 'f';
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_role');
+    }
+
+    public function isAdministrator()
+    {
+        return $this->roles->pluck('name')->contains('administrator');
+    }
+
+    public function getIsTeamManagerAttribute()
+    {
+        return $this->roles->pluck('name')->contains('student');
+    }
 }

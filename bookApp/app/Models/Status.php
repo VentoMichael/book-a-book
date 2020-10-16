@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class Status extends Model
 {
     use HasFactory;
 
-    public function books()
+    protected $table = 'status';
+    protected $guarded = [];
+
+    public function book()
     {
-        return $this->belongsToMany('App\Models\Book', 'purchases');
+        return $this->belongsTo(Book::class);
     }
 }
