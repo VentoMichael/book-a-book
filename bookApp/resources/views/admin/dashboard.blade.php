@@ -22,9 +22,9 @@
         Principal navigation
     </h2>
     <ul>
-        <li>Étudiants</li>
-        <li>Livres</li>
-        <li>Achats</li>
+        <li><a href="#">Étudiants</a></li>
+        <li><a href="#">Livres</a></li>
+        <li><a href="#">Achats</a></li>
     </ul>
 </nav>
 

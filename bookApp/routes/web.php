@@ -16,7 +16,7 @@ use Laravel\Fortify\Fortify;
 
 // If admin
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.dashboard');
 });
 
 //Route::get('/login', function () {
