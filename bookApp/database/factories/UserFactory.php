@@ -25,7 +25,13 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'email_verified_at' => now(),
+            'surname' => $this->faker->name(),
+            'groupe' => $this->faker->numberBetween(81, 85),
+            'purchase' => $this->faker->boolean(),
+            'file_name' => $this->faker->imageUrl(100, 100, 'abstract'),
+            'paid' => $this->faker->boolean(),
+            'is_admin' => $this->faker->boolean(),
+        'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ];

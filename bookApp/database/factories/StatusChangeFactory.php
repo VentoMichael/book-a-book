@@ -2,19 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Book;
-use App\Models\Purchase;
-use App\Models\User;
+use App\Models\StatusChange;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PurchaseFactory extends Factory
+class StatusChangeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Purchase::class;
+    protected $model = StatusChange::class;
 
     /**
      * Define the model's default state.
@@ -24,10 +22,7 @@ class PurchaseFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
-            'book_id' => Book::factory(),
-            'is_purchase' => $this->faker->boolean,
-            'is_paid'=> $this->faker->boolean
+            //
         ];
     }
 }

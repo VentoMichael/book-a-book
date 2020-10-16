@@ -21,8 +21,19 @@ class BookFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->unique()->title();
+        $author = $this->faker->name();
+        $publishing_house = $this->faker->company();
+        $isbn = $this->faker->isbn10('-');
+        $public_price = $this->faker->numberBetween(4.99,20.99);
+        $proposed_price = $this->faker->numberBetween(4.99,20.99);
         return [
-            //
+            'title' => $title,
+            'author' => $author,
+            'publishing_house' => $publishing_house,
+            'isbn' => $isbn,
+            'public_price' => $public_price,
+            'proposed_price' => $proposed_price,
         ];
     }
 }
