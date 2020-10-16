@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Book;
 use Illuminate\Database\Seeder;
 
-class BookSeeder extends Seeder
+class StatusChangeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,6 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        Book::factory()->times(15)->create();
+        //
     }
 }
