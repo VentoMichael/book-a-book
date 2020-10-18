@@ -1,39 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    @auth(Auth::user()->isAdministrator())
+
+    @auth(\Illuminate\Support\Facades\Auth::user()->isAdministrator())
         <div>
-            <label for="search" class="search">Search the site:</label>
-            <input type="search" id="search" name="search"
-                   aria-label="Search through site content">
+            <form action="#">
+                <label for="search" class="search">Chercher dans l'application :</label>
+                <input type="search" id="search" name="search"
+                       aria-label="Search through site content">
+                <input type="submit">
+            </form>
         </div>
         <nav>
             <h2 class="hidden">
                 Principal navigation
             </h2>
-            <ul>
-                <li><a href="#">Étudiants</a></li>
-                <li><a href="#">Livres</a></li>
-                <li><a href="#">Achats</a></li>
-            </ul>
         </nav>
         @if(isset($users))
             @foreach($users as $user)
                 <section>
                     <h2>
                         {{$user->name}}
+                        {{$user->surname}}
                     </h2>
                     <div>
                         <div>
                             <span class="{{asset('svg/book.svg')}}"></span>
-                            <p>Numero de livre commandé</p>
+                            <p>Numéro de livre commandé</p>
                         </div>
                         <div>
                             <span class="{{asset('svg/group.svg')}}"></span>
                             <p>{{$user->group}}</p>
                         </div>
                         <div>
-                            <img src="{{asset('svg/group.svg')}}" alt="Photo d'étudiant 1">
+                            <img src="{{$user->file_name}}" alt="Photo de profil de {{$user->name}}
+                            {{$user->surname}}">
                         </div>
                     </div>
                 </section>
@@ -45,5 +46,9 @@
             @endforeach
         </div>
     @endauth
+    <p>
+        Il faut être administrateur pour voir / modifier ce contenu.
+        <a href="/login">Veuillez vous connectez</a>
+    </p>
 
 @endsection

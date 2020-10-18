@@ -20,19 +20,27 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+<h1>
+    <a class="navbar-brand" href="{{ url('/') }}">
+        <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
+    </a></h1>
+<div id="app">
+    @auth()
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <h1>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
-                </a></h1>
-            </div>
+            <ul class="container">
+                <!--<li class="\Symfony\Component\HttpFoundation\Request::is ('student') ? "current_link" : """>Étudiants</li>-->
+                <a href="">
+                    <li>
+                        Books
+                    </li>
+                </a>
+            </ul>
         </nav>
+    @endauth
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 </body>
 </html>

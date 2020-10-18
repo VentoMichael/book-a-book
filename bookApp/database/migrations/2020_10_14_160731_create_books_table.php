@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('author');
             $table->string('publishing_house');
             $table->string('isbn');
-            $table->integer('quantity')->default(0);
+            $table->integer('quantity')->default(false);
             $table->integer('public_price');
             $table->integer('proposed_price');
             $table->timestamps();

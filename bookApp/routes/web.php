@@ -16,7 +16,7 @@ use Laravel\Fortify\Fortify;
 */
 
 // If admin
-Route::get('/', [\App\Http\Controllers\UserController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->middleware('auth');
 
 //Route::get('/login', function () {
 //    return view('authentication.login');
@@ -31,8 +31,7 @@ Fortify::loginView(function () {
 });
 
 Fortify::registerView(function () {
-    $inputs = [];
-    return view('auth.register',compact('inputs'));
+    return view('auth.register');
 });
 
 Fortify::requestPasswordResetLinkView(function () {

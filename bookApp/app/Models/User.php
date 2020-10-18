@@ -16,6 +16,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+
     protected $fillable = [
         'name',
         'surname',
@@ -43,24 +44,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-
-    public function users()
-    {
-        return $this->belongsToMany('App\Models\User', 'purchases');
-    }
-
     public function roles()
     {
-        return $this->belongsToMany(Role::class, 'role_users');
+        return $this->belongsToMany(Role::class);
     }
-
-    public function isAdministrator()
+    public function isAdministrator(): bool
     {
         return $this->roles->pluck('name')->contains('administrator');
     }
 
-    public function getIsStudentAttribute()
+    public function getIsStudentAttribute(): bool
     {
         return $this->roles->pluck('name')->contains('student');
     }

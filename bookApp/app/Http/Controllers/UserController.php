@@ -15,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->get();
+        $users = User::orderBy('name')
+            ->orderBy('group')
+            ->get();;
         return view('admin.dashboard', compact('users'));
     }
     /**
