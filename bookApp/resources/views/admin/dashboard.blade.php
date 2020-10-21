@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-    @if(Auth::user()->is_administrator())
+    @if(Auth::user()->is_administrator)
         <div>
             <form action="#">
                 <label for="search" class="search">Chercher dans l'application :</label>
