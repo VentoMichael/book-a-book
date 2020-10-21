@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @if(Auth::user()->isAdministrator())
+    @if(Auth::user()->is_administrator())
         <div>
             <form action="#">
                 <label for="search" class="search">Chercher dans l'application :</label>
