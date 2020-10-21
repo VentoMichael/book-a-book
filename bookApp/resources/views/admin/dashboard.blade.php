@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @auth(\Illuminate\Support\Facades\Auth::user()->isAdministrator())
+    @if(Auth::user()->isAdministrator())
         <div>
             <form action="#">
                 <label for="search" class="search">Chercher dans l'application :</label>
@@ -45,10 +45,6 @@
                 <span>{{$i++}}</span>
             @endforeach
         </div>
-    @endauth
-    <p>
-        Il faut être administrateur pour voir / modifier ce contenu.
-        <a href="/login">Veuillez vous connectez</a>
-    </p>
+    @endif
 
 @endsection
