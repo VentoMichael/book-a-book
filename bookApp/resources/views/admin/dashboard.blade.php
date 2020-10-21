@@ -45,6 +45,9 @@
                 <span>{{$i++}}</span>
             @endforeach
         </div>
+        @else
+        Mince, vous essayer d'atteindre une propriété d'un administrateur
+        <a href="/user/dashboard.php">Voici le bon lien</a>
     @endif
 
 @endsection

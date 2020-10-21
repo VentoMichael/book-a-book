@@ -68,22 +68,22 @@
                                     <input id="password" type="password"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
                                            required autocomplete="new-password">
-
+                                    <ul>
+                                        <li>
+                                            Minimum 8 caractères
+                                        </li>
+                                        <li>
+                                            Minimum 1 majuscule
+                                        </li>
+                                        <li>
+                                            Minimum 1 chiffre
+                                        </li>
+                                    </ul>
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Confirmer le mot de passe') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
 
@@ -109,17 +109,17 @@
                                     </span>
                                 @enderror
                             </div>
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('S\'enregistrer') }}
-                            </button>
-                        </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('S\'enregistrer') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

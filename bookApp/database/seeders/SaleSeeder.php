@@ -14,6 +14,6 @@ class SaleSeeder extends Seeder
      */
     public function run()
     {
-        w
+
     }
 }
