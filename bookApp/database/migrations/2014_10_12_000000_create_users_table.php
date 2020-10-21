@@ -19,12 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('surname');
             $table->string('group')->nullable();
             $table->string('file_name')->nullable();
+            $table->string('bank_account')->nullable();
+            $table->boolean('suspended')->default(false);
             $table->string('email')->unique();
-            $table->boolean('paid')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

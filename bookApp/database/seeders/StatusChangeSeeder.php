@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\StatusChanges;
 use Illuminate\Database\Seeder;
 
 class StatusChangeSeeder extends Seeder
@@ -13,6 +14,9 @@ class StatusChangeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        StatusChanges::create([
+            'status_id' => '2',
+            'order_id' => '1'
+        ]);
     }
 }

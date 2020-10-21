@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Fortify\Rules\Password;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -32,8 +33,14 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
 
-            'password' => $this->passwordRules(),
-        ])->validate();
+            'password' => [
+                'required',
+                'string',
+                'min:8',             // must be at least 10 characters in length
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+        ]])->validate();
 
         return User::create([
             'name' => $input['name'],

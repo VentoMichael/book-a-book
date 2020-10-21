@@ -2,18 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Status extends Model
+class Status extends Model 
 {
-    use HasFactory;
 
-    protected $table = 'status';
-    protected $guarded = [];
+    protected $table = 'statuses';
+    public $timestamps = true;
 
-    public function book()
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
+    public function orders()
     {
-        return $this->belongsTo(Book::class);
+        return $this->belongsToMany('Order');
     }
+
 }

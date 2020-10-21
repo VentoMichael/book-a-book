@@ -2,27 +2,31 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Model
 {
     use HasFactory, Notifiable;
+
+    protected $table = 'users';
+    public $timestamps = true;
+
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-
     protected $fillable = [
         'name',
-        'surname',
         'email',
-        'group',
-        'file_name',
         'password',
     ];
 
@@ -44,11 +48,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
     }
-    public function isAdministrator(): bool
+
+    public function getIsAdminAttribute(): bool
     {
         return $this->roles->pluck('name')->contains('administrator');
     }
@@ -57,4 +63,5 @@ class User extends Authenticatable
     {
         return $this->roles->pluck('name')->contains('student');
     }
+
 }

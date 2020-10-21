@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Http\Request;
 use function GuzzleHttp\Promise\all;

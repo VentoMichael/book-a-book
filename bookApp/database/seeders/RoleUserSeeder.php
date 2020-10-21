@@ -16,25 +16,14 @@ class RoleUserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email', 'vento.michael@hotmail.com')->first();
-dd($user);
+        $user = wUser::where('email', 'vento.michael0705@hotmail.com')->first();
         $roleId = Role::where('name', 'administrator')
             ->first()
             ->id;
-
         $user->roles()->attach($roleId);
 
-        User::where('email', 'vento.michael@hotmail.com')
-            ->first()
-            ->roles()
-            ->attach(Role::where('name', 'student')
-                ->first()
-                ->id);
-
-        $otherUsers = User::where('email', '!=', 'vento.michael@hotmail.com')
+        $otherUsers = User::where('email', '!=', 'vento.michael0705@hotmail.com')
             ->get();
-
-        $otherUsers = $otherUsers->skip(3);
 
         foreach ($otherUsers as $user) {
             $user->roles()
