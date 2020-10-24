@@ -30,22 +30,21 @@
     @auth()
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <ul class="container">
-                <!--<li class="\Symfony\Component\HttpFoundation\Request::is ('student') ? "current_link" : """>Étudiants</li>-->
-                <a href="{{route('users')}}">
-                    <li class="{{\Request::route()->getName() === 'users' ? 'current_page_item' : ''}}">
-                        Users
-                    </li>
-                </a>
-                <a href="{{route('books')}}">
-                    <li class="{{\Request::route()->getName() === 'books' ? 'current_page_item' : ''}}">
-                        Books
-                    </li>
-                </a>
-                <a href="{{route('purchases')}}">
-                    <li class="{{\Request::route()->getName() === 'purchases' ? 'current_page_item' : ''}}">
-                        Purchases
-                    </li>
-                </a>
+                <li class="{{\Request::route()->getName() === 'users' ? 'current_page_item' : ''}}">
+                    <a href="{{route('users')}}">
+                        Étudiants
+                    </a>
+                </li>
+                <li class="{{\Request::route()->getName() === 'books' ? 'current_page_item' : ''}}">
+                    <a href="{{route('books.index')}}">
+                        Livres
+                    </a>
+                </li>
+                <li class="{{\Request::route()->getName() === 'purchases' ? 'current_page_item' : ''}}">
+                    <a href="{{route('purchases')}}">
+                        Achats
+                    </a>
+                </li>
             </ul>
         </nav>
     @endauth

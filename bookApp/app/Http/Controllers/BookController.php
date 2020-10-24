@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class BookController extends Controller
 {
@@ -16,68 +17,97 @@ class BookController extends Controller
     {
         $books = Book::orderBy('title')
             ->get();
-        return view('admin.books',compact('books'));
+        return view('admin.book.index', compact('books'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('admin.book.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        //new Book($this->validateBook());
+        $book = new Book();
+        $book->picture = request('picture');
+        $book->title = request('title');
+        $book->author = request('author');
+        $book->publishing_house = request('publishing_house');
+        $book->isbn = request('isbn');
+        $book->presentation = request('presentation');
+        $book->public_price = request('public_price');
+        $book->proposed_price = request('proposed_price');
+        $book->stock = request('stock');
+        $book->save();
+
+        return redirect(route('books.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param \App\Models\Book $book
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Book $book)
     {
-        //
+        return view('admin.book.show', compact('book'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param \App\Models\Book $book
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Book $book)
     {
-        //
+        return view('admin.book.edit',compact('book'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Book $book
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $book->update($this->validateBook());
+
+        return redirect($book->path());
+    }
+
+    protected function validateBook()
+    {
+        return request()->validate([
+            'picture' => 'required',
+            'title' => 'required',
+            'author' => 'required',
+            'publishing_house' => 'required',
+            'isbn' => 'required',
+            'public_price' => 'required',
+            'proposed_price' => 'required',
+            'stock' => 'required',
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
+     * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
     public function destroy(Book $book)

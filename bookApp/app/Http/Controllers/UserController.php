@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -50,7 +51,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view ('user.show',compact('user'));
+        $books = Book::all();
+        return view ('admin.user.show',compact('user','books'));
     }
 
     /**

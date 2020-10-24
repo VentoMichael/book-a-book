@@ -36,7 +36,12 @@
                             {{$user->surname}}">
                         </div>
                         <div>
-                            <a href="/users/{{$user->id}}">
+                            <p>
+                                L'étudiant est en ordre
+                            </p>
+                        </div>
+                        <div>
+                            <a href="/users/{{$user->name}}">
                                 Voir plus d'informations
                             </a>
                         </div>
@@ -46,7 +51,7 @@
         @endif
         <div>
             @foreach(range('A','Z') as $i)
-                <span>{{$i++}}</span>
+                <a href="#{{$i++}}">{{$i++}}</a>
             @endforeach
         </div>
     @endif

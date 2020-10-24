@@ -66,5 +66,9 @@ class User extends Authenticatable
     {
         return $this->roles->pluck('name')->contains('student');
     }
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 
 }

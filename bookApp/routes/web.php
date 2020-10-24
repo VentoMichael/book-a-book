@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -18,15 +19,29 @@ use Laravel\Fortify\Fortify;
 */
 
 // If admin
+
+Route::get('/', [UserController::class,'index'])->middleware('auth');
+
+
 Route::get('/users', [UserController::class,'index'])->middleware('auth')->name('users');
 
 Route::get('/users/{user}', [UserController::class,'show'])->middleware('auth');
 
 
 
-Route::get('/books',[BookController::class,'index'])->middleware('auth')->name('books');
 
-Route::get('/purchases',[\App\Http\Controllers\PurchaseController::class,'index'])->middleware('auth')->name('purchases');
+Route::get('/books',[BookController::class,'index'])->middleware('auth')->name('books.index');
+Route::post('/books',[BookController::class,'store'])->middleware('auth');
+
+Route::get('/books/create',[BookController::class,'create'])->middleware('auth');
+
+Route::get('/books/{book}',[BookController::class,'show'])->middleware('auth')->name('book.show');
+Route::get('/books/{book}/edit',[BookController::class,'edit'])->middleware('auth');
+Route::put('/books/{book}',[BookController::class,'update'])->middleware('auth');
+
+
+
+Route::get('/purchases',[PurchaseController::class,'index'])->middleware('auth')->name('purchases');
 
 
 

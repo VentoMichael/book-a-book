@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc02cef4-6c94-48b5-b04f-52a3951e9564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/books.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/user/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/AcademicYear.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/AcademicYear.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Sale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/StatusChanges.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/StatusChanges.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_14_160731_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_14_160731_create_books_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/routes/web.php" afterDir="false" />
     </list>
@@ -170,6 +166,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bookApp/resources/views/admin/book" />
+      <recent name="$PROJECT_DIR$/bookApp/resources/views/admin" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -180,7 +182,7 @@
       <updated>1603380603513</updated>
       <workItem from="1603380604745" duration="2056000" />
       <workItem from="1603526146729" duration="90000" />
-      <workItem from="1603526290955" duration="2746000" />
+      <workItem from="1603526290955" duration="14462000" />
     </task>
     <servers />
   </component>
@@ -196,9 +198,21 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="141" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1603396349991" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1603396309740">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1603563965822">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1603396309740" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1280.777@0.23.1280.777" timestamp="1603563965822" />
+    <state x="339" y="138" width="598" height="548" key="find.popup" timestamp="1603563990742">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="339" y="138" width="598" height="548" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1603563990742" />
+    <state x="287" y="135" width="700" height="530" key="recent.locations.popup" timestamp="1603563969580">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="287" y="135" width="700" height="530" key="recent.locations.popup/0.23.1280.777@0.23.1280.777" timestamp="1603563969580" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1603564076147">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1603564076147" />
   </component>
 </project>
