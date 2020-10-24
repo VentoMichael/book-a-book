@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
@@ -16,15 +18,18 @@ use Laravel\Fortify\Fortify;
 */
 
 // If admin
-Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->middleware('auth');
+Route::get('/users', [UserController::class,'index'])->middleware('auth')->name('users');
 
-//Route::get('/login', function () {
-//    return view('authentication.login');
-//})->name('login');
-//
-//Route::get('/register', function () {
-//    return view('authentication.register');
-//});
+Route::get('/users/{user}', [UserController::class,'show'])->middleware('auth');
+
+
+
+Route::get('/books',[BookController::class,'index'])->middleware('auth')->name('books');
+
+Route::get('/purchases',[\App\Http\Controllers\PurchaseController::class,'index'])->middleware('auth')->name('purchases');
+
+
+
 
 Fortify::loginView(function () {
     return view('auth.login');

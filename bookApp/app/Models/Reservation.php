@@ -13,7 +13,7 @@ class Reservation extends Model
 
     use SoftDeletes;
 
-    protected $dates = ['deleted_at'];
+
 
     public function book()
     {

@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         $users = User::orderBy('name')
             ->orderBy('group')
-            ->get();;
+            ->get();
         return view('admin.dashboard', compact('users'));
     }
     /**
@@ -46,11 +46,11 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(User $user)
     {
-        //
+        return view ('user.show',compact('user'));
     }
 
     /**

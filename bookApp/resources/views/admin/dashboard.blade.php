@@ -35,6 +35,11 @@
                             <img src="{{$user->file_name}}" alt="Photo de profil de {{$user->name}}
                             {{$user->surname}}">
                         </div>
+                        <div>
+                            <a href="/users/{{$user->id}}">
+                                Voir plus d'informations
+                            </a>
+                        </div>
                     </div>
                 </section>
             @endforeach
@@ -44,9 +49,6 @@
                 <span>{{$i++}}</span>
             @endforeach
         </div>
-        @else
-        Mince, vous essayer d'atteindre une propriété d'un administrateur
-        <a href="/user/dashboard.php">Voici le bon lien</a>
     @endif
 
 @endsection

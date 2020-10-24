@@ -14,7 +14,6 @@ class Book extends Model
     protected $table = 'books';
     public $timestamps = true;
 
-    use SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -25,7 +24,6 @@ class Book extends Model
         'proposed_price',
         'presentation',
         'stock'];
-    protected $dates = ['deleted_at'];
 
     public function academic_years()
     {

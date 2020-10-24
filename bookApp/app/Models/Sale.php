@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Sale extends Model 
+class Sale extends Model
 {
 
     protected $table = 'sales';
@@ -13,7 +13,7 @@ class Sale extends Model
 
     use SoftDeletes;
 
-    protected $dates = ['deleted_at'];
+
 
     public function book()
     {
