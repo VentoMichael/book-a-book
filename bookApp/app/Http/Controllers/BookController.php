@@ -85,7 +85,18 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        $book->update($this->validateBook());
+        request()->validate($this->validateBook());
+        $book = Book::find($book);
+        $book->picture = request('picture');
+        $book->title = request('title');
+        $book->author = request('author');
+        $book->publishing_house = request('publishing_house');
+        $book->isbn = request('isbn');
+        $book->presentation = request('presentation');
+        $book->public_price = request('public_price');
+        $book->proposed_price = request('proposed_price');
+        $book->stock = request('stock');
+        $book->save();
 
         return redirect($book->path());
     }

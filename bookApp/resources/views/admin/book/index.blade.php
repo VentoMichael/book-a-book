@@ -6,7 +6,7 @@
     </h2>
     @foreach($books as $book)
         <div>
-            <img src="{{asset($book->picture)}}" alt="{{$book->title}}">
+            <img src="img/picture/books/{{ $book->picture }}" alt="{{$book->title}}">
             <p>{{$book->title}}</p>
             <a href="{{$book->path()}}">Plus d'informations</a>
         </div>

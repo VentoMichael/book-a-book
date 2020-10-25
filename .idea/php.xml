@@ -33,7 +33,6 @@
       <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/bookApp/vendor/paragonie/constant_time_encoding" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/bookApp/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/bookApp/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-timer" />
@@ -62,7 +61,6 @@
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php72" />

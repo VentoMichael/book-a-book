@@ -33,9 +33,9 @@
                         </div>
                         <div>
                             @if($user->file_name !== NULL)
-                                <img src="img/picture/{{ $user->file_name }}" alt="Photo de profil de {{$user->name}}" />
+                                <img src="img/picture/students/{{ $user->file_name }}" alt="Photo de profil de {{$user->name}}" />
                             @else
-                                <img src="img/picture/default.svg" alt="Photo de profil de profil par default" />
+                                <img src="img/picture/students/default.svg" alt="Photo de profil de profil par default" />
                             @endif
                         </div>
                         <div>

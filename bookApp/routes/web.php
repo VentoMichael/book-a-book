@@ -38,7 +38,9 @@ Route::post('/books', [BookController::class, 'store'])->middleware('auth');
 Route::get('/books/create', [BookController::class, 'create'])->middleware('auth');
 
 Route::get('/books/{book}', [BookController::class, 'show'])->middleware('auth')->name('book.show');
-Route::get('/books/{book}/edit', [BookController::class, 'edit'])->middleware('auth');
+
+Route::get('/books/{book}/edit/', [BookController::class, 'edit'])->middleware('auth')->name('book.edit');
+
 Route::put('/books/{book}', [BookController::class, 'update'])->middleware('auth');
 
 

@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc02cef4-6c94-48b5-b04f-52a3951e9564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookApp/public/img/picture/default.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookApp/public/img/picture/photo_profil.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookApp/public/img/picture/books/photo_couverture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/book-a-book.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/book-a-book.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/factories/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/factories/BookFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/public/img/picture/default.svg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/img/picture/students/default.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/public/img/picture/photo_profil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/img/picture/students/photo_profil.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +68,6 @@
       <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/bookApp/vendor/paragonie/constant_time_encoding" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/bookApp/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/bookApp/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-timer" />
@@ -93,7 +96,6 @@
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php72" />
@@ -149,11 +151,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jEsUn6GVhtWZF3ZbT6AIRc430G" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -165,6 +171,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bookApp/public/img/picture/books" />
+      <recent name="$PROJECT_DIR$/bookApp/public/img/picture/students" />
       <recent name="$PROJECT_DIR$/bookApp/resources/views/admin/book" />
       <recent name="$PROJECT_DIR$/bookApp/resources/views/admin" />
     </key>
@@ -180,12 +188,15 @@
       <workItem from="1603380604745" duration="2056000" />
       <workItem from="1603526146729" duration="90000" />
       <workItem from="1603526290955" duration="14520000" />
-      <workItem from="1603621141629" duration="4855000" />
+      <workItem from="1603621141629" duration="8094000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="59" key="#Plugins" timestamp="1603396229782">
