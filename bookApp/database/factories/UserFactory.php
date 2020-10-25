@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'surname' => ucfirst($this->faker->lastName),
             'group' => $this->faker->randomElement($array = array ('2181','2281','2381','2182','2282','2382','2183','2283','2383')),
             'bank_account'=> $this->faker->bankAccountNumber(),
-            'file_name' => $this->faker->imageUrl(100, 100, 'abstract'),
+            'file_name' => 'photo_profil.jpg',
         'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),

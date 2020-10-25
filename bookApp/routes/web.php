@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
+use Symfony\Component\Console\Input\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,30 +21,28 @@ use Laravel\Fortify\Fortify;
 
 // If admin
 
-Route::get('/', [UserController::class,'index'])->middleware('auth');
+// HOME PAGE
+Route::get('/', [UserController::class, 'index'])->middleware('auth')->name('index');
 
 
-Route::get('/users', [UserController::class,'index'])->middleware('auth')->name('users.index');
+// USERS
+Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('users.index');
 
-Route::get('/users/{user}', [UserController::class,'show'])->middleware('auth');
-
-
-
-
-Route::get('/books',[BookController::class,'index'])->middleware('auth')->name('books.index');
-Route::post('/books',[BookController::class,'store'])->middleware('auth');
-
-Route::get('/books/create',[BookController::class,'create'])->middleware('auth');
-
-Route::get('/books/{book}',[BookController::class,'show'])->middleware('auth')->name('book.show');
-Route::get('/books/{book}/edit',[BookController::class,'edit'])->middleware('auth');
-Route::put('/books/{book}',[BookController::class,'update'])->middleware('auth');
+Route::get('/users/{user}', [UserController::class, 'show'])->middleware('auth');
 
 
+// BOOKS
+Route::get('/books', [BookController::class, 'index'])->middleware('auth')->name('books.index');
+Route::post('/books', [BookController::class, 'store'])->middleware('auth');
 
-Route::get('/purchases',[PurchaseController::class,'index'])->middleware('auth')->name('purchases.index');
+Route::get('/books/create', [BookController::class, 'create'])->middleware('auth');
+
+Route::get('/books/{book}', [BookController::class, 'show'])->middleware('auth')->name('book.show');
+Route::get('/books/{book}/edit', [BookController::class, 'edit'])->middleware('auth');
+Route::put('/books/{book}', [BookController::class, 'update'])->middleware('auth');
 
 
+Route::get('/purchases', [PurchaseController::class, 'index'])->middleware('auth')->name('purchases.index');
 
 
 Fortify::loginView(function () {

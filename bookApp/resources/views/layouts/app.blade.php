@@ -9,13 +9,12 @@
 
     <title>@auth()
             @if(Auth::user()->is_administrator)
-                    {{'Admin |'}}
+                {{'Admin |'}}
             @endif
         @endauth{{ 'Book a book' }}
+        {{\Request::route()->getName() === 'users.index' ? ' | Étudiants' : ''}}
         {{\Request::route()->getName() === 'books.index' ? ' | Livres' : ''}}
-        {{\Request::route()->getName() === 'books.index' ? ' | Livres' : ''}}
-        {{\Request::route()->getName() === 'books.index' ? ' | Livres' : ''}}
-
+        {{\Request::route()->getName() === 'purchases.index' ? ' | Achats' : ''}}
     </title>
 
     <!-- Scripts -->

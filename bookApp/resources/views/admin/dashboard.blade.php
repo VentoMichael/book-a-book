@@ -32,8 +32,11 @@
                             <p>{{$user->group}}</p>
                         </div>
                         <div>
-                            <img src="{{$user->file_name}}" alt="Photo de profil de {{$user->name}}
-                            {{$user->surname}}">
+                            @if($user->file_name !== NULL)
+                                <img src="img/picture/{{ $user->file_name }}" alt="Photo de profil de {{$user->name}}" />
+                            @else
+                                <img src="img/picture/default.svg" alt="Photo de profil de profil par default" />
+                            @endif
                         </div>
                         <div>
                             <p>
