@@ -10,11 +10,12 @@ class PurchaseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $purchases = Purchase::all();
+        return view('admin.purchases.index',compact('purchases'));
     }
 
     /**

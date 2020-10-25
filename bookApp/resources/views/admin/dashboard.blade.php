@@ -50,8 +50,8 @@
             @endforeach
         @endif
         <div>
-            @foreach(range('A','Z') as $i)
-                <a href="#{{$i++}}">{{$i++}}</a>
+            @foreach (range('A', 'Z') as $i)
+                <a href="#{{$i}}">{{$i}}</a>
             @endforeach
         </div>
     @endif

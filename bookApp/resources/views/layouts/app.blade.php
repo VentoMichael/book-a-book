@@ -8,8 +8,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@auth()
-            @if(Auth::user()->is_administrator){{'Admin |'}} @endif
-        @endauth{{ 'Book a book' }}</title>
+            @if(Auth::user()->is_administrator)
+                    {{'Admin |'}}
+            @endif
+        @endauth{{ 'Book a book' }}
+        {{\Request::route()->getName() === 'books.index' ? ' | Livres' : ''}}
+        {{\Request::route()->getName() === 'books.index' ? ' | Livres' : ''}}
+        {{\Request::route()->getName() === 'books.index' ? ' | Livres' : ''}}
+
+    </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,18 +37,18 @@
     @auth()
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <ul class="container">
-                <li class="{{\Request::route()->getName() === 'users' ? 'current_page_item' : ''}}">
-                    <a href="{{route('users')}}">
+                <li class="{{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
+                    <a href="{{route('users.index')}}">
                         Étudiants
                     </a>
                 </li>
-                <li class="{{\Request::route()->getName() === 'books' ? 'current_page_item' : ''}}">
+                <li class="{{\Request::route()->getName() === 'books.index' ? 'current_page_item' : ''}}">
                     <a href="{{route('books.index')}}">
                         Livres
                     </a>
                 </li>
-                <li class="{{\Request::route()->getName() === 'purchases' ? 'current_page_item' : ''}}">
-                    <a href="{{route('purchases')}}">
+                <li class="{{\Request::route()->getName() === 'purchases.index' ? 'current_page_item' : ''}}">
+                    <a href="{{route('purchases.index')}}">
                         Achats
                     </a>
                 </li>

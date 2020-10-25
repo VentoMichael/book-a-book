@@ -23,7 +23,7 @@ use Laravel\Fortify\Fortify;
 Route::get('/', [UserController::class,'index'])->middleware('auth');
 
 
-Route::get('/users', [UserController::class,'index'])->middleware('auth')->name('users');
+Route::get('/users', [UserController::class,'index'])->middleware('auth')->name('users.index');
 
 Route::get('/users/{user}', [UserController::class,'show'])->middleware('auth');
 
@@ -41,7 +41,7 @@ Route::put('/books/{book}',[BookController::class,'update'])->middleware('auth')
 
 
 
-Route::get('/purchases',[PurchaseController::class,'index'])->middleware('auth')->name('purchases');
+Route::get('/purchases',[PurchaseController::class,'index'])->middleware('auth')->name('purchases.index');
 
 
 
