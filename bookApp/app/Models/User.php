@@ -16,6 +16,7 @@ class User extends Authenticatable
     public $timestamps = true;
 
     use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -64,8 +65,18 @@ class User extends Authenticatable
     {
         return $this->roles->pluck('name')->contains('student');
     }
+
     public function getRouteKeyName()
     {
         return 'name';
+    }
+
+    public function defaultPictureUser($user)
+    {
+        if ($user->file_name !== NULL) {
+            echo '<img src="img/picture/students/'.$user->file_name.'" alt = "Photo de profil de '.$user->name.'" />';
+        } else {
+            echo '<img src="img/picture/students/default.svg" alt = "Photo de profil de profil par default" />';
+        }
     }
 }
