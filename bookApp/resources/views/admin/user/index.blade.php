@@ -28,9 +28,10 @@
     </ul>
 </nav>
 
+@foreach($users as $user)
 <section>
     <h2>
-        Étudiant 1
+        {{$user->name}} {{$user->surname}}
     </h2>
     <div>
         <div>
@@ -39,10 +40,10 @@
         </div>
         <div>
             <span class="{{asset('svg/group.svg')}}"></span>
-            <p>Numero du groupe</p>
+            <p>{{$user->group}}</p>
         </div>
         <div>
-            <img src="{{asset('svg/group.svg')}}" alt="Photo d'étudiant 1">
+            {{$user->defaultPictureUser($user)}}
         </div>
     </div>
 </section>

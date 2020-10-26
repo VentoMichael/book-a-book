@@ -3,7 +3,8 @@
 @section('content')
     @if(Auth::user()->is_administrator)
         <div>
-            <form action="#">
+            <form action="/search" method="get">
+                @csrf
                 <label for="search" class="search">Chercher dans l'application :</label>
                 <input type="search" id="search" name="search"
                        aria-label="Search through site content">
@@ -25,18 +26,14 @@
                     <div>
                         <div>
                             <span class="{{asset('svg/book.svg')}}"></span>
-                            <p>Numéro de livre commandé</p>
+                            <p>Numéro de livres commandés</p>
                         </div>
                         <div>
                             <span class="{{asset('svg/group.svg')}}"></span>
                             <p>{{$user->group}}</p>
                         </div>
                         <div>
-                            @if($user->file_name !== NULL)
-                                <img src="img/picture/students/{{ $user->file_name }}" alt="Photo de profil de {{$user->name}}" />
-                            @else
-                                <img src="img/picture/students/default.svg" alt="Photo de profil de profil par default" />
-                            @endif
+                            {{$user->defaultPictureUser($user)}}
                         </div>
                         <div>
                             <p>

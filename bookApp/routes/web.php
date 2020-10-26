@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
-use Symfony\Component\Console\Input\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +61,6 @@ Fortify::requestPasswordResetLinkView(function () {
 Fortify::resetPasswordView(function () {
     return view('auth.reset-password');
 });
+
+//SEARCH
+Route::any('/search', [SearchController::class, 'index'])->middleware('auth');

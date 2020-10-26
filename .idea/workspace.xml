@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc02cef4-6c94-48b5-b04f-52a3951e9564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookApp/public/img/picture/books/photo_couverture.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/book-a-book.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/book-a-book.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/factories/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/factories/BookFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/public/img/picture/default.svg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/img/picture/students/default.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/public/img/picture/photo_profil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/img/picture/students/photo_profil.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +184,7 @@
       <workItem from="1603380604745" duration="2056000" />
       <workItem from="1603526146729" duration="90000" />
       <workItem from="1603526290955" duration="14520000" />
-      <workItem from="1603621141629" duration="8094000" />
+      <workItem from="1603621141629" duration="14229000" />
     </task>
     <servers />
   </component>
@@ -207,6 +203,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="378" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.777@0.23.1280.777" timestamp="1603623231208" />
+    <state x="324" y="144" key="NewPhpClassDialog" timestamp="1603700606262">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="324" y="144" key="NewPhpClassDialog/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1603700606262" />
     <state x="141" y="50" key="SettingsEditor" timestamp="1603396349991">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

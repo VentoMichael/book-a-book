@@ -17,6 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
+
         $users = User::orderBy('name')
             ->orderBy('group')
             ->get();

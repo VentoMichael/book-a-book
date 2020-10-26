@@ -38,7 +38,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //new Book($this->validateBook());
+        new Book($this->validateBook());
         $book = new Book();
         $book->picture = request('picture');
         $book->title = request('title');
