@@ -8,7 +8,8 @@
         @csrf
         <div class="field">
             <label for="picture" class="label">Photo de couverture</label>
-            <input type="file" name="picture" class="@error('picture')is danger @enderror input" id="picture" value="{{ $book->picture }}">
+            <img src="{{ $book->picture }}" alt="">
+            <input type="file" name="picture" class="@error('picture')is danger @enderror input" id="picture">
             <p>{{$errors->first('picture')}}</p>
         </div>
         <div class="field">

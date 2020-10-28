@@ -8,11 +8,16 @@ use Illuminate\Support\Facades\Request;
 
 class SearchController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $search = Request::input('search');
         $user = User::where('name', 'LIKE', '%' . $search . '%')->orWhere('surname', 'LIKE', '%' . $search . '%')->get();
+
         if (count($user) > 0)
             return view('admin.search')->withDetails($user)->withQuery($search);
-        else return view('admin.search')->withMessage('No Details found. Try to search again !');
+        else return view('admin.search')->withMessage("Je n\'ai rien trouvé, essayez une autre recherche !");
     }
+    //verifier si le input est autre que un utilisateur probleme
+    // mettre les livres aussi en recherche
+    //
 }

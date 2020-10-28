@@ -50,12 +50,13 @@ class User extends Authenticatable
     ];
     protected $location = '/img/picture/';
 
-
     public function roles()
     {
         return $this->belongsToMany(Role::class);
     }
-
+    public function book(){
+        return $this->belongsToMany(Book::class);
+    }
     public function getIsAdministratorAttribute(): bool
     {
         return $this->roles->pluck('name')->contains('administrator');
@@ -70,13 +71,5 @@ class User extends Authenticatable
     {
         return 'name';
     }
-
-    public function defaultPictureUser($user)
-    {
-        if ($user->file_name !== NULL) {
-            echo '<img src="img/picture/students/'.$user->file_name.'" alt = "Photo de profil de '.$user->name.'" />';
-        } else {
-            echo '<img src="img/picture/students/default.svg" alt = "Photo de profil de profil par default" />';
-        }
-    }
+    //img old value edition
 }

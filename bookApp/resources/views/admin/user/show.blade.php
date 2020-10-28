@@ -24,7 +24,7 @@
         </section>
         <section>
             <h2>
-                La commande contiens les livres suivants :
+                La commande contient les livres suivants :
             </h2>
             @foreach($books as $book)
 

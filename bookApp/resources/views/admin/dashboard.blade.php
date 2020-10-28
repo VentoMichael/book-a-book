@@ -1,15 +1,9 @@
 @extends('layouts.app')
-
+@include('partials.search-form')
 @section('content')
     @if(Auth::user()->is_administrator)
         <div>
-            <form action="/search" method="get">
-                @csrf
-                <label for="search" class="search">Chercher dans l'application :</label>
-                <input type="search" id="search" name="search"
-                       aria-label="Search through site content">
-                <input type="submit">
-            </form>
+            @include('partials.search-form')
         </div>
         <nav>
             <h2 class="hidden">
@@ -32,9 +26,7 @@
                             <span class="{{asset('svg/group.svg')}}"></span>
                             <p>{{$user->group}}</p>
                         </div>
-                        <div>
-                            {{$user->defaultPictureUser($user)}}
-                        </div>
+                        @include('partials.user-avatar')
                         <div>
                             <p>
                                 L'étudiant est en ordre
@@ -49,11 +41,6 @@
                 </section>
             @endforeach
         @endif
-        <div>
-            @foreach (range('A', 'Z') as $i)
-                <a href="#{{$i}}">{{$i}}</a>
-            @endforeach
-        </div>
+        @include('partials.letters-links')
     @endif
-
 @endsection

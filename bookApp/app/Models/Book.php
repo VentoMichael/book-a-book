@@ -24,9 +24,12 @@ class Book extends Model
         'proposed_price',
         'presentation',
         'stock'];
-    public function path(){
-        return route('book.show',$this);
+
+    public function path()
+    {
+        return route('book.show', $this);
     }
+
     public function getRouteKeyName()
     {
         return 'title';

@@ -1,7 +1,8 @@
 <div class="container">
-    @if(isset($details))
+    @include('partials.search-form')
+@if(isset($details))
         <p> The Search results for your query <b> {{ $query }} </b> are :</p>
-        <h2>Sample User details</h2>
+        <h2>Sample details</h2>
         <table class="table table-striped">
             <thead>
             <tr>

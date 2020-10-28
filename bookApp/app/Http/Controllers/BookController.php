@@ -85,9 +85,14 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+        $validated = $request->validated();
         request()->validate($this->validateBook());
-        $book = Book::find($book);
-        $book->picture = request('picture');
+        //si y a une image envoye alors change
+        //alors book->picture = request('picture')
+        //formRequest
+        if ($request->hasFile('picture')){
+            $book->picture = request('picture');
+        }
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
@@ -97,7 +102,6 @@ class BookController extends Controller
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
         $book->save();
-
         return redirect($book->path());
     }
 

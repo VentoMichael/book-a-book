@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+@include('partials.search-form')
 @section('content')
     <div class="container">
-        @if($query)
-        <p>Le resultat pour votre recherche "{{ $query }}" {{count($details) > 1 ? 'sont' : 'est'}}</p>
-        @endif
+            @if($query !== null)
+                <p>Le resultat pour votre recherche "{{ $query }}" {{count($details) > 1 ? 'sont' : 'est'}}</p>
+            @endif
         <h2>Détails sur {{count($details) > 1 ? 'les utilisateurs' : 'l\'utilisateur'}}</h2>
         <table class="table table-striped">
             <thead>
@@ -19,7 +19,7 @@
             <tbody>
             @foreach($details as $user)
                 <tr>
-                    <td>{{$user->defaultPictureUser($user)}}</td>
+                    <td>@include('partials.user-avatar')</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->surname}}</td>
                     <td>{{$user->email}}</td>
@@ -28,5 +28,5 @@
             @endforeach
             </tbody>
         </table>
-</div>
+    </div>
 @endsection
