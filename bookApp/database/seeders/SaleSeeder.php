@@ -15,16 +15,22 @@ class SaleSeeder extends Seeder
     public function run()
     {
         Sale::create([
-            'book_id'=>1,
-                'academic_year_id'=>1,
-                'public-price'=>20,
-                'price'=>10,
+            'book_id' => 1,
+            'academic_year_id' => 1,
+            'public-price' => 20,
+            'price' => 10,
         ]);
         Sale::create([
-            'book_id'=>1,
-            'academic_year_id'=>1,
-            'public-price'=>20,
-            'price'=>10,
+            'book_id' => 2,
+            'academic_year_id' => 1,
+            'public-price' => 20,
+            'price' => 10,
+        ]);
+        Sale::create([
+            'book_id' => 3,
+            'academic_year_id' => 1,
+            'public-price' => 20,
+            'price' => 10,
         ]);
     }
 }

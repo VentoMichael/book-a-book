@@ -5,14 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc02cef4-6c94-48b5-b04f-52a3951e9564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search-book.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search-user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/TextController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Text.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_100850_create_texts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/BookSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/BookSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/OrderSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/OrderSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/ReservationSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/ReservationSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/SaleSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/SaleSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/TextSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/UserSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/search-book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search/search-book.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/search-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search/search-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/search.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/partials/search-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/search-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/partials/user-avatar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/user-avatar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,11 +178,12 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bookApp/resources/views/admin/search" />
       <recent name="$PROJECT_DIR$/bookApp/public/img/picture/books" />
       <recent name="$PROJECT_DIR$/bookApp/public/img/picture/students" />
       <recent name="$PROJECT_DIR$/bookApp/resources/views/admin/book" />
@@ -188,7 +203,7 @@
       <workItem from="1603526290955" duration="14520000" />
       <workItem from="1603621141629" duration="18670000" />
       <workItem from="1603803517664" duration="42000" />
-      <workItem from="1603823483814" duration="5420000" />
+      <workItem from="1603823483814" duration="13587000" />
     </task>
     <servers />
   </component>
@@ -221,9 +236,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="324" y="144" key="NewPhpClassDialog/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1603700606262" />
-    <state x="141" y="50" key="SettingsEditor" timestamp="1603396349991">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="-1708" y="38" key="SettingsEditor" timestamp="1603879811924">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="-1708" y="38" key="SettingsEditor/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1603879811924" />
     <state x="141" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1603396349991" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1603563965822">
       <screen x="0" y="23" width="1280" height="777" />

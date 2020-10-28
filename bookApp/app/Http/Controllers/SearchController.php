@@ -19,11 +19,11 @@ class SearchController extends Controller
 
         if (count($user) > 0 || count($book) > 0) {
             if (count($user) > 0) {
-                return view('admin.search-user',compact('user'))->withDetails($user)->withQuery($search);
+                return view('admin.search.search-user',compact('user'))->withDetails($user)->withQuery($search);
             }
             if (count($book) > 0) {
-                return view('admin.search-book',compact('book'))->withDetails($book)->withQuery($search);
+                return view('admin.search.search-book',compact('book'))->withDetails($book)->withQuery($search);
             }
-        } else return Redirect::back();
+        } else return \redirect('../');
     }
 }

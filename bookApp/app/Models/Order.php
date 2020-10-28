@@ -13,16 +13,13 @@ class Order extends Model
 
     use SoftDeletes;
 
-
-
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function academic_year()
     {
         return $this->hasOne('AcademicYear');
     }
-
 }

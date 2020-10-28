@@ -54,12 +54,23 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
-    public function book(){
+
+    public function book()
+    {
         return $this->belongsToMany(Book::class);
     }
+
+    public function order(){
+        return $this->belongsToMany(Order::class);
+    }
+
     public function getIsAdministratorAttribute(): bool
     {
         return $this->roles->pluck('name')->contains('administrator');
+    }
+
+    public function getFirstLetterOfNameAttribute(){
+        return strtoupper(substr($this->name,0,1));
     }
 
     public function getIsStudentAttribute(): bool
@@ -71,5 +82,4 @@ class User extends Authenticatable
     {
         return 'name';
     }
-    //img old value edition
 }

@@ -18,5 +18,25 @@ class OrderSeeder extends Seeder
             'user_id' => '1',
             'academic_year_id' => '1'
         ]);
+        Order::create([
+            'user_id' => '1',
+            'academic_year_id' => '1'
+        ]);
+        Order::create([
+            'user_id' => '1',
+            'academic_year_id' => '1'
+        ]);
+        Order::create([
+            'user_id' => '1',
+            'academic_year_id' => '1'
+        ]);
+        Order::create([
+            'user_id' => '1',
+            'academic_year_id' => '1'
+        ]);
+        Order::create([
+            'user_id' => '1',
+            'academic_year_id' => '1'
+        ]);
     }
 }
