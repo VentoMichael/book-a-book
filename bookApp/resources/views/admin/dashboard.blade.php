@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('partials.search-form')
 @section('content')
     @if(Auth::user()->is_administrator)
         <div>

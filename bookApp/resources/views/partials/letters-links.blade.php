@@ -1,5 +1,5 @@
 <div>
     @foreach(range('A','Z') as $i)
-        <span>{{$i++}}</span>
+        <a href="#{{$i}}">{{$i++}}</a>
     @endforeach
 </div>

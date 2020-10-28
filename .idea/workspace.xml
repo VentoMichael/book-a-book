@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc02cef4-6c94-48b5-b04f-52a3951e9564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/search-form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/user-avatar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search-book.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search-user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/BookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/partials/search-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/search-form.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +188,7 @@
       <workItem from="1603526290955" duration="14520000" />
       <workItem from="1603621141629" duration="18670000" />
       <workItem from="1603803517664" duration="42000" />
-      <workItem from="1603823483814" duration="3068000" />
+      <workItem from="1603823483814" duration="5420000" />
     </task>
     <servers />
   </component>
@@ -216,9 +208,14 @@
     </state>
     <state x="240" y="59" key="#Plugins/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1603709685304" />
     <state x="240" y="59" key="#Plugins/0.23.1280.777@0.23.1280.777" timestamp="1603396229782" />
-    <state x="378" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603623231208">
+    <state x="349" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603870932568">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
+    <state x="349" y="220" key="#com.intellij.fileTypes.FileTypeChooser/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1603870932568" />
+    <state x="378" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603871479826">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="378" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1603871479826" />
     <state x="378" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.777@0.23.1280.777" timestamp="1603623231208" />
     <state x="324" y="144" key="NewPhpClassDialog" timestamp="1603700606262">
       <screen x="0" y="23" width="1280" height="777" />
