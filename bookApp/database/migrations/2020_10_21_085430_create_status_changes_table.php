@@ -19,6 +19,14 @@ class CreateStatusChangesTable extends Migration
             $table->bigInteger('order_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('status_id')
+                ->references('id')
+                ->on('statuses')
+                ->onDelete('cascade');
+            $table->foreign('order_id')
+                ->references('id')
+                ->on('orders')
+                ->onDelete('cascade');
         });
     }
 

@@ -17,6 +17,7 @@ class CreateSalesTable extends Migration {
             $table->float('price');
             $table->timestamps();
             $table->softDeletes();
+
         });
     }
 
