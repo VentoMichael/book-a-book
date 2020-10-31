@@ -11,18 +11,4 @@ class Reservation extends Model
     protected $table = 'reservations';
     public $timestamps = true;
 
-    use SoftDeletes;
-
-
-
-    public function book()
-    {
-        return $this->hasOne('Book');
-    }
-
-    public function order()
-    {
-        return $this->hasOne('Order');
-    }
-
 }

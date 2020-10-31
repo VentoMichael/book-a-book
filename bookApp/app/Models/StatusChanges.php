@@ -13,16 +13,4 @@ class StatusChanges extends Model
 
     use SoftDeletes;
 
-
-
-    public function order()
-    {
-        return $this->hasOne('Order');
-    }
-
-    public function status()
-    {
-        return $this->hasOne('Status');
-    }
-
 }

@@ -9,7 +9,11 @@
             <div>
                 <div>
                     <span class="{{asset('svg/book.svg')}}"></span>
-                    <p>Numero de livre commandé</p>
+                    @if(count($student->orders))
+                        {{count($student->orders)}} livres ont été commandés
+                    @else
+                        <p>Aucun livres n'a encore été commandé</p>
+                    @endif
                 </div>
                 <div>
                     <span class="{{asset('svg/group.svg')}}"></span>

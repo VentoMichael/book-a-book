@@ -43,4 +43,10 @@ class Book extends Model
         return $this->belongsToMany('AcademicYear');
     }
 
+    public function orders(){
+        return $this->belongsToMany(Order::class,'reservations','book_id','order_id')
+            ->withPivot('quantity')
+            ->withTimestamps();
+    }
+
 }

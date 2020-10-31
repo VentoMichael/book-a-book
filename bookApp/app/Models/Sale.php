@@ -13,8 +13,6 @@ class Sale extends Model
 
     use SoftDeletes;
 
-
-
     public function book()
     {
         return $this->hasOne('Book');

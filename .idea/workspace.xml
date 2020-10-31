@@ -5,24 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc02cef4-6c94-48b5-b04f-52a3951e9564" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_085430_create_status_changes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_085430_create_status_changes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_085846_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_085846_create_reservations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_101117_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/migrations/2020_10_21_101117_create_sales_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/OrderSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/database/seeders/OrderSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/book/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/search/search-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/search/search-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/admin/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/admin/user/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/partials/letters-links.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookApp/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/app/Models/RoleUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/database/seeders/RoleUserSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/public/img/picture/students/default.svg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/img/picture/students/default.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/public/svg/eye-with-thick-outline-variant.svg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/svg/eye-with-thick-outline-variant.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookApp/public/svg/user-profile.svg" beforeDir="false" afterPath="$PROJECT_DIR$/bookApp/public/svg/user-profile.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,116 +34,116 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/bookApp/vendor/facade/ignition-contracts" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/graham-campbell/result-type" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/voku/portable-ascii" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/composer" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/bookApp/vendor/fruitcake/laravel-cors" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/object-enumerator" />
       <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/cli-parser" />
       <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/scrivo/highlight.php" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/paragonie/constant_time_encoding" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-client-contracts" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/asm89/stack-cors" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/laravel/fortify" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/bacon/bacon-qr-code" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/bookApp/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/bookApp/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/bookApp/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/bookApp/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/bookApp/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/composer" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/bookApp/vendor/opis/closure" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/dasprid/enum" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/bookApp/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/bookApp/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/bookApp/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/bookApp/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/bookApp/vendor/fideloper/proxy" />
     </include_path>
   </component>
@@ -170,7 +159,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bookApp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -178,6 +167,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bookApp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/bookApp/resources/views/admin/search" />
       <recent name="$PROJECT_DIR$/bookApp/public/img/picture/books" />
@@ -202,7 +194,7 @@
       <workItem from="1603823483814" duration="16588000" />
       <workItem from="1603909480508" duration="8000" />
       <workItem from="1603956590975" duration="168000" />
-      <workItem from="1604134478647" duration="6000000" />
+      <workItem from="1604134478647" duration="20262000" />
     </task>
     <servers />
   </component>
@@ -240,14 +232,16 @@
     </state>
     <state x="-1708" y="38" key="SettingsEditor/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1603879811924" />
     <state x="141" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1603396349991" />
-    <state width="500" height="459" key="SwitcherDM" timestamp="1603882439095">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="750" height="620" key="SwitcherDM" timestamp="1604163402154">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="750" height="620" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1604163402154" />
     <state width="500" height="459" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1603882439095" />
     <state width="500" height="445" key="SwitcherDM/0.23.1280.777@0.23.1280.777" timestamp="1603563965822" />
-    <state x="339" y="138" width="598" height="548" key="find.popup" timestamp="1603563990742">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="-1411" y="160" width="897" height="762" key="find.popup" timestamp="1604171692564">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="-1411" y="160" width="897" height="762" key="find.popup/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1604171692564" />
     <state x="339" y="138" width="598" height="548" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1603563990742" />
     <state x="287" y="135" width="700" height="530" key="recent.locations.popup" timestamp="1603563969580">
       <screen x="0" y="23" width="1280" height="777" />

@@ -21,4 +21,15 @@ class Order extends Model
     {
         return $this->hasOne('AcademicYear');
     }
+    public function books()
+    {
+        return $this->belongsToMany(Order::class, 'reservations', 'order_id',
+            'book_id')
+            ->withPivot('quantity')
+            ->withTimestamps();
+    }
+    public function statuses()
+    {
+        return $this->belongsToMany('Statuses','status-changes')->withTimestamps();
+    }
 }
