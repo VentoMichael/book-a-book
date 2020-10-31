@@ -4,8 +4,8 @@
     @if(Auth::user()->is_administrator)
         <section>
         <h2>
-            {{$user->name}}
-            {{$user->surname}}
+            {{$student->name}}
+            {{$student->surname}}
         </h2>
         <div>
             <div>
@@ -14,11 +14,11 @@
             </div>
             <div>
                 <span class="{{asset('svg/group.svg')}}"></span>
-                <p>{{$user->group}}</p>
+                <p>{{$student->group}}</p>
             </div>
             <div>
-                <img src="{{$user->file_name}}" alt="Photo de profil de {{$user->name}}
-                {{$user->surname}}">
+                <img src="{{$student->file_name}}" alt="Photo de profil de {{$student->name}}
+                {{$student->surname}}">
             </div>
         </div>
         </section>

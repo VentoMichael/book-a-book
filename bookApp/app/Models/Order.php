@@ -10,12 +10,11 @@ class Order extends Model
 
     protected $table = 'orders';
     public $timestamps = true;
-
     use SoftDeletes;
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->hasMany('App\Models\User','id','user_id');
     }
 
     public function academic_year()

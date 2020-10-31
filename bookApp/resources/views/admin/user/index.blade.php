@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @include('partials.search-form')
 @section('content')
-    @foreach($users as $user)
+    @foreach($students as $student)
         <section>
             <h2>
-                {{$user->name}} {{$user->surname}}
+                {{$student->name}} {{$student->surname}}
             </h2>
             <div>
                 <div>
@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <span class="{{asset('svg/group.svg')}}"></span>
-                    <p>{{$user->group}}</p>
+                    <p>{{$student->group}}</p>
                 </div>
                 @include('partials.user-avatar')
             </div>

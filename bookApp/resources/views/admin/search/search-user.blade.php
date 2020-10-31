@@ -16,13 +16,13 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($details as $user)
+            @foreach($details as $student)
                 <tr>
                     <td>@include('partials.user-avatar')</td>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->surname}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->group}}</td>
+                    <td>{{$student->name}}</td>
+                    <td>{{$student->surname}}</td>
+                    <td>{{$student->email}}</td>
+                    <td>{{$student->group}}</td>
                 </tr>
             @endforeach
             </tbody>

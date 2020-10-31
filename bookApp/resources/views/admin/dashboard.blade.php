@@ -29,7 +29,11 @@
                                 <div>
                                     <div>
                                         <span class="{{asset('svg/book.svg')}}"></span>
-                                        <p>Numéro de livres commandés</p>
+                                        @if(count($student->orders))
+                                            {{count($student->orders)}} livres ont été commandés
+                                        @else
+                                            <p>Aucun livres n'a encore été commandé</p>
+                                        @endif
                                     </div>
                                     <div>
                                         <span class="{{asset('svg/group.svg')}}"></span>
@@ -51,5 +55,5 @@
                     @endforeach
                 @endif
                 @include('partials.letters-links')
-    @endif
+                @endif
 @endsection

@@ -34,6 +34,9 @@ class Book extends Model
     {
         return 'title';
     }
+    public function getFirstLetterOfBookAttribute(){
+        return strtoupper(substr($this->title,0,1));
+    }
 
     public function academic_years()
     {

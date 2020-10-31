@@ -27,7 +27,7 @@ Route::get('/', [UserController::class, 'index'])->middleware('auth')->name('ind
 // USERS
 Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('users.index');
 
-Route::get('/users/{user}', [UserController::class, 'show'])->middleware('auth');
+Route::get('/users/{student}', [UserController::class, 'show'])->middleware('auth');
 
 
 // BOOKS

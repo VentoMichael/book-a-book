@@ -60,8 +60,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Book::class);
     }
 
-    public function order(){
-        return $this->belongsToMany(Order::class);
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 
     public function getIsAdministratorAttribute(): bool
