@@ -9,7 +9,7 @@ class CreateAcademicYearsTable extends Migration {
     public function up()
     {
         Schema::create('academic_years', function(Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->date('starting_year');
             $table->date('ending_year');
             $table->timestamps();

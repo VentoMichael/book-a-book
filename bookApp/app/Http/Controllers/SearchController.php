@@ -16,14 +16,10 @@ class SearchController extends Controller
         $search = Request::input('search');
         $user = User::where('name', 'LIKE', '%' . $search . '%')->orWhere('surname', 'LIKE', '%' . $search . '%')->get();
         $book = Book::where('title', 'LIKE', '%' . $search . '%')->get();
-
         if (count($user) || count($book)) {
             if (count($user)) {
-                return view('admin.search.search-user',compact('user'))->withDetails($user)->withQuery($search);
+                return view('admin.search.search',compact('user','book'))->withQuery($search);
             }
-            if (count($book)) {
-                return view('admin.search.search-book',compact('book'))->withDetails($book)->withQuery($search);
-            }
-        } else return \redirect('../');
+        } else return view('admin.search.no-result');
     }
 }

@@ -12,7 +12,7 @@ class CreateSalesTable extends Migration {
         Schema::create('sales', function(Blueprint $table) {
             $table->increments('id');
             $table->foreignId('book_id')->constrained('books');
-            $table->foreignId('academic_year_id');
+            $table->foreignId('academic_year_id')->constrained('academic_years');
             $table->float('public-price');
             $table->float('price');
             $table->timestamps();
