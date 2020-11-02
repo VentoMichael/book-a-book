@@ -14,7 +14,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        //
+        //$purchases = R
+        //return view('admin.purchases.index',compact('purchases'));
     }
 
     /**

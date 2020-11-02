@@ -13,7 +13,6 @@
             @if(strtoupper(substr($book->name,0,1)) !== $firstLetterBook)
                 @php
                     $firstLetterBook = strtoupper(substr($book->name,0,1));
-$firstLetterBook = strtoupper(substr($book->name,0,1));
                 @endphp
                 <section id="{{$firstLetterBook}}">
                     @else

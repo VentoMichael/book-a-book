@@ -16,13 +16,11 @@ class UserController extends Controller
     // TODO : gerer le cas ou il n'y a pas d'étudiants
     public function index()
     {
-        $books = Book::all();
-
         $students = \App\Models\User::with('orders.books','roles')->whereHas('roles', function ($query) {
             $query->where('name', 'student');
         })->get();
 
-        return view('admin.user.index', compact('students','books'));
+        return view('admin.user.index', compact('students'));
     }
 
     /**

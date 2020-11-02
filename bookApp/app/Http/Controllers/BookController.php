@@ -16,10 +16,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        $students = User::all();
         $books = Book::orderBy('title')
             ->get();
-        return view('admin.book.index', compact('books','students'));
+        return view('admin.book.index', compact('books'));
     }
 
     /**
