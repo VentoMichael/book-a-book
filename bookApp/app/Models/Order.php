@@ -10,26 +10,26 @@ class Order extends Model
 
     protected $table = 'orders';
     public $timestamps = true;
-    use SoftDeletes;
 
     public function user()
     {
-        return $this->hasMany('App\Models\User','id','user_id');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function academic_year()
     {
-        return $this->hasOne('AcademicYear');
+        return $this->belongsTo('AcademicYear','id','academic_year_id');
     }
+
     public function books()
     {
-        return $this->belongsToMany(Order::class, 'reservations', 'order_id',
-            'book_id')
+        return $this->belongsToMany(Book::class, 'reservations')
             ->withPivot('quantity')
             ->withTimestamps();
     }
+
     public function statuses()
     {
-        return $this->belongsToMany('Statuses','status-changes')->withTimestamps();
+        return $this->belongsToMany('Statuses', 'status-changes')->withTimestamps();
     }
 }

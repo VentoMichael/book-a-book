@@ -12,15 +12,4 @@ class Sale extends Model
     public $timestamps = true;
 
     use SoftDeletes;
-
-    public function book()
-    {
-        return $this->hasOne('Book');
-    }
-
-    public function academic_year()
-    {
-        return $this->hasOne('AcademicYear');
-    }
-
 }

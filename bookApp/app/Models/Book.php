@@ -40,7 +40,7 @@ class Book extends Model
 
     public function academic_years()
     {
-        return $this->belongsToMany('AcademicYear');
+        return $this->belongsToMany('AcademicYear','Sales')->withPivot('price','public_price')->withTimestamps();
     }
 
     public function orders(){

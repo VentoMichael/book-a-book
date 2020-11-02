@@ -1,5 +1,5 @@
 <div>
-    @if(count($students))
+    @if(route('users.index'))
         @php
             $firstLetters = $students->pluck('first_letter_of_name')->unique();
         @endphp
@@ -7,7 +7,7 @@
             <a href="#{{$i}}">{{$i++}}</a>
         @endforeach
     @endif
-    @if(count($books))
+    @if(route('books.index'))
         @php
             $firstLettersBook = $books->pluck('first_letter_of_book')->unique();
         @endphp

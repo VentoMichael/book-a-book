@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AcademicYear;
+use Database\Factories\AcademicYearFactory;
 use Illuminate\Database\Seeder;
 
 class AcademicYearSeeder extends Seeder

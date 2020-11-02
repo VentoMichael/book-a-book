@@ -23,7 +23,6 @@ class AcademicYearFactory extends Factory
     public function definition()
     {
         $startYear = '2015-12-31 00:00:00';
-
         $date = Carbon::create($startYear);
         return [
             'starting_year' => $startYear,

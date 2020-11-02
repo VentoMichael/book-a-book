@@ -30,9 +30,9 @@
                                     <div>
                                         <span class="{{asset('svg/book.svg')}}"></span>
                                         @if(count($student->orders))
-                                            {{count($student->orders)}} livres ont été commandés
+                                            {{count($student->orders)}} commandes ont été réalisées au total
                                         @else
-                                            <p>Aucun livres n'a encore été commandé</p>
+                                            <p>Aucune commande n'a encore été réalisée jusqu'à présent</p>
                                         @endif
                                     </div>
                                     <div>

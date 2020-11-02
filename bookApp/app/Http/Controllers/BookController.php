@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Boolean;
 
@@ -15,9 +16,10 @@ class BookController extends Controller
      */
     public function index()
     {
+        $students = User::all();
         $books = Book::orderBy('title')
             ->get();
-        return view('admin.book.index', compact('books'));
+        return view('admin.book.index', compact('books','students'));
     }
 
     /**

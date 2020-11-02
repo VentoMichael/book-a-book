@@ -23,9 +23,7 @@ use Laravel\Fortify\Fortify;
 // HOME PAGE
 Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware('auth')->name('index');
 Route::get('/test',function (){
-    return \App\Models\User::whereHas('roles', function ($query) {
-        $query->where('name', 'student');
-    })->orderBy('name')->with('orders.books')->get();
+
 });
 
 

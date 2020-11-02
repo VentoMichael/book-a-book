@@ -41,7 +41,7 @@ class ReservationSeeder extends Seeder
         ]);
         Reservation::create([
             'book_id' => '34',
-            'order_id' => '1',
+            'order_id' => '2',
             'quantity' => '2'
         ]);
     }

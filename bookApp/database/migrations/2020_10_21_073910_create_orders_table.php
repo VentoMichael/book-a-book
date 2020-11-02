@@ -15,8 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('academic_year_id')->unsigned();
+            $table->foreignId("academic_year_id");
+            $table->foreignId("user_id")->constrained('users');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
 
     /**
      * Reverse the migrations.
+     *
      *
      * @return void
      */

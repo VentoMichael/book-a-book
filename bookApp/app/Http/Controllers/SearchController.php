@@ -17,11 +17,11 @@ class SearchController extends Controller
         $user = User::where('name', 'LIKE', '%' . $search . '%')->orWhere('surname', 'LIKE', '%' . $search . '%')->get();
         $book = Book::where('title', 'LIKE', '%' . $search . '%')->get();
 
-        if (count($user) > 0 || count($book) > 0) {
-            if (count($user) > 0) {
+        if (count($user) || count($book)) {
+            if (count($user)) {
                 return view('admin.search.search-user',compact('user'))->withDetails($user)->withQuery($search);
             }
-            if (count($book) > 0) {
+            if (count($book)) {
                 return view('admin.search.search-book',compact('book'))->withDetails($book)->withQuery($search);
             }
         } else return \redirect('../');

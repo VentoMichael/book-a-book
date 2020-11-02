@@ -14,11 +14,13 @@ class AcademicYear extends Model
 
     use SoftDeletes;
 
-
-
     public function books()
     {
-        return $this->belongsToMany('Book');
+        return $this->belongsToMany('Books');
+    }
+
+    public function orders(){
+        return $this->hasMany('Order','id','academic_year_id');
     }
 
 }
