@@ -4,11 +4,12 @@
     <h2>
         Edit
     </h2>
-    <form method="POST" action="/books">
+    <form method="POST" action="/books" enctype="multipart/form-data">>
         @csrf
+        <input type="hidden" name="_method" value="PUT">
         <div class="field">
             <label for="picture" class="label">Photo de couverture</label>
-            <img src="{{ $book->picture }}" alt="">
+            <img src="{{asset('/')}}img/picture/books/{{ $book->picture }}" alt="">
             <input type="file" name="picture" class="@error('picture')is danger @enderror input" id="picture">
             <p>{{$errors->first('picture')}}</p>
         </div>
@@ -56,4 +57,10 @@
             <button type="submit">Mettre à jour ce livre</button>
         </div>
     </form>
+    <form method='POST' action="{{ route('book.destroy',$book) }}">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Supprimer le livre" />
+    </form>
+
 @endsection

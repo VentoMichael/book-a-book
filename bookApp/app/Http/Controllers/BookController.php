@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\User;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Boolean;
+use Illuminate\Support\Facades\Redirect;
 
 class BookController extends Controller
 {
@@ -34,7 +34,7 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
@@ -58,7 +58,7 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Book $book
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Book $book)
@@ -69,19 +69,19 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Book $book
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Book $book)
     {
-        return view('admin.book.edit',compact('book'));
+        return view('admin.book.edit', compact('book'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Book $book
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, Book $book)
@@ -91,9 +91,13 @@ class BookController extends Controller
         //si y a une image envoye alors change
         //alors book->picture = request('picture')
         //formRequest
-        if ($request->hasFile('picture')){
-            $book->picture = request('picture');
-        }
+        //$file = $request->file("picture");
+        //if ($request->hasfile("picture")) {
+        //    $file->move("public/img/", $file->getClientOriginalName());
+        //    $book->picture = $file->getClientOriginalName();
+        //} else {
+        //    $book->picture = $request->Image;
+        //}
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
@@ -123,11 +127,15 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Book $book
-     * @return \Illuminate\Http\Response
+     * @param  \App\Models\Book  $book
+     * @return string
      */
+    //TODO: Add a second chance to delete
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+
+        Session::flash('message', 'Successfully deleted the shark!');
+        return Redirect::to('books');
     }
 }

@@ -6,9 +6,15 @@
         @php
             $firstLetterBook = '';
         @endphp
-        <h2>
+        <h2 class="hidden">
             Les livres de l'application
         </h2>
+        <a href="#">
+            Gérer
+        </a>
+        <a href="{{}}">
+            Ajouter
+        </a>
         @foreach($books as $book)
             @if(strtoupper(substr($book->name,0,1)) !== $firstLetterBook)
                 @php
@@ -23,8 +29,7 @@
                             </h3>
                             <div>
                                 <img src="img/picture/books/{{ $book->picture }}" alt="{{$book->title}}">
-                                <p></p>
-                                <a href="{{$book->path()}}">Plus d'informations</a>
+                                <a href="{{$book->path()}}/edit">Plus d'informations</a>
                             </div>
                         </section>
                 @endforeach

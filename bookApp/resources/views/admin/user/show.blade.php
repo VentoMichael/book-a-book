@@ -50,7 +50,7 @@
                     @endif
                 </section>
                 <a href="#">Noté comme étudiant en ordre</a>
-                <a href="#">Envoyé une notification de rappel</a>
+                <a href="#">Envoyé une notification de rappel général</a>
             </section>
 
         @endif

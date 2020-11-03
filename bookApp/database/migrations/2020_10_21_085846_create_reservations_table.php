@@ -21,7 +21,8 @@ class CreateReservationsTable extends Migration
             $table->timestamps();
             $table->foreign('book_id')
                 ->references('id')
-                ->on('books');
+                ->on('books')
+            ->onDelete('cascade');
             $table->foreign('order_id')
                 ->references('id')
                 ->on('orders');

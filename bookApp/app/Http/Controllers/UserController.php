@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Order;
 use App\Models\User;
+use function PHPUnit\Framework\returnArgument;
 
 class UserController extends Controller
 {
@@ -14,6 +15,8 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     // TODO : gerer le cas ou il n'y a pas d'étudiants
+    // TODO : verifier dans la vue/personnel le total de livres et faire la somme
+    // TODO : link notifications
     public function index()
     {
         $students = \App\Models\User::with('orders.books','roles')->whereHas('roles', function ($query) {

@@ -9,9 +9,15 @@
             <div>
                 <div>
                     <span class="{{asset('svg/book.svg')}}"></span>
-                    @if(count($student->orders)){{count($student->orders)}} commandes ont été réalisées au total.
+                    @if(count($student->orders) > 0)
+                        @foreach($student->orders as $order)
+                            @if(count($order->books))
+                                {{count($order->books)}}
+                            @endif
+                        @endforeach
+                        livres ont été commandés au total.
                     @else
-                        <p>Aucune commande n'a encore été réalisée jusqu'à présent.</p>
+                        <p>Aucun livre n'a encore été commandé jusqu'à présent.</p>
                     @endif
                 </div>
                 <div>
