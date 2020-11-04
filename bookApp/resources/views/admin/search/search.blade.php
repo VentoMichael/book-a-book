@@ -50,7 +50,7 @@
                     <tbody>
                     @foreach($book as $bookDetails)
                         <tr>
-                            <td><img src="{{asset('img/picture/books/'.$bookDetails->picture)}}" alt="Photo de couverture de {{$bookDetails->title}}"></td>
+                            <td><img src="{{asset('img//books/'.$bookDetails->picture)}}" alt="Photo de couverture de {{$bookDetails->title}}"></td>
                             <td>{{$bookDetails->title}}</td>
                             <td>{{$bookDetails->author}}</td>
                             <td>{{$bookDetails->publishing_house}}</td>

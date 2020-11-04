@@ -22,33 +22,30 @@ use Laravel\Fortify\Fortify;
 
 // HOME PAGE
 Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware('auth')->name('index');
-Route::get('/test',function (){
+Route::get('/test', function () {
 
 });
 
 
 // USERS
 Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('users.index');
-
 Route::get('/users/{student}', [UserController::class, 'show'])->middleware('auth');
 
 
 // BOOKS
-Route::get('/books', [BookController::class, 'index'])->middleware('auth')->name('books.index');
-Route::post('/books', [BookController::class, 'store'])->middleware('auth');
-
-Route::get('/books/create', [BookController::class, 'create'])->middleware('auth');
-
-Route::get('/books/{book}', [BookController::class, 'show'])->middleware('auth')->name('book.show');
-
-Route::get('/books/{book}/edit/', [BookController::class, 'edit'])->middleware('auth')->name('book.edit');
-
-Route::delete('/books/{book}', [BookController::class, 'destroy'])->middleware('auth')->name('book.destroy');
-
-Route::put('/books/{book}', [BookController::class, 'update'])->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::get('/books', [BookController::class, 'index'])->name('books.index');
+    Route::post('/books', [BookController::class, 'store']);
+    Route::get('/books/create', [BookController::class, 'create'])->name('book.create');
+    Route::get('/books/{book}', [BookController::class, 'show'])->name('book.show');
+    Route::get('/books/{book}/edit/', [BookController::class, 'edit'])->name('book.edit');
+    Route::put('/books/{book}', [BookController::class, 'update']);
+    Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('book.destroy');
+});
 
 
-Route::get('/purchases', [PurchaseController::class, 'index'])->middleware('auth')->name('purchases.index');
+Route::get('/purchases',
+    [\App\Http\Controllers\ReservationController::class, 'index'])->middleware('auth')->name('purchases.index');
 
 
 Fortify::loginView(function () {

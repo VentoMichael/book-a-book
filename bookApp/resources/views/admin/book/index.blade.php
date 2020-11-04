@@ -12,7 +12,7 @@
         <a href="#">
             Gérer
         </a>
-        <a href="{{}}">
+        <a href="{{route('book.create')}}">
             Ajouter
         </a>
         @foreach($books as $book)
@@ -28,8 +28,9 @@
                                 {{$book->title}}
                             </h3>
                             <div>
-                                <img src="img/picture/books/{{ $book->picture }}" alt="{{$book->title}}">
-                                <a href="{{$book->path()}}/edit">Plus d'informations</a>
+                                <img src="img/books/{{ $book->picture }}" alt="{{$book->title}}">
+                                <a href="{{$book->path()}}/edit">Éditer ce livre</a>
+                                <a href="/books/{{$book->title}}">Voir plus d'informations</a>
                             </div>
                         </section>
                 @endforeach

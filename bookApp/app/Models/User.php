@@ -48,7 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected $location = '/img/picture/';
+    protected $location = '/img//';
 
     public function roles()
     {

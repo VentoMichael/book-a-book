@@ -6,6 +6,8 @@ use App\Models\Book;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class BookController extends Controller
 {
@@ -86,8 +88,7 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        $validated = $request->validated();
-        request()->validate($this->validateBook());
+        $validatedData = request($this->validateBook());
         //si y a une image envoye alors change
         //alors book->picture = request('picture')
         //formRequest
@@ -106,17 +107,18 @@ class BookController extends Controller
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
-        $book->save();
+        $book->update($validatedData);
         return redirect($book->path());
     }
 
     protected function validateBook()
     {
         return request()->validate([
-            'picture' => 'required',
+            'picture' => 'required|mimes:jpeg,png',
             'title' => 'required',
             'author' => 'required',
             'publishing_house' => 'required',
+            'presentation' => 'required',
             'isbn' => 'required',
             'public_price' => 'required',
             'proposed_price' => 'required',
