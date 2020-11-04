@@ -28,7 +28,7 @@
                                 {{$book->title}}
                             </h3>
                             <div>
-                                <img src="img/books/{{ $book->picture }}" alt="{{$book->title}}">
+                                <img src="{{ asset('storage/'.$book->picture) }}" alt="Photo de couverture de {{$book->title}}">
                                 <a href="{{$book->path()}}/edit">Éditer ce livre</a>
                                 <a href="/books/{{$book->title}}">Voir plus d'informations</a>
                             </div>

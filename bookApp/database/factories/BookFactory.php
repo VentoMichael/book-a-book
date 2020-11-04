@@ -28,7 +28,6 @@ class BookFactory extends Factory
             'publishing_house' => $this->faker->company(),
             'isbn' => $this->faker->isbn10('-'),
             'public_price' => $this->faker->biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt'),
-            'picture' => 'photo_couverture.jpg',
             'proposed_price' => $this->faker->numberBetween(4.99,9.99),
             'presentation'=> $this->faker->text(),
             'stock'=> $this->faker->numberBetween(1,100),

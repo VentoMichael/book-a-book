@@ -17,6 +17,7 @@ class Book extends Model
 
     protected $fillable = [
         'title',
+        'picture',
         'author',
         'publishing_house',
         'isbn',
@@ -47,6 +48,9 @@ class Book extends Model
         return $this->belongsToMany(Order::class,'reservations','book_id','order_id')
             ->withPivot('quantity')
             ->withTimestamps();
+    }
+    public function getCoverAttribute($value){
+        return asset($value);
     }
 
 }

@@ -19,7 +19,7 @@ class UserController extends Controller
     // TODO : link notifications
     public function index()
     {
-        $students = \App\Models\User::with('orders.books','roles')->whereHas('roles', function ($query) {
+        $students = \App\Models\User::with('orders.books','roles-name')->whereHas('roles-name', function ($query) {
             $query->where('name', 'student');
         })->get();
 
