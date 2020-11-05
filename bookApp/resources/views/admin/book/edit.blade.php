@@ -9,7 +9,7 @@
         <input type="hidden" name="_method" value="PUT">
         <div class="field">
             <label for="picture" class="label">Photo de couverture</label>
-            <img src="{{asset('/')}}img//books/{{ $book->picture }}" alt="">
+            <img src="{{ asset('storage/'.$book->picture) }}" alt="Photo de couverture de {{$book->title}}">
             <input type="file" name="picture" class="@error('picture')is danger @enderror input" id="picture">
             <p>{{$errors->first('picture')}}</p>
         </div>

@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcaf3adf-f13c-4d28-ba09-6d6c7755f05a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bookApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bookApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BookFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/students/default.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/studentss/default.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/students/photo_profil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/studentss/photo_profil.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/user-avatar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/user-avatar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +181,7 @@
       <updated>1602688893030</updated>
       <workItem from="1602688894379" duration="1753000" />
       <workItem from="1602749376029" duration="8000" />
-      <workItem from="1604480169892" duration="8479000" />
+      <workItem from="1604480169892" duration="13617000" />
     </task>
     <servers />
   </component>
@@ -200,14 +189,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="556" height="445" key="SwitcherDM" timestamp="1604489251196">
+    <state width="556" height="445" key="SwitcherDM" timestamp="1604566038282">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="556" height="445" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604489251196" />
+    <state width="556" height="445" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604566038282" />
     <state x="341" y="126" width="598" height="548" key="find.popup" timestamp="1604480759536">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="341" y="126" width="598" height="548" key="find.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604480759536" />
     <state x="341" y="126" width="598" height="548" key="find.popup/-1920.23.1920.1057/0.0.1280.800@0.0.1280.800" timestamp="1604480505616" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/book/create.blade.php</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -4,7 +4,7 @@
     <h2>
         Create a new book
     </h2>
-    <form method="POST" action="/books">
+    <form method="POST" action="/books" enctype="multipart/form-data">
         @csrf
         <div class="field">
             <label for="picture" class="label">Photo de couverture</label>

@@ -43,7 +43,7 @@ class BookController extends Controller
     {
         new Book($this->validateBook());
         $book = new Book();
-        $book->picture = request('picture');
+        $book->picture = request('picture')->store('books');
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
@@ -53,18 +53,6 @@ class BookController extends Controller
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
         $book->save();
-
-        //if ($request->hasfile("picture")) {
-        //    $file = $request->file("picture");
-        //    $img = Image::make($file)->resize(500, 500)->encode();
-        //    $filename = time().'.'.$file->getClientOriginalExtension();
-
-        //    Storage::put($filename, $img);
-        //    //Move file to your location
-        //    Storage::move($filename, 'public/books/'.$filename);
-        //    $book->picture = $img;
-        //    $book->update();
-        //}
         return redirect(route('books.index'));
     }
 
@@ -100,10 +88,7 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $validatedData = request($this->validateBook());
-        //si y a une image envoye alors change
-        //alors book->picture = request('picture')
-        //formRequest
-        $book->picture = request('picture');
+        $book->picture = request('picture')->store('books');
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
@@ -112,16 +97,19 @@ class BookController extends Controller
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
-        $validatedData['picture'] = request('picture')->store('books');
+        // TODO: check the file
+        if ($request->hasfile("picture")) {
+            $book->picture = '';
+        }
         $book->update($validatedData);
         return redirect($book->path());
+
     }
 
     protected function validateBook()
     {
-        // TODO: NOT VALIDATED MIMES PICTURE
         return request()->validate([
-            'picture' => 'required|mimes:jpeg,jpg,png',
+            'picture' => 'required|image',
             'title' => 'required',
             'author' => 'required',
             'publishing_house' => 'required',
