@@ -40,7 +40,7 @@
                                     La commande n°{{$order->id}} contient les livres suivants :
                                 </h3>
                                 @foreach($order->books as $book)
-                                    <img src="{{asset('img//books/'.$book->picture)}}"
+                                    <img src="{{ asset('storage/'.$book->picture) }}"
                                          alt="Photo de couverture de {{$book->title}}">
                                     <p>{{$book->title}}</p>
                                     <p>Payé ou non</p>
@@ -56,4 +56,5 @@
         @endif
 
     @endif
+
 @endsection

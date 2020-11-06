@@ -30,6 +30,6 @@ class Order extends Model
 
     public function statuses()
     {
-        return $this->belongsToMany('Statuses', 'status-changes')->withTimestamps();
+        return $this->belongsToMany(Status::class, 'status-changes')->withTimestamps();
     }
 }

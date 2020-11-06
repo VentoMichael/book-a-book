@@ -24,6 +24,7 @@ class BookFactory extends Factory
     {
         return [
             'title' => $this->faker->unique()->word(),
+            'picture' => 'books/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg',
             'author' => $this->faker->name(),
             'publishing_house' => $this->faker->company(),
             'isbn' => $this->faker->isbn10('-'),

@@ -41,9 +41,23 @@
                                     </div>
                                     @include('partials.user-avatar')
                                     <div>
-                                        <p>
-                                            L'étudiant est en ordre
-                                        </p>
+                                        @foreach($student->orders as $order)
+                                            @foreach($order->statuses as $statusChange)
+                                                @switch($statusChange['name'])
+                                                    @case('paid')
+                                                    <p>
+                                                        L'étudiant a payé
+                                                    </p>
+                                                    @break
+                                                    @case('ordered')
+                                                    <p>
+                                                        L'étudiant est en ordre
+                                                    </p>
+                                                    @break
+                                                @endswitch
+                                            @endforeach
+                                        @endforeach
+
                                     </div>
                                     <div>
                                         <a href="/users/{{$student->name}}">

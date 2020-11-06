@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ece085f4667f3194061a97a1fa36cf0",
+    "content-hash": "7bb67c91217ef0d008406dc790b72db0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -999,23 +999,23 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.6.2",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "55e4b0fc750d3d2abed4c314105db269043e6cb7"
+                "reference": "1a8d5a7017c455491091b87eddb8e8523313af51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/55e4b0fc750d3d2abed4c314105db269043e6cb7",
-                "reference": "55e4b0fc750d3d2abed4c314105db269043e6cb7",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/1a8d5a7017c455491091b87eddb8e8523313af51",
+                "reference": "1a8d5a7017c455491091b87eddb8e8523313af51",
                 "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^2.0",
                 "ext-json": "*",
                 "illuminate/support": "^8.0",
-                "php": "^7.3",
+                "php": "^7.3|^8.0",
                 "pragmarx/google2fa": "^7.0|^8.0"
             },
             "require-dev": {
@@ -1054,7 +1054,11 @@
                 "auth",
                 "laravel"
             ],
-            "time": "2020-10-20T15:44:56+00:00"
+            "support": {
+                "issues": "https://github.com/laravel/fortify/issues",
+                "source": "https://github.com/laravel/fortify"
+            },
+            "time": "2020-11-03T16:20:04+00:00"
         },
         {
             "name": "laravel/framework",
