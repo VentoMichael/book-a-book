@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class UserController extends Controller
 {
@@ -12,12 +15,16 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    // TODO : gerer le cas ou il n'y a pas d'étudiants
     // TODO : verifier dans la vue/personnel le total de livres et faire la somme
     // TODO : link notifications
+    // TODO : show view paied or not
+    // TODO : link to student if is ordered or not
+    // TODO : add message of sucess or not in (notifications,add book, delete book,...)
+    // TODO : check the update of user
+    // TODO : http://127.0.0.1:8000/users/Vento/ don't have access
     public function index()
     {
-        $students = \App\Models\User::with('orders.admins', 'roles')->whereHas('roles', function ($query) {
+        $students = \App\Models\User::with('orders.books', 'roles')->whereHas('roles', function ($query) {
             $query->where('name', 'student');
         })->get();
 
@@ -51,32 +58,45 @@ class UserController extends Controller
 
     public function update(Request $request, User $admin)
     {
-        dd('ff');
-        $validatedData = request($this->validateBook());
-        $book->picture = request('picture')->store('books');
-        $book->title = request('title');
-        $book->author = request('author');
-        $book->publishing_house = request('publishing_house');
-        $book->isbn = request('isbn');
-        $book->presentation = request('presentation');
-        $book->public_price = request('public_price');
-        $book->proposed_price = request('proposed_price');
-        $book->stock = request('stock');
-        // TODO: check the file
-        //if ($request->hasfile("picture")) {
-        //    $book->picture = '';
-        //}
-        $book->update($validatedData);
-        return redirect($book->path());
-
-    }
-
-    protected function validateAdmin()
-    {
-        return request()->validate([
+        // TODO : password n'est pas le même qu'avant
+        $attributes = request()->validate([
             'file_name' => 'image',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => [
+                'string',
+                'email',
+                'max:255',
+                Rule::unique(User::class),
+            ],
+            'password' =>
+                'required',
+                'string',
+                'min:8',
+                'max:255',
+                'confirmed'
+
         ]);
+        if ($request->hasfile("file_name")) {
+            $attributes['file_name'] = request('file_name')->store('users');
+
+        } else {
+           // $attributes['file_name'] = Input::old('file_name');
+        }
+        if (Hash::check($request->password, $admin->password)) {
+            $admin->fill([
+                'password' => Hash::make($request->new_password)
+            ])->save();
+        }
+        $attributes['email'] = request('email');
+        //$attributes['password'] = Hash::make(request('password'));
+
+        $admin->first()->update($attributes);
+
+        return redirect(asset('/users/Vento/edit'));
     }
+
+    public function validateBook()
+    {
+        return;
+    }
+
 }

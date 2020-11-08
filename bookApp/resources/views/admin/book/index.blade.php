@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.search-form')
     @if(count($books))
         @php
             $firstLetterBook = '';
@@ -28,12 +27,18 @@
                                 {{$book->title}}
                             </h3>
                             <div>
-                                <img src="{{ asset('storage/'.$book->picture) }}" alt="Photo de couverture de {{$book->title}}">
-                                <a href="{{$book->path()}}/edit">Éditer ce livre</a>
-                                <a href="/books/{{$book->title}}">Voir plus d'informations</a>
+                                <img src="{{ asset('storage/'.$book->picture) }}"
+                                     alt="Photo de couverture de {{$book->title}}">
+                                <a href="{{$book->path()}}/edit">Éditer <span>{{$book->title}}</span></a>
+                                <a href="/books/{{$book->title}}">Plus d'informations sur <span>{{$book->title}}</span></a>
                             </div>
                         </section>
+                </section>
                 @endforeach
+            @else
+                <p>
+                    Aucun livre trouvé
+                </p>
             @endif
             @include('partials.letters-links')
 @endsection

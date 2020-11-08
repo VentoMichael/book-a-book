@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @include('partials.search-form')
     @if($query !== null)
         @if(count($user))
             <div class="container">

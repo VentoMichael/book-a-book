@@ -10,12 +10,14 @@ class ReservationController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        //$purchases = R
-        //return view('admin.purchases.index',compact('purchases'));
+        $students = \App\Models\User::with('orders.books', 'roles')->whereHas('roles', function ($query) {
+            $query->where('name', 'student');
+        })->get();
+        return view('admin.purchases.index',compact('students'));
     }
 
     /**

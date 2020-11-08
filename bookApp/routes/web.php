@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
@@ -19,11 +22,9 @@ use Laravel\Fortify\Fortify;
 Route::get('/test', function () {
 });
 
-
-//Route::middleware(['auth','administrator'])->group(function () {
-
+//Route::group(['middleware' => ['administrator']], function () {
 //HOME PAGE
-    Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('index');
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
 
 // USERS
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
@@ -44,19 +45,13 @@ Route::get('/test', function () {
     Route::any('/search', [SearchController::class, 'index']);
 
 //PURCHASES
-    Route::get('/purchases', [\App\Http\Controllers\ReservationController::class, 'index'])->name('purchases.index');
+    Route::get('/purchases', [ReservationController::class, 'index'])->name('purchases.index');
+
+//SETTINGS
+    Route::get('/settings', [SettingController::class, 'index']);
 //});
 
 
-Fortify::loginView(function () {
-    return view('auth.login');
-});
-Fortify::registerView(function () {
-    return view('auth.register');
-});
-Fortify::requestPasswordResetLinkView(function () {
-    return view('auth.forgot-password');
-});
-Fortify::resetPasswordView(function () {
-    return view('auth.reset-password');
-});
+
+
+

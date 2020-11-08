@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,33 +31,48 @@
 <h1>
     <a class="navbar-brand" href="{{ url('/') }}">
         <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
-    </a></h1>
+    </a>
+</h1>
 <div id="app">
-    @auth()
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <ul class="container">
-                <li class="{{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
-                    <a href="{{route('users.index')}}">
-                        Étudiants
-                    </a>
-                </li>
-                <li class="{{\Request::route()->getName() === 'books.index' ? 'current_page_item' : ''}}">
-                    <a href="{{route('books.index')}}">
-                        Livres
-                    </a>
-                </li>
-                <li class="{{\Request::route()->getName() === 'purchases.index' ? 'current_page_item' : ''}}">
-                    <a href="{{route('purchases.index')}}">
-                        Achats
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    @endauth
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <ul class="container">
+            <li class="{{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
+                <a href="{{route('users.index')}}">
+                    Étudiants
+                </a>
+            </li>
+            <li class="{{\Request::route()->getName() === 'books.index' ? 'current_page_item' : ''}}">
+                <a href="{{route('books.index')}}">
+                    Livres
+                </a>
+            </li>
+            <li class="{{\Request::route()->getName() === 'purchases.index' ? 'current_page_item' : ''}}">
+                <a href="{{route('purchases.index')}}">
+                    Achats
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <main class="py-4">
+        <form action="/search" method="get">
+            @csrf
+            <label for="search" class="hidden">Chercher dans l'application :</label>
+            <input type="search" id="search" name="search" required placeholder="Livres ou étudiants"
+                   aria-label="Search through site content">
+            <input type="submit">
+        </form>
+
         @yield('content')
     </main>
+    <nav>
+        <a href="/settings">
+            Paramètres
+        </a>
+        <a href="/">
+            Home
+        </a>
+    </nav>
 </div>
 </body>
 </html>

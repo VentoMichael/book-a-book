@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>
+    <a href="{{asset('/books')}}">Retour en arrière</a>
+    <h2 class="hidden">
         Create a new book
     </h2>
     <form method="POST" action="/books" enctype="multipart/form-data">

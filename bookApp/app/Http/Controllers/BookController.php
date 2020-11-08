@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Symfony\Component\Console\Input\Input;
 
 class BookController extends Controller
 {
@@ -88,6 +89,11 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $validatedData = request($this->validateBook());
+        if ($request->hasfile("picture")) {
+            $book->picture = request('picture')->store('books');
+        } else {
+            $book->picture = Input::old('picture');
+        }
         $book->picture = request('picture')->store('books');
         $book->title = request('title');
         $book->author = request('author');
@@ -98,9 +104,6 @@ class BookController extends Controller
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
         // TODO: check the file
-        if ($request->hasfile("picture")) {
-            $book->picture = '';
-        }
         $book->update($validatedData);
         return redirect($book->path());
 
@@ -127,12 +130,10 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return string
      */
-    //TODO: Add a second chance to delete
+    //TODO: add a save book
     public function destroy(Book $book)
     {
         $book->delete();
-
-        Session::flash('message', 'Le livre a bien été supprimé !');
         return Redirect::to('books');
     }
 }

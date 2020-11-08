@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @if(Auth::user()->is_administrator)
         <div>
             @include('partials.search-form')
         </div>
@@ -69,5 +68,4 @@
                     @endforeach
                 @endif
                 @include('partials.letters-links')
-                @endif
 @endsection

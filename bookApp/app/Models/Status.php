@@ -13,8 +13,6 @@ class Status extends Model
 
     use SoftDeletes;
 
-
-
     public function orders()
     {
         return $this->belongsToMany('Order','status-changes')->withTimestamps();

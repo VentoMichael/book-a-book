@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>
+    <a href="{{asset('/books')}}">Retour en arrière</a>
+    <h2 class="hidden">
         Edit
     </h2>
     <form method="POST" action="/books/{{$book->title}}" enctype="multipart/form-data">
@@ -9,7 +10,9 @@
         <input type="hidden" name="_method" value="PUT">
         <div class="field">
             <label for="picture" class="label">Photo de couverture</label>
+            @if($book->picture)
             <img src="{{ asset('storage/'.$book->picture) }}" alt="Photo de couverture de {{$book->title}}">
+            @endif
             <input type="file" name="picture" class="@error('picture')is danger @enderror input" id="picture">
             <p>{{$errors->first('picture')}}</p>
         </div>
@@ -34,11 +37,6 @@
             <p>{{$errors->first('isbn')}}</p>
         </div>
         <div class="field">
-            <label for="presentation" class="label">Presentation</label>
-            <textarea name="presentation" class="textarea" id="presentation">{{ $book->presentation }}</textarea>
-            <p>{{$errors->first('presentation')}}</p>
-        </div>
-        <div class="field">
             <label for="public_price" class="label">Prix public</label>
             <input name="public_price" value="{{ $book->public_price }}" class="input @error('public_price')is danger @enderror" id="public_price" type="number">
             <p>{{$errors->first('public_price')}}</p>
@@ -54,13 +52,18 @@
             <p>{{$errors->first('stock')}}</p>
         </div>
         <div class="field">
-            <button type="submit">Mettre à jour ce livre</button>
+            <label for="presentation" class="label">Presentation</label>
+            <textarea name="presentation" class="textarea" id="presentation">{{ $book->presentation }}</textarea>
+            <p>{{$errors->first('presentation')}}</p>
+        </div>
+        <div class="field">
+            <button type="submit">Mettre à jour <span>{{$book->title}}</span></button>
         </div>
     </form>
     <form method='POST' action="{{ route('book.destroy',$book) }}">
         @csrf
         @method('DELETE')
-        <input type="submit" value="Supprimer le livre" />
+        <input type="submit" value="Supprimer {{$book->title}}" />
     </form>
 
 @endsection
