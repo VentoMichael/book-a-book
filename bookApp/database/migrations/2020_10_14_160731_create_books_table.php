@@ -18,9 +18,10 @@ class CreateBooksTable extends Migration
             $table->string('picture')->nullable();
             $table->string('title');
             $table->string('author');
+            $table->string('orientation');
             $table->string('publishing_house');
             $table->string('isbn');
-            $table->text('presentation');
+            $table->text('presentation')->nullable();
             $table->smallInteger('public_price');
             $table->smallInteger('proposed_price');
             $table->smallInteger('stock')->unsigned();

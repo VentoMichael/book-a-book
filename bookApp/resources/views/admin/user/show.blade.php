@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <a href="{{asset('/users')}}">Retour en arrière</a>
     <section>
         <h2>
             {{$student->name}}

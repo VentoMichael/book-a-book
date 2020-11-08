@@ -24,7 +24,8 @@ class Book extends Model
         'public_price',
         'proposed_price',
         'presentation',
-        'stock'];
+        'stock',
+        'orientation'];
 
     public function path()
     {

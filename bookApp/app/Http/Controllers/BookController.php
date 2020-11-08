@@ -49,6 +49,7 @@ class BookController extends Controller
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
         $book->isbn = request('isbn');
+        $book->orientation = request('orientation');
         $book->presentation = request('presentation');
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
@@ -99,6 +100,9 @@ class BookController extends Controller
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
         $book->isbn = request('isbn');
+        if(request('orientation')){
+            $book->orientation = request('orientation');
+        }
         $book->presentation = request('presentation');
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
@@ -116,8 +120,8 @@ class BookController extends Controller
             'title' => 'required',
             'author' => 'required',
             'publishing_house' => 'required',
-            'presentation' => 'required',
             'isbn' => 'required',
+            'orientation' => 'required',
             'public_price' => 'required',
             'proposed_price' => 'required',
             'stock' => 'required',

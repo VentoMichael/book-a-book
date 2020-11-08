@@ -27,6 +27,20 @@
             <p>{{$errors->first('author')}}</p>
         </div>
         <div class="field">
+            <label for="orientation" class="label">Orientation</label>
+            <select name="orientation" class="input @error('orientation')is danger @enderror" id="orientation">
+                @if(!isset($book->orientation))
+                    <option value="">--Choissisez une option--</option>
+                @else
+                    <option value="{{ $book->orientation }}">{{ $book->orientation }}</option>
+                @endif
+                <option value="web">Web</option>
+                <option value="2D">2D</option>
+                <option value="3D">3D</option>
+            </select>
+            <p>{{$errors->first('orientation')}}</p>
+        </div>
+        <div class="field">
             <label for="publishing_house" class="label">Maison d'édition</label>
             <input name="publishing_house" type="text" value="{{ $book->publishing_house }}" class="input @error('publishing_house')is danger @enderror" id="publishing_house">
             <p>{{$errors->first('publishing_house')}}</p>

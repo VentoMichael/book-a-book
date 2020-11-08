@@ -17,6 +17,9 @@
                 Auteur(s) : {{$book->author}}
             </li>
             <li>
+                Orientation : {{$book->orientation}}
+            </li>
+            <li>
                 Maison d'édition : {{$book->publishing_house}}
             </li>
             <li>

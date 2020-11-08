@@ -18,7 +18,7 @@
                                     @endif
                                 @endif
                             @endforeach
-                             au total.
+                            au total.
                         @else
                             <p>Aucun livre n'a encore été commandé jusqu'à présent.</p>
                         @endif

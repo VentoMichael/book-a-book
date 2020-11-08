@@ -26,6 +26,7 @@ class BookFactory extends Factory
             'title' => $this->faker->unique()->word(),
             'picture' => 'books/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg',
             'author' => $this->faker->name(),
+            'orientation' => $this->faker->randomElement($array = array ('Web','2D','3D')),
             'publishing_house' => $this->faker->company(),
             'isbn' => $this->faker->isbn10('-'),
             'public_price' => $this->faker->biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt'),

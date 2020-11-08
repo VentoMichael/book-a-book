@@ -73,7 +73,6 @@ class UserController extends Controller
                 'min:8',
                 'max:255',
                 'confirmed'
-
         ]);
         if ($request->hasfile("file_name")) {
             $attributes['file_name'] = request('file_name')->store('users');
@@ -81,22 +80,12 @@ class UserController extends Controller
         } else {
            // $attributes['file_name'] = Input::old('file_name');
         }
-        if (Hash::check($request->password, $admin->password)) {
-            $admin->fill([
-                'password' => Hash::make($request->new_password)
-            ])->save();
-        }
         $attributes['email'] = request('email');
-        //$attributes['password'] = Hash::make(request('password'));
+        $attributes['password'] = Hash::make(request('password'));
 
         $admin->first()->update($attributes);
 
         return redirect(asset('/users/Vento/edit'));
-    }
-
-    public function validateBook()
-    {
-        return;
     }
 
 }
