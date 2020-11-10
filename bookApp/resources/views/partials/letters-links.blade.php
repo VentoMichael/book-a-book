@@ -1,7 +1,7 @@
 <div>
     @if(\Request::route()->getName() === 'users.index')
         @php
-            $firstLetters = $students->pluck('first_letter_of_name')->unique();
+            $firstLetters = $users->pluck('first_letter_of_name')->unique();
         @endphp
         @foreach($firstLetters as $i)
             <a href="#{{$i}}">{{$i++}}</a>

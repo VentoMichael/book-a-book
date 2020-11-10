@@ -1,40 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{asset('/users')}}">Retour en arrière</a>
+    <a href="{{route('users.index')}}">Retour en arrière</a>
     <section>
         <h2>
-            {{$student->name}}
-            {{$student->surname}}
+            {{$user->name}}
+            {{$user->surname}}
         </h2>
         <div>
             <div>
                 <span class="{{asset('svg/book.svg')}}"></span>
-                @if(count($student->orders))
-                    {{count($student->orders)}} commandes ont été réalisées au total
+                @if(count($user->orders))
+                    {{count($user->orders)}} commandes ont été réalisées au total
                 @else
                     <p>Aucune commande n'a encore été réalisée jusqu'à présent</p>
                 @endif
             </div>
             <div>
                 <span class="{{asset('svg/group.svg')}}"></span>
-                <p>{{$student->group}}</p>
+                <p>{{$user->group}}</p>
             </div>
             @include('partials.user-avatar')
             <div>
-                {{$student->name}}
-                {{$student->surname}}
+                {{$user->name}}
+                {{$user->surname}}
             </div>
         </div>
     </section>
-    @if(count($student->orders))
+    @if(count($user->orders))
         <section>
             <h2>
                 Voici un historique de vos 5 dernières commandes
             </h2>
             <section>
-                @if($student->orders)
-                    @foreach($student->orders as $order)
+                @if($user->orders)
+                    @foreach($user->orders as $order)
                         <section>
                             <h3>
                                 La commande n°{{$loop->iteration}} contient les livres suivants :
@@ -74,8 +74,8 @@
                         </section>
                     @endforeach
                 @endif
-            <a href="#">Noté comme étudiant en ordre</a>
-            <a href="#">Envoyé une notification de rappel général</a>
-        </section>
+                <a href="#">Noté comme étudiant en ordre</a>
+                <a href="#">Envoyé une notification de rappel général</a>
+            </section>
     @endif
 @endsection

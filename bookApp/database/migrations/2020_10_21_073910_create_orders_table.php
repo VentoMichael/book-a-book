@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId("academic_year_id")->constrained('academic_years');
             $table->foreignId("user_id")->constrained('users');
+            $table->unsignedSmallInteger('total_price')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

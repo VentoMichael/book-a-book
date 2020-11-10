@@ -10,10 +10,10 @@ class DashboardController extends Controller
     public function index()
     {
         $books = Book::all();
-        $students = \App\Models\User::whereHas('roles', function ($query) {
+        $users = \App\Models\User::whereHas('roles', function ($query) {
             $query->where('name', 'student');
         })->orderBy('name')->get();
 
-        return view('admin.dashboard', compact('students','books'));
+        return view('admin.dashboard', compact('users','books'));
     }
 }

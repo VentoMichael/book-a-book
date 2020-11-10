@@ -69,7 +69,7 @@
         <a href="/settings">
             Paramètres
         </a>
-        <a href="/">
+        <a href="{{route('dashboard.index')}}">
             Home
         </a>
     </nav>

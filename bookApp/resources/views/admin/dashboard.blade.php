@@ -1,71 +1,50 @@
 @extends('layouts.app')
 @section('content')
-        <div>
-            @include('partials.search-form')
-        </div>
-        <nav>
-            <h2 class="hidden">
-                Principal navigation
-            </h2>
-        </nav>
-        @if(count($students))
-            @php
-                $firstLetter = '';
-            @endphp
-            @foreach($students as $student)
-                @if(strtoupper(substr($student->name,0,1)) !== $firstLetter)
-                    @php
-                        $firstLetter = strtoupper(substr($student->name,0,1));
-                    @endphp
-                    <section id="{{$firstLetter}}">
-                        @else
-                            <section>
+    @if(count($users))
+        @foreach($users as $user)
+            <section>
+                <h2>
+                    {{$user->name}} {{$user->surname}}
+                </h2>
+                <div>
+                    <div>
+                        <span class="{{asset('svg/book.svg')}}"></span>
+                        @if(count($user->orders) >= 1)
+                            @foreach($user->orders as $order)
+                                @if(count($order->books))
+                                    {{count($order->books)}}
+                                    @if(count($order->books) > 1)livres ont été commandés
+                                    @else livre a été commandé
+                                    @endif
                                 @endif
-                                <h2>
-                                    {{$student->name}}
-                                    {{$student->surname}}
-                                </h2>
-                                <div>
-                                    <div>
-                                        <span class="{{asset('svg/book.svg')}}"></span>
-                                        @if(count($student->orders))
-                                            {{count($student->orders)}} commandes ont été réalisées au total
-                                        @else
-                                            <p>Aucune commande n'a encore été réalisée jusqu'à présent</p>
-                                        @endif
-                                    </div>
-                                    <div>
-                                        <span class="{{asset('svg/group.svg')}}"></span>
-                                        <p>{{$student->group}}</p>
-                                    </div>
-                                    @include('partials.user-avatar')
-                                    <div>
-                                        @foreach($student->orders as $order)
-                                            @foreach($order->statuses as $statusChange)
-                                                @switch($statusChange['name'])
-                                                    @case('paid')
-                                                    <p>
-                                                        L'étudiant a payé
-                                                    </p>
-                                                    @break
-                                                    @case('ordered')
-                                                    <p>
-                                                        L'étudiant est en ordre
-                                                    </p>
-                                                    @break
-                                                @endswitch
-                                            @endforeach
-                                        @endforeach
-
-                                    </div>
-                                    <div>
-                                        <a href="/users/{{$student->name}}">
-                                            Voir plus d'informations
-                                        </a>
-                                    </div>
-                                </div>
-                            </section>
-                    @endforeach
-                @endif
-                @include('partials.letters-links')
+                            @endforeach
+                            au total.
+                        @else
+                            <p>Aucun livre n'a encore été commandé jusqu'à présent.</p>
+                        @endif
+                    </div>
+                    <div>
+                        <span class="{{asset('svg/group.svg')}}"></span>
+                        <p>{{$user->group}}</p>
+                    </div>
+                    @include('partials.user-avatar')
+                    <div>
+                        <p>
+                            L'étudiant est en ordre
+                        </p>
+                    </div>
+                    <div>
+                        <a href="{{route('users.update',['user' => $user->name])}}">
+                            Plus d'informations <span>sur {{$user->name}}</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        @endforeach
+    @else
+        <p>
+            Encore aucun étudiants
+        </p>
+    @endif
+    @include('partials.letters-links')
 @endsection

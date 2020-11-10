@@ -6,6 +6,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
 
@@ -20,17 +21,18 @@ use Laravel\Fortify\Fortify;
 |
 */
 Route::get('/test', function () {
+    dd('Hello');
 });
 
-//Route::group(['middleware' => ['administrator']], function () {
+Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
 //HOME PAGE
-    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
 // USERS
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/{student}', [UserController::class, 'show']);
-    Route::get('/users/Vento/edit', [UserController::class, 'edit']);
-    Route::put('/users/Vento', [UserController::class, 'update']);
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit']);
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 
 // BOOKS
     Route::get('/books', [BookController::class, 'index'])->name('books.index');
@@ -49,9 +51,4 @@ Route::get('/test', function () {
 
 //SETTINGS
     Route::get('/settings', [SettingController::class, 'index']);
-//});
-
-
-
-
-
+});

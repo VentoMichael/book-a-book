@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
-    @if(count($students))
-        @foreach($students as $student)
+    @if(count($users))
+        @foreach($users as $user)
             <section>
                 <h2>
-                    {{$student->name}} {{$student->surname}}
+                    {{$user->name}} {{$user->surname}}
                 </h2>
                 <div>
                     <div>
                         <span class="{{asset('svg/book.svg')}}"></span>
-                        @if(count($student->orders) >= 1)
-                            @foreach($student->orders as $order)
+                        @if(count($user->orders) >= 1)
+                            @foreach($user->orders as $order)
                                 @if(count($order->books))
                                     {{count($order->books)}}
                                     @if(count($order->books) > 1)livres ont été commandés
@@ -25,7 +25,7 @@
                     </div>
                     <div>
                         <span class="{{asset('svg/group.svg')}}"></span>
-                        <p>{{$student->group}}</p>
+                        <p>{{$user->group}}</p>
                     </div>
                     @include('partials.user-avatar')
                     <div>
@@ -34,8 +34,8 @@
                         </p>
                     </div>
                     <div>
-                        <a href="/users/{{$student->name}}">
-                            Plus d'informations <span>sur {{$student->name}}</span>
+                        <a href="{{route('users.update',['user' => $user->name])}}">
+                            Plus d'informations <span>sur {{$user->name}}</span>
                         </a>
                     </div>
                 </div>

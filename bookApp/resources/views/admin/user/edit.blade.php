@@ -15,7 +15,7 @@
             <p>Mon adresse mail : {{$admin->first()->email}}</p>
         </div>
     </section>
-    <form method="POST" action="/users/{{$admin->first()->name}}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('users.update',['user' => $admin->first()->name])}}" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <div class="field">
@@ -33,9 +33,6 @@
             <input type="password" id="password" required autocomplete="current-password" name="password" class="@error('password')is danger @enderror input">
             <p>{{$errors->first('password')}}</p>
         </div>
-
-
-
         <div class="field">
             <label for="password_confirmation" class="label">Confirmer mon mot de passe</label>
             <input type="password" name="password_confirmation" class="@error('password_confirmation')is danger @enderror input" id="password_confirmation">

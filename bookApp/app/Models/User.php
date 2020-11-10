@@ -55,6 +55,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function scopeAdmin($query)
+    {
+        return $query->where('name', '!=', 'Vento');
+    }
+
     public function orders(){
         return $this->hasMany(Order::class);
     }

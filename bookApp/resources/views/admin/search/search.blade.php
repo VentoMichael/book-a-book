@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
     @if($query !== null)
-        @if(count($user))
+        @if(count($users))
             <div class="container">
-                <p>Le resultat pour votre recherche "{{ $query }}" {{count($user) > 1 ? 'sont' : 'est'}}</p>
-                <h2>Détails sur {{count($user) > 1 ? 'les utilisateurs' : 'l\'utilisateur'}}</h2>
+                <p>Le resultat pour votre recherche "{{ $query }}" {{count($users) > 1 ? 'sont' : 'est'}}</p>
+                <h2>Détails sur {{count($users) > 1 ? 'les utilisateurs' : 'l\'utilisateur'}}</h2>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -16,22 +16,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($user as $student)
+                    @foreach($users as $user)
                         <tr>
                             <td>@include('partials.user-avatar')</td>
-                            <td>{{$student->name}}</td>
-                            <td>{{$student->surname}}</td>
-                            <td>{{$student->email}}</td>
-                            <td>{{$student->group}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->surname}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->group}}</td>
+                            <td>
+                                <a href="{{route('users.show',['user'=>$user])}}">Voir les informations de {{$user->name}} {{$user->surname}}</a></td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
         @endif
-        @if(count($book))
+        @if(count($books))
             <div class="container">
-                <h2>Détails sur {{count($book) > 1 ? 'les livres' : 'le livre'}}</h2>
+                <h2>Détails sur {{count($books) > 1 ? 'les livres' : 'le livre'}}</h2>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -47,9 +49,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($book as $bookDetails)
+                    @foreach($books as $bookDetails)
                         <tr>
-                            <td><img src="{{asset('img//books/'.$bookDetails->picture)}}" alt="Photo de couverture de {{$bookDetails->title}}"></td>
+                            <td><img src="{{asset('img/'.$bookDetails->picture)}}" alt="Photo de couverture de {{$bookDetails->title}}"></td>
                             <td>{{$bookDetails->title}}</td>
                             <td>{{$bookDetails->author}}</td>
                             <td>{{$bookDetails->publishing_house}}</td>
@@ -58,6 +60,11 @@
                             <td>{{$bookDetails->public_price}}</td>
                             <td>{{$bookDetails->proposed_price}}</td>
                             <td>{{$bookDetails->stock}}</td>
+                            <td>
+                            <td>
+                                <a href="/books/{{$bookDetails->title}}">Voir les informations
+                                    de {{$bookDetails->title}}</a></td>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
