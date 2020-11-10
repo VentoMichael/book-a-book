@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{asset('/books')}}">Retour en arrière</a>
+    <a href="{{route('books.index')}}">Retour en arrière</a>
     <section>
         <h2 class="hidden">
             Informations de {{$book->title}}
@@ -36,8 +36,8 @@
             </li>
         </ul>
     </section>
-    <a href="{{$book->path()}}/edit">Modifier <span>{{$book->title}}</span></a>
-    <form method='POST' action="{{ route('book.destroy',$book) }}">
+    <a href="{{ route('books.edit',$book) }}">Modifier <span>{{$book->title}}</span></a>
+    <form method='POST' action="{{ route('books.destroy',$book) }}">
         @csrf
         @method('DELETE')
         <input type="submit" value="Supprimer {{$book->title}}"

@@ -137,7 +137,7 @@ class BookController extends Controller
     //TODO: add a save book
     public function destroy(Book $book)
     {
-        $book->delete();
+        $book->delete()->session()->flash('status', 'Task was successful!');;
         return Redirect::to('books');
     }
 }

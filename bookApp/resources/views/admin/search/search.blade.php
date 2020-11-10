@@ -62,7 +62,7 @@
                             <td>{{$bookDetails->stock}}</td>
                             <td>
                             <td>
-                                <a href="/books/{{$bookDetails->title}}">Voir les informations
+                                <a href="{{route('books.show',['book'=>$bookDetails->title])}}">Voir les informations
                                     de {{$bookDetails->title}}</a></td>
                             </td>
                         </tr>

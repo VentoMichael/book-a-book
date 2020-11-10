@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +38,11 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
 // BOOKS
     Route::get('/books', [BookController::class, 'index'])->name('books.index');
     Route::post('/books', [BookController::class, 'store']);
-    Route::get('/books/create', [BookController::class, 'create'])->name('book.create');
-    Route::get('/books/{book}', [BookController::class, 'show'])->name('book.show');
-    Route::get('/books/{book}/edit/', [BookController::class, 'edit'])->name('book.edit');
+    Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+    Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
+    Route::get('/books/{book}/edit/', [BookController::class, 'edit'])->name('books.edit');
     Route::put('/books/{book}', [BookController::class, 'update']);
-    Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('book.destroy');
+    Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 
 //SEARCH
     Route::any('/search', [SearchController::class, 'index']);
@@ -51,4 +52,5 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
 
 //SETTINGS
     Route::get('/settings', [SettingController::class, 'index']);
+
 });

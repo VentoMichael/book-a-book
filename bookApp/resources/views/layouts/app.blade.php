@@ -33,46 +33,64 @@
         <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
     </a>
 </h1>
-<div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <ul class="container">
-            <li class="{{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
-                <a href="{{route('users.index')}}">
-                    Étudiants
-                </a>
-            </li>
-            <li class="{{\Request::route()->getName() === 'books.index' ? 'current_page_item' : ''}}">
-                <a href="{{route('books.index')}}">
-                    Livres
-                </a>
-            </li>
-            <li class="{{\Request::route()->getName() === 'purchases.index' ? 'current_page_item' : ''}}">
-                <a href="{{route('purchases.index')}}">
-                    Achats
-                </a>
-            </li>
-        </ul>
-    </nav>
+@if (Illuminate\Support\Facades\Auth::check())
 
-    <main class="py-4">
-        <form action="/search" method="get">
-            @csrf
-            <label for="search" class="hidden">Chercher dans l'application :</label>
-            <input type="search" id="search" name="search" required placeholder="Livres ou étudiants"
-                   aria-label="Search through site content">
-            <input type="submit">
-        </form>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <ul class="container">
+                <li class="{{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
+                    <a href="{{route('users.index')}}">
+                        Étudiants
+                    </a>
+                </li>
+                <li class="{{\Request::route()->getName() === 'books.index' ? 'current_page_item' : ''}}">
+                    <a href="{{route('books.index')}}">
+                        Livres
+                    </a>
+                </li>
+                <li class="{{\Request::route()->getName() === 'purchases.index' ? 'current_page_item' : ''}}">
+                    <a href="{{route('purchases.index')}}">
+                        Achats
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-        @yield('content')
-    </main>
-    <nav>
-        <a href="/settings">
-            Paramètres
-        </a>
-        <a href="{{route('dashboard.index')}}">
-            Home
-        </a>
-    </nav>
-</div>
+        <main class="py-4">
+            <form action="/search" method="get">
+                @csrf
+                <label for="search" class="hidden">Chercher dans l'application :</label>
+                <input type="search" id="search" name="search" required placeholder="Livres ou étudiants"
+                       aria-label="Search through site content">
+                <input type="submit">
+            </form>
+            @endif
+
+
+            @yield('content')
+        </main>
+        @if (Illuminate\Support\Facades\Auth::check())
+
+            <nav>
+                <a href="/settings">
+                    Paramètres
+                </a>
+                <a href="{{route('dashboard.index')}}">
+                    Home
+                </a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </nav>
+        @endif
+
+    </div>
+
 </body>
 </html>

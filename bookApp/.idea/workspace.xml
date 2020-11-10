@@ -3,21 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fcaf3adf-f13c-4d28-ba09-6d6c7755f05a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_21_073910_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_21_073910_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/search/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/search/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/letters-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/letters-links.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/user-avatar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/user-avatar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +193,7 @@
       <workItem from="1602749376029" duration="8000" />
       <workItem from="1604480169892" duration="22541000" />
       <workItem from="1604649494466" duration="2783000" />
-      <workItem from="1605007742048" duration="12952000" />
+      <workItem from="1605007742048" duration="16577000" />
     </task>
     <servers />
   </component>
@@ -256,25 +246,28 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="275" y="133" key="NewPhpClassDialog/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604650348783" />
-    <state width="556" height="445" key="SwitcherDM" timestamp="1605027170408">
+    <state width="556" height="445" key="SwitcherDM" timestamp="1605035735853">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="834" height="601" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605021052236" />
-    <state width="556" height="445" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605027170408" />
+    <state width="556" height="445" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605027795876" />
+    <state width="556" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1605035735853" />
     <state x="341" y="126" width="598" height="548" key="find.popup" timestamp="1605024363889">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="341" y="126" width="598" height="548" key="find.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605024363889" />
     <state x="341" y="126" width="598" height="548" key="find.popup/-1920.23.1920.1057/0.0.1280.800@0.0.1280.800" timestamp="1604480505616" />
-    <state x="-1311" y="274" width="700" height="530" key="recent.locations.popup" timestamp="1605019562390">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="406" y="203" width="598" height="448" key="recent.locations.popup" timestamp="1605034782922">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-1311" y="274" width="700" height="530" key="recent.locations.popup/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605019562390" />
-    <state x="-1462" y="167" width="1005" height="913" key="search.everywhere.popup" timestamp="1605019565597">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="406" y="203" width="598" height="448" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1605034782922" />
+    <state x="305" y="124" width="670" height="677" key="search.everywhere.popup" timestamp="1605036363153">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-1462" y="167" width="1005" height="913" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605019565597" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604577155992" />
+    <state x="305" y="124" width="670" height="677" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1605036363153" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
