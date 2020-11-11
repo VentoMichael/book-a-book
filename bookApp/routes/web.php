@@ -45,7 +45,7 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 
 //SEARCH
-    Route::any('/search', [SearchController::class, 'index']);
+    Route::any('/search', [SearchController::class, 'index'])->name('search.index');
 
 //PURCHASES
     Route::get('/purchases', [ReservationController::class, 'index'])->name('purchases.index');

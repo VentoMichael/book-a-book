@@ -4,9 +4,13 @@
     <list default="true" id="fcaf3adf-f13c-4d28-ba09-6d6c7755f05a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/search/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/search/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -193,7 +197,7 @@
       <workItem from="1602749376029" duration="8000" />
       <workItem from="1604480169892" duration="22541000" />
       <workItem from="1604649494466" duration="2783000" />
-      <workItem from="1605007742048" duration="16577000" />
+      <workItem from="1605007742048" duration="26499000" />
     </task>
     <servers />
   </component>
@@ -201,11 +205,12 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604584235999">
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605099175582">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-1353" y="219" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1604583919306" />
     <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604584235999" />
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1605099175582" />
     <state width="1238" height="222" key="GridCell.Tab.0.bottom" timestamp="1604653155737">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -246,17 +251,22 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="275" y="133" key="NewPhpClassDialog/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1604650348783" />
-    <state width="556" height="445" key="SwitcherDM" timestamp="1605035735853">
+    <state width="556" height="445" key="SwitcherDM" timestamp="1605107423454">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="834" height="601" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605021052236" />
-    <state width="556" height="445" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605027795876" />
-    <state width="556" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1605035735853" />
-    <state x="341" y="126" width="598" height="548" key="find.popup" timestamp="1605024363889">
+    <state width="556" height="445" key="SwitcherDM/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605107423454" />
+    <state width="556" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1605099905299" />
+    <state x="438" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605098008018">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="438" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1605098008018" />
+    <state x="341" y="126" width="598" height="548" key="find.popup" timestamp="1605102906113">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="341" y="126" width="598" height="548" key="find.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605024363889" />
     <state x="341" y="126" width="598" height="548" key="find.popup/-1920.23.1920.1057/0.0.1280.800@0.0.1280.800" timestamp="1604480505616" />
+    <state x="341" y="126" width="598" height="548" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1605102906113" />
     <state x="406" y="203" width="598" height="448" key="recent.locations.popup" timestamp="1605034782922">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -274,7 +284,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/book/create.blade.php</url>
-          <line>15</line>
+          <line>16</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

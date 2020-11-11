@@ -9,11 +9,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $books = Book::all();
         $users = \App\Models\User::whereHas('roles', function ($query) {
             $query->where('name', 'student');
-        })->orderBy('name')->get();
+        })->with('orders.books')->orderBy('name')->get();
 
-        return view('admin.dashboard', compact('users','books'));
+        return view('admin.dashboard', compact('users'));
     }
 }

@@ -5,13 +5,16 @@
         @php
             $firstLetterBook = '';
         @endphp
+        @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
         <h2 class="hidden">
             Les livres de l'application
         </h2>
         <a href="#">
             Gérer
         </a>
-        <a href="{{route('book.create')}}">
+        <a href="{{route('books.create')}}">
             Ajouter
         </a>
         @foreach($books as $book)
@@ -29,8 +32,8 @@
                             <div>
                                 <img src="{{ asset('storage/'.$book->picture) }}"
                                      alt="Photo de couverture de {{$book->title}}">
-                                <a href="{{$book->path()}}/edit">Éditer <span>{{$book->title}}</span></a>
-                                <a href="/books/{{$book->title}}">Plus d'informations sur <span>{{$book->title}}</span></a>
+                                <a href="{{route('books.edit',['book'=>$book->title])}}">Éditer <span>{{$book->title}}</span></a>
+                                <a href="{{route('books.show',['book'=>$book->title])}}">Plus d'informations sur <span>{{$book->title}}</span></a>
                             </div>
                         </section>
                 </section>

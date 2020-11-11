@@ -27,11 +27,6 @@ class Book extends Model
         'stock',
         'orientation'];
 
-    public function path()
-    {
-        return route('book.show', $this);
-    }
-
     public function getRouteKeyName()
     {
         return 'title';

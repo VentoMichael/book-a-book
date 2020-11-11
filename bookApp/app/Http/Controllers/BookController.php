@@ -38,24 +38,27 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
+     * @return string
      */
     public function store(Request $request)
     {
-        new Book($this->validateBook());
-        $book = new Book();
+        $book = new Book($this->validateBook());
         $book->picture = request('picture')->store('books');
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
         $book->isbn = request('isbn');
+        if (request('orientation')) {
+            $book->orientation = request('orientation');
+        }
         $book->orientation = request('orientation');
         $book->presentation = request('presentation');
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
         $book->save();
-        return redirect(route('books.index'));
+        Session::flash('message', 'Livre créer avec succès');
+        return \redirect(route('books.show',['book'=>$book->title]));
     }
 
     /**
@@ -100,7 +103,7 @@ class BookController extends Controller
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
         $book->isbn = request('isbn');
-        if(request('orientation')){
+        if (request('orientation')) {
             $book->orientation = request('orientation');
         }
         $book->presentation = request('presentation');
@@ -109,14 +112,15 @@ class BookController extends Controller
         $book->stock = request('stock');
         // TODO: check the file
         $book->update($validatedData);
-        return redirect($book->path());
+        Session::flash('message', 'Livre éditer avec succès');
+        return redirect(route('books.index',['book'=>$book]));
 
     }
 
     protected function validateBook()
     {
         return request()->validate([
-            'picture' => 'required|image',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required',
             'author' => 'required',
             'publishing_house' => 'required',
@@ -135,9 +139,10 @@ class BookController extends Controller
      * @return string
      */
     //TODO: add a save book
-    public function destroy(Book $book)
+    public function destroy(Book $book, Request $request)
     {
-        $book->delete()->session()->flash('status', 'Task was successful!');;
-        return Redirect::to('books');
+        $book->delete();
+        Session::flash('message', 'Livre supprimé avec succès');
+        return Redirect::to(route('books.index'));
     }
 }

@@ -59,7 +59,7 @@ class UserController extends Controller
     {
         // TODO : taille image && redimensionnement
         $attributes = request()->validate([
-            'file_name' => 'image|size:1024',
+            'file_name' => 'image|mimes:jpeg,png,jpg,gif,svg|size:2048',
             'email' => [
                 'string',
                 'email',

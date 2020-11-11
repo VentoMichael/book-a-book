@@ -29,7 +29,7 @@
 </head>
 <body>
 <h1>
-    <a class="navbar-brand" href="{{ url('/') }}">
+    <a class="navbar-brand" href="{{ url('/admin') }}">
         <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
     </a>
 </h1>
@@ -57,7 +57,7 @@
         </nav>
 
         <main class="py-4">
-            <form action="/search" method="get">
+            <form action="/admin/search" method="get">
                 @csrf
                 <label for="search" class="hidden">Chercher dans l'application :</label>
                 <input type="search" id="search" name="search" required placeholder="Livres ou étudiants"
@@ -84,7 +84,7 @@
                     {{ __('Logout') }}
                 </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                <form id="logout-form" action="admin/{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
             </nav>

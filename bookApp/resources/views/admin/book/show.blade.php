@@ -3,6 +3,9 @@
 @section('content')
     <a href="{{route('books.index')}}">Retour en arrière</a>
     <section>
+        @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
         <h2 class="hidden">
             Informations de {{$book->title}}
         </h2>
