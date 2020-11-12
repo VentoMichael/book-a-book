@@ -57,7 +57,7 @@ class User extends Authenticatable
 
     public function scopeAdmin($query)
     {
-        return $query->where('name', '!=', 'Vento');
+        return $query->where('name', '=', 'Vento');
     }
 
     public function orders(){

@@ -43,7 +43,10 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $book = new Book($this->validateBook());
-        $book->picture = request('picture')->store('books');
+        if ($request->hasFile('picture')){
+            $img = Image::make($book->picture)->resize(500, 200)->insert('public/books');
+            return $img->response('jpg');
+        }
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');

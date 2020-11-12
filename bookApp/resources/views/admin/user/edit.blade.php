@@ -8,14 +8,14 @@
             Mes informations personelles
         </h2>
         <div>
-            <img src="{{ asset('storage/'.$admin->first()->file_name) }}" alt="Photo de profil de {{$admin->first()->name}} {{$admin->first()->surname}}">
-            <p>{{$admin->first()->name}} {{$admin->first()->surname}}</p>
+            <img src="{{ asset('storage/'.$user->first()->file_name) }}" alt="Photo de profil de {{$user->first()->name}} {{$user->first()->surname}}">
+            <p>{{$user->first()->name}} {{$user->first()->surname}}</p>
         </div>
         <div>
-            <p>Mon adresse mail : {{$admin->first()->email}}</p>
+            <p>Mon adresse mail : {{$user->first()->email}}</p>
         </div>
     </section>
-    <form method="POST" action="{{route('users.update',['user' => $admin->first()->name])}}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('users.update',['user' => $user->first()->name])}}" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <div class="field">
@@ -25,7 +25,7 @@
         </div>
         <div class="field">
             <label for="email" class="label">Modifier mon adresse mail</label>
-            <input value="{{$admin->first()->email}}" type="email" name="email" class="@error('email')is danger @enderror input" id="email">
+            <input value="{{$user->first()->email}}" type="email" name="email" class="@error('email')is danger @enderror input" id="email">
             <p>{{$errors->first('email')}}</p>
         </div>
         <div class="field">

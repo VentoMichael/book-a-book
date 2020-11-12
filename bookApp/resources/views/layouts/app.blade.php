@@ -72,7 +72,7 @@
         @if (Illuminate\Support\Facades\Auth::check())
 
             <nav>
-                <a href="/settings">
+                <a href="{{route(('settings.index'))}}">
                     Paramètres
                 </a>
                 <a href="{{route('dashboard.index')}}">
@@ -84,7 +84,7 @@
                     {{ __('Logout') }}
                 </a>
 
-                <form id="logout-form" action="admin/{{ route('logout') }}" method="POST" class="d-none">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
             </nav>

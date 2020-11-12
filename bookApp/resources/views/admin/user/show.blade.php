@@ -24,6 +24,7 @@
             <div>
                 {{$user->name}}
                 {{$user->surname}}
+                <a href="mailto:{{$user->email}}">Envoyer un mail à {{$user->name}}</a>
             </div>
         </div>
     </section>

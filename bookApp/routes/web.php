@@ -8,6 +8,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
+use Intervention\Image\Facades\Image;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
@@ -22,7 +23,6 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 |
 */
 Route::get('/test', function () {
-    dd('Hello');
 });
 
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
@@ -32,7 +32,7 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
 // USERS
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
-    Route::get('/users/{user}/edit', [UserController::class, 'edit']);
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 
 // BOOKS
@@ -51,6 +51,6 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::get('/purchases', [ReservationController::class, 'index'])->name('purchases.index');
 
 //SETTINGS
-    Route::get('/settings', [SettingController::class, 'index']);
+    Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
 
 });

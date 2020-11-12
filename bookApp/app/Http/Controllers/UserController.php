@@ -44,15 +44,13 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $admin
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit()
     {
-        $admin = User::with('roles')->whereHas('roles', function ($query) {
-            $query->where('name', 'administrator');
-        })->get();
-        return view('admin.user.edit', compact('admin'));
+        $user = User::admin()->get();
+        return view('admin.user.edit',compact('user'));
     }
 
     public function update(Request $request, User $user)
