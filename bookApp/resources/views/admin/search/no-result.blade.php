@@ -2,7 +2,7 @@
 @section('content')
     <section>
         <h2>
-            Mince ! Vous avez renseigné un mauvais champ, ressayez avec le champ de recherches ci-dessus ou <a
+            Mince ! Je n'ai rien trouver avec cette recherche, ressayez avec un autre champ de recherche ci-dessus ou <a
                 href="{{asset('/')}}">retourner à la page d'accueil</a>
         </h2>
     </section>

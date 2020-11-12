@@ -6,3 +6,49 @@ img{
     position: absolute;
     top: -9999px;
 }
+.submitDiv:after{
+    width: 30px;
+    content: '';
+    display: block;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-image: url("../svg/search.svg");
+}
+.containerBookSvg{
+    width: 20px;
+    content: '';
+    display: block;
+    height: 20px;
+    background-image: url("../svg/book.svg");
+}
+.containerGroupSvg{
+    width: 30px;
+    content: '';
+    display: block;
+    height: 30px;
+    background-image: url("../svg/group.svg");
+}
+.lettersContainer{
+    top: 30%;
+}
+.letterLink{
+    transition: .3s;
+}
+.letterLink:hover{
+    font-size: 2rem;
+}
+.current_page_item{
+    opacity: 1 !important;
+    position: relative;
+}
+.current_page_item:before{
+    content:'•';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    left: 45%;
+}

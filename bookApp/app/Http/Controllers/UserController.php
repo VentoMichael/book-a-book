@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $users = User::with('orders.books', 'roles')->whereHas('roles', function ($query) {
             $query->where('name', 'student');
-        })->get();
+        })->orderBy('name')->get();
 
         return view('admin.user.index', compact('users'));
     }
