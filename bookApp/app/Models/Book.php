@@ -25,7 +25,8 @@ class Book extends Model
         'proposed_price',
         'presentation',
         'stock',
-        'orientation'];
+        'orientation'
+    ];
 
     public function getRouteKeyName()
     {

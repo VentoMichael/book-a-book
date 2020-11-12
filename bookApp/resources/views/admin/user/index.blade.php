@@ -12,10 +12,12 @@
                         @if(count($user->orders) >= 1)
                             @foreach($user->orders as $order)
                                 @if(count($order->books))
-                                    {{count($order->books)}}
-                                    @if(count($order->books) > 1)livres ont été commandés
-                                    @else livre a été commandé
-                                    @endif
+                                    @foreach($order->books as $book)
+                                        {{$book->pivot->count()}}
+                                        @if(count($order->books) > 1)livres ont été commandés
+                                        @else livre a été commandé
+                                        @endif
+                                    @endforeach
                                 @endif
                             @endforeach
                             au total.

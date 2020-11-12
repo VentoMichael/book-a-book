@@ -22,13 +22,5 @@ class OrderSeeder extends Seeder
             'user_id' => '2',
             'academic_year_id' => '1'
         ]);
-        Order::create([
-            'user_id' => '3',
-            'academic_year_id' => '1'
-        ]);
-        Order::create([
-            'user_id' => '3',
-            'academic_year_id' => '1'
-        ]);
     }
 }

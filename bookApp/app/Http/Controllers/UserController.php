@@ -16,11 +16,7 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     // TODO : verifier dans la vue/personnel le total de livres et faire la somme
-    // TODO : show view paied or not
-    // TODO : link to student if is ordered or not
-    // TODO : add message of sucess or not in (notifications,add book, delete book,...) https://laravel.com/docs/8.x/session#flash-data
-    // TODO : check the update of user
-    // TODO : link notifications
+    // TODO : mail notifications
     public function index()
     {
         $users = User::with('orders.books', 'roles')->whereHas('roles', function ($query) {
