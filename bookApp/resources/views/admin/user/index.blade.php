@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="grid grid-cols-3 flex-wrap justify-between gap-12 mr-32">
+    <div class="grid grid-cols-1 ml-4 flex-wrap justify-between gap-12 mr-4">
         @if(count($users))
             @foreach($users as $user)
                 @php
@@ -16,13 +16,13 @@
                             <section id="{{$firstLetter}}" class="border-2 rounded-xl p-4">
                     <div>
                         <div class="flex justify-between">
-                            <div class="rounded-xl bg-orange-900 p-4 pt-3 relative justify-around text-center">
-                                <div class="containerBookSvg mb-4"></div>
+                            <div class="flex flex-col rounded-xl bg-orange-900 p-4 pt-3 relative justify-around text-center">
+                                <div class="containerBookSvg mb-4 self-center"></div>
                                 @if(count($user->orders) >= 1)
                                     @foreach($user->orders as $order)
                                         @if(count($order->books))
                                             @foreach($order->books as $book)
-                                                <p class="text-xl">{{$book->pivot->count()}}</p>
+                                                <p class="text-xl text-white font-hairline">{{$book->pivot->count()}}</p>
                                                 @if(count($order->books) > 1)
                                                 @else
                                                 @endif
@@ -43,13 +43,12 @@
                             {{$user->name}} {{$user->surname}}
                         </h2>
                         <div class="mb-12 mt-10 text-center">
-                            <p class="rounded-xl p-4 border inline">
+                            <p class="rounded-xl border inline">
                                 L'étudiant est en ordre
                             </p>
                         </div>
-                        <div class="mt-6 mb-6 text-center">
-                            <a class="rounded-xl bg-orange-900 text-white p-4"
-                               href="{{route('users.update',['user' => $user->name])}}">
+                        <div class="text-center p-4">
+                            <a class="rounded-xl block bg-orange-900 text-white px-3 pt-6 pb-6" href="{{route('users.update',['user' => $user->name])}}">
                                 Plus d'informations <span>sur {{$user->name}}</span>
                             </a>
                         </div>

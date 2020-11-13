@@ -14,5 +14,15 @@
         <a href="{{route('users.index')}}">Voir tous les étudiants</a>
         <a href="{{route('books.index')}}">Voir tous les livres</a>
         <a href="{{route('purchases.index')}}">Voir les differents achats</a>
+
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
     </section>
 @endsection

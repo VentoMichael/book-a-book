@@ -13,8 +13,19 @@ img{
     height: 30px;
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 8px;
+    z-index: -10;
     background-image: url("../svg/search.svg");
+}
+.searchInput:focus{
+    width: 192px;
+    padding: 5px 10px;
+}
+.searchInput:focus::placeholder{
+    color:inherit;
+}
+.searchInput::placeholder{
+    color:transparent;
 }
 .containerBookSvg{
     width: 20px;
@@ -31,13 +42,13 @@ img{
     background-image: url("../svg/group.svg");
 }
 .lettersContainer{
-    top: 30%;
+    top: 15%;
 }
-.letterLink{
+.letterLink,.searchInput{
     transition: .3s;
 }
 .letterLink:hover{
-    font-size: 2rem;
+    border-bottom: 1px solid black;
 }
 .current_page_item{
     opacity: 1 !important;
@@ -51,4 +62,19 @@ img{
     height: 10px;
     top: 10px;
     left: 45%;
+}
+.homeSvg{
+    width: 50px;
+    display: block;
+    height: 50px;
+    background-image: url("../svg/house.svg");
+}
+.settingsSvg{
+    width: 50px;
+    display: block;
+    height: 50px;
+    background-image: url("../svg/settings.svg");
+}
+.navSecondary{
+    top: 71px;
 }
