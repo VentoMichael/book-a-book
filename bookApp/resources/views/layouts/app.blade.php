@@ -28,7 +28,7 @@
         <div class="inline-block">
             <h1 class="ml-3 mt-3 inline-block">
                 <a class="navbar-brand" href="{{ url('/admin') }}">
-                    <img src="{{asset('svg/logo.svg')}}" alt="Book a book application">
+                    <img class="logo" src="{{asset('svg/logo.svg')}}" alt="Book a book application">
                 </a>
             </h1>
         </div>
@@ -37,17 +37,17 @@
                 <nav class="m-auto mt-4 mb-4 navbar navbar-expand-md navbar-light">
                     <ul class="container flex items-center">
                         <li class="m-3 my-0 opacity-25 hover:opacity-100 {{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
-                            <a href="{{route('users.index')}}">
+                            <a class="text-xl" href="{{route('users.index')}}">
                                 Étudiants
                             </a>
                         </li>
                         <li class="m-3 my-0 opacity-25 hover:opacity-100 {{\Request::route()->getName() === 'books.index' ? 'current_page_item' : ''}}">
-                            <a href="{{route('books.index')}}">
+                            <a class="text-xl" href="{{route('books.index')}}">
                                 Livres
                             </a>
                         </li>
                         <li class="m-3 my-0 opacity-25 hover:opacity-100 {{\Request::route()->getName() === 'purchases.index' ? 'current_page_item' : ''}}">
-                            <a href="{{route('purchases.index')}}">
+                            <a class="text-xl" href="{{route('purchases.index')}}">
                                 Achats
                             </a>
                         </li>
