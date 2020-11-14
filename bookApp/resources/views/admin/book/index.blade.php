@@ -12,10 +12,10 @@
             Les livres de l'application
         </h2>
         <div class="justify-center flex mb-4">
-            <a class="rounded-xl bg-orange-900 text-white mr-8 px-4 pt-4 pb-4" href="#">
+            <a class="linkAction rounded-xl bg-orange-900 text-white mr-8 px-4 pt-4 pb-4" href="#">
                 Gérer
             </a>
-            <a class="rounded-xl border-2 hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
+            <a class="linkAction rounded-xl border-2 hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
                href="{{route('books.create')}}">
                 Ajouter
             </a>
@@ -37,7 +37,7 @@
                                         {{$book->title}}
                                     </h3>
                                 </div>
-                                <div class="mb-12 mt-10 text-center">
+                                <div class="mb-6 mt-10 text-center">
                                     <a class="rounded-xl border p-3 inline"
                                        href="{{route('books.edit',['book'=>$book->title])}}">Éditer
                                         <span>{{$book->title}}</span></a>

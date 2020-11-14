@@ -43,6 +43,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         // TODO : resize book
+        // TODO : save fake book
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')){
             $img = Image::make($book->picture)->resize(100, 160)->insert('public/books');

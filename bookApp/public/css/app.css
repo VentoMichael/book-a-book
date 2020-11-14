@@ -10,6 +10,9 @@ img{
     position: absolute;
     top: -9999px;
 }
+body>div>nav{
+    margin-top: -30px;
+}
 .submitDiv:after{
     width: 30px;
     content: '';
@@ -20,6 +23,18 @@ img{
     right: 8px;
     z-index: -10;
     background-image: url("../svg/search.svg");
+}
+.backLink:hover{
+    margin-left: -5px;
+}
+.backLink{
+    transition: .3s;
+    background-image: url('../svg/arrow.svg');
+    background-repeat: no-repeat;
+}
+.linkAction{
+    width: 105px;
+    text-align: center;
 }
 .searchInput:focus{
     width: 192px;
