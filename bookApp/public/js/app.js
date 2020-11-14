@@ -9,13 +9,16 @@ function stayOpenFunction() {
     })
 }
 
-    setTimeOut(function () {
-        document.getElementById("sucessMessage").remove()
-    }, 3000);
+console.log(hideMessage)
 
-setInterval(function(){
-
-    var obj = document.getElementById("sucessMessage");
-    obj.innerHTML = "dezdezdze";
-
-},3000);
+function hideMessage() {
+    console.log('dans')
+    var sM = document.getElementById("sucessMessage");
+    setTimeout(function () {
+        sM.style.background = 'transparent';
+        sM.style.color = 'transparent';
+        sM.style.transition = '.7s';
+        sM.style.transitionDuration = 'opacity';
+        sM.style.position = 'absolute';
+    }, 5000);
+}

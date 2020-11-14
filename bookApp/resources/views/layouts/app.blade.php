@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-white m-3 mb-0 rounded-xl mb-24">
+<body onload="hideMessage()" class="bg-white m-3 mb-0 rounded-xl mb-24">
 <div>
     <div class="flex flex-col sm:flex-row justify-around">
         <div class="inline-block">
