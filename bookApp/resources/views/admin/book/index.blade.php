@@ -37,11 +37,11 @@
                                         {{$book->title}}
                                     </h3>
                                 </div>
-                                <div class="mb-6 mt-10 text-center">
-                                    <a class="rounded-xl border p-3 inline"
+                                <div class="mb-4 mt-10 text-center">
+                                    <a class="rounded-xl border p-3 inline hover:bg-orange-900 hover:text-white"
                                        href="{{route('books.edit',['book'=>$book->title])}}">Éditer
                                         <span>{{$book->title}}</span></a>
-                                    <a class="rounded-xl block mt-12 bg-orange-900 text-white px-3 pt-6 pb-6"
+                                    <a class="rounded-xl block mt-8 bg-orange-900 text-white p-3"
                                        href="{{route('books.show',['book'=>$book->title])}}">Plus d'informations sur
                                         <span>{{$book->title}}</span></a>
                                 </div>

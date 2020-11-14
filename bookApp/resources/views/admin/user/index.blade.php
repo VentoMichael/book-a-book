@@ -43,13 +43,13 @@
                                 <h2 class="text-xl mt-4 break-all ml-4 mr-4">
                                     {{$user->name}} {{$user->surname}}
                                 </h2>
-                                <div class="mb-12 mt-10 text-center">
+                                <div class="mb-4 mt-10 text-center">
                                     <p class="rounded-xl border p-3 inline">
                                         L'étudiant est en ordre
                                     </p>
                                 </div>
                                 <div class="text-center p-4">
-                                    <a class="rounded-xl block bg-orange-900 text-white px-3 pt-6 pb-6"
+                                    <a class="rounded-xl block bg-orange-900 text-white p-3"
                                        href="{{route('users.update',['user' => $user->name])}}">
                                         Plus d'informations <span>sur {{$user->name}}</span>
                                     </a>
