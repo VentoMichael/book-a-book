@@ -8,11 +8,7 @@ function stayOpenFunction() {
         }
     })
 }
-
-console.log(hideMessage)
-
 function hideMessage() {
-    console.log('dans')
     var sM = document.getElementById("sucessMessage");
     setTimeout(function () {
         sM.style.background = 'transparent';

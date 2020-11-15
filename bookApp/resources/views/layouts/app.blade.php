@@ -24,7 +24,7 @@
 </head>
 <body onload="hideMessage()" class="bg-white m-3 mb-0 rounded-xl mb-24">
 <div>
-    <div class="flex flex-col sm:flex-row justify-around">
+    <div class="flex flex-col md:flex-row justify-between">
         <div class="inline-block">
             <h1 class="ml-3 mt-3 inline-block">
                 <a class="navbar-brand" href="{{ url('/admin') }}">
@@ -33,7 +33,7 @@
             </h1>
         </div>
         @if (Illuminate\Support\Facades\Auth::check())
-            <div id="app" class="flex items-center">
+            <div id="app" class="flex items-center m-auto">
                 <nav class="m-auto mt-4 mb-4 navbar navbar-expand-md navbar-light">
                     <ul class="container flex items-center">
                         <li class="m-3 my-0 opacity-25 hover:opacity-100 {{\Request::route()->getName() === 'users.index' ? 'current_page_item' : ''}}">
@@ -53,11 +53,11 @@
                         </li>
                     </ul>
                 </nav>
-                <form action="/admin/search" class="z-0 absolute top-0 right-0 mt-6 mr-6 sm:ml-16 sm:relative" method="get">
+                <form action="/admin/search" class="z-0 absolute top-0 right-0 mt-6 mr-6" method="get">
                     @csrf
                     <label for="search" class="hidden">Chercher dans l'application :</label>
                     <input type="search" id="formSearch" onclick="stayOpenFunction()"
-                           class="sm:p-3 sm:pl-12 searchInput rounded-xl border-2 border-orange-900 w-12 h-12 p-1 bg-transparent z-10"
+                           class="searchInput rounded-xl border-2 border-orange-900 w-12 h-12 p-1 bg-transparent"
                            id="search" name="search" required
                            placeholder="Livres ou étudiants"
                            aria-label="Search through site content">

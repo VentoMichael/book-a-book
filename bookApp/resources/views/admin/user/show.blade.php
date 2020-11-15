@@ -1,82 +1,106 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{route('users.index')}}">Retour en arrière</a>
-    <section>
-        <h2>
-            {{$user->name}}
-            {{$user->surname}}
-        </h2>
-        <div>
+    <div class="relative">
+        <a class="backLink text-transparent text-xl absolute" title="Retour en arrière" href="{{route('users.index')}}">Retour
+            en arrière</a>
+        <section class="rounded-xl p-4 max-w-5xl m-auto">
             <div>
-                <span class="{{asset('svg/book.svg')}}"></span>
-                @if(count($user->orders))
-                    {{count($user->orders)}} commandes ont été réalisées au total
-                @else
-                    <p>Aucune commande n'a encore été réalisée jusqu'à présent</p>
-                @endif
-            </div>
-            <div>
-                <span class="{{asset('svg/group.svg')}}"></span>
-                <p>{{$user->group}}</p>
-            </div>
-            @include('partials.user-avatar')
-            <div>
-                {{$user->name}}
-                {{$user->surname}}
-                <a href="mailto:{{$user->email}}">Envoyer un mail à {{$user->name}} {{$user->surname}}</a>
-            </div>
-        </div>
-    </section>
-    @if(count($user->orders))
-        <section>
-            <h2>
-                Voici un historique de vos 5 dernières commandes
-            </h2>
-            <section>
-                @if($user->orders)
-                    @foreach($user->orders as $order)
-                        <section>
-                            <h3>
-                                La commande n°{{$loop->iteration}} contient les livres suivants :
-                            </h3>
-                            @foreach($order->books as $book)
-                                <img src="{{ asset('storage/'.$book->picture) }}"
-                                     alt="Photo de couverture de {{$book->title}}">
-                                <p>{{$book->title}}</p>
-                            @endforeach
-                            @foreach($order->statuses as $statuses)
-                                @switch($statuses['name'])
-                                    @case('paid')
-                                    <p>
-                                        Payé
-                                    </p>
-                                    @break
+                <div class="flex justify-between">
+                    @include('partials.user-avatar')
+                    <div>
+                        <div>
+                            <h2 class="text-xl break-all ml-4 mr-4">
+                                {{$user->name}} {{$user->surname}}
+                            </h2>
+                        </div>
+                        <div class="flex justify-around mt-8">
+                            <div class="rounded-xl bg-orange-900 p-3 text-center">
+                                <div class="containerBookSvg mb-4 self-center"></div>
+                                @if(count($user->orders) >= 1)
+                                    @foreach($user->orders as $order)
+                                        @if(count($order->books))
+                                            @foreach($order->books as $book)
+                                                <p class="text-xl text-white font-hairline">{{$book->pivot->count()}}</p>
+                                                @if(count($order->books) > 1)
+                                                @else
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                @else
+                                    <p class="text-xl text-white font-hairline">0</p>
+                                @endif
+                            </div>
+                            <div class="rounded-xl bg-orange-900 p-3 pt-3 relative justify-around text-center">
+                                <div class="containerGroupSvg mb-2 m-auto"></div>
+                                <p class="text-xl text-white font-hairline">{{$user->group}}</p>
+                            </div>
+                        </div>
+                    </div>
 
-                                    @case('available')
-                                    <p>
-                                        Disponible au bureau
-                                    </p>
-                                    @break
+                </div>
+                <div class="text-center p-4 mt-8 -mb-8">
+                    <a class="rounded-xl block bg-orange-900 text-white p-3" href="mailto:{{$user->email}}">Envoyer un
+                        mail à {{$user->name}} {{$user->surname}}</a>
+                </div>
+            </div>
+        </section>
+        @if(count($user->orders))
+            <section class="pl-8 mt-6 max-w-5xl m-auto">
+                <h2 class="text-2xl">
+                    Voici un historique de vos 5 dernières commandes
+                </h2>
+                <section>
+                    @if($user->orders)
+                        @foreach($user->orders as $order)
+                            <section>
+                                <h3 class="mt-6 mb-4">
+                                    La commande n°{{$loop->iteration}} contient les livres suivants :
+                                </h3>
+                                <section>
+                                    @foreach($order->books as $book)
+                                        <div class="flex mb-8">
+                                            <img src="{{ asset('storage/'.$book->picture) }}"
+                                                 alt="Photo de couverture de {{$book->title}}">
+                                            <h4 class="ml-4">{{$book->title}}</h4>
+                                        </div>
+                                    @endforeach
+                                    @foreach($order->statuses as $statuses)
+                                        @switch($statuses['name'])
+                                            @case('paid')
+                                            <p>
+                                                Payé
+                                            </p>
+                                            @break
 
-                                    @case('delivered')
-                                    <p>
-                                        Delivré
-                                    </p>
-                                    @break
+                                            @case('available')
+                                            <p>
+                                                Disponible au bureau
+                                            </p>
+                                            @break
 
-                                    @case('ordered')
-                                    <p>
-                                        En ordre
-                                    </p>
-                                    @break
-                                @endswitch
-                            @endforeach
-                        </section>
-                    @endforeach
-                @endif
-                <a href="#">Noté comme étudiant en ordre</a>
-                <a href="#">Envoyé une notification de rappel général</a>
+                                            @case('delivered')
+                                            <p>
+                                                Delivré
+                                            </p>
+                                            @break
+
+                                            @case('ordered')
+                                            <p>
+                                                En ordre
+                                            </p>
+                                            @break
+                                        @endswitch
+                                    @endforeach
+                                </section>
+                            </section>
+                        @endforeach
+                    @endif
+                    <a href="#">Noté comme étudiant en ordre</a>
+                    <a href="#">Envoyé une notification de rappel général</a>
+                </section>
             </section>
-    @endif
+        @endif
+    </div>
 @endsection
