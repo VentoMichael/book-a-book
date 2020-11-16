@@ -61,6 +61,7 @@
                             <p>
                                 Encore aucun étudiants
                             </p>
+                    </section>
                 @endif
     </div>
     @include('partials.letters-links')

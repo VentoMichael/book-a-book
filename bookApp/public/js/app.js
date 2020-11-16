@@ -8,6 +8,13 @@ function stayOpenFunction() {
         }
     })
 }
+function focusSearch(){
+    let formSearch = document.getElementById("formSearch");
+    let inputCta = document.getElementById('inputCta')
+    inputCta.addEventListener('click',()=>{
+        formSearch.focus()
+    })
+}
 function hideMessage() {
     var sM = document.getElementById("sucessMessage");
     setTimeout(function () {

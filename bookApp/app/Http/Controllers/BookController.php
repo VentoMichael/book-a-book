@@ -44,6 +44,7 @@ class BookController extends Controller
     {
         // TODO : resize book
         // TODO : save fake book
+        // TODO : dans un erreur de form mettre le required ou pas ( car affiche pas erreur plus precise)
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')){
             $img = Image::make($book->picture)->resize(100, 160)->insert('public/books');

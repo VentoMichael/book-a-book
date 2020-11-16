@@ -16,28 +16,28 @@
                     <img src="{{ asset('storage/'.$book->picture) }}" alt="Photo de couverture de {{$book->title}}">
                 </li>
                 <li class="my-2 text-xl">
-                    Titre : {{$book->title}}
+                    Titre : <span class="border p-3">{{$book->title}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Auteur(s) : {{$book->author}}
+                    Auteur(s) : <span class="border p-3">{{$book->author}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Orientation : {{$book->orientation}}
+                    Orientation : <span class="border p-3">{{$book->orientation}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Maison d'édition : {{$book->publishing_house}}
+                    Maison d'édition : <span class="border p-3">{{$book->publishing_house}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    ISBN : {{$book->isbn}}
+                    ISBN : <span class="border p-3">{{$book->isbn}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Prix public : {{$book->public_price}}
+                    Prix public : <span class="border p-3">{{$book->public_price}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Prix proposé : {{$book->proposed_price}}
+                    Prix proposé : <span class="border p-3">{{$book->proposed_price}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Stock : {{$book->stock}}
+                    Stock : <span class="border p-3">{{$book->stock}}</span>
                 </li>
             </ul>
         </section>
