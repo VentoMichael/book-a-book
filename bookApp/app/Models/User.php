@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $query->where('name', '=', 'Vento');
     }
 
+    public function scopeStudent($query)
+    {
+        return $query->where('name', '!=', 'Vento');
+    }
+
     public function orders(){
         return $this->hasMany(Order::class);
     }

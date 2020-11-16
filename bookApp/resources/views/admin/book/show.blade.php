@@ -31,10 +31,10 @@
                     ISBN : <span class="border p-3">{{$book->isbn}}</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Prix public : <span class="border p-3">{{$book->public_price}}</span>
+                    Prix public : <span class="border p-3">{{$book->public_price}} €</span>
                 </li>
                 <li class="my-2 text-xl">
-                    Prix proposé : <span class="border p-3">{{$book->proposed_price}}</span>
+                    Prix proposé : <span class="border p-3">{{$book->proposed_price}} €</span>
                 </li>
                 <li class="my-2 text-xl">
                     Stock : <span class="border p-3">{{$book->stock}}</span>

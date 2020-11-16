@@ -44,7 +44,7 @@
                                     {{$user->name}} {{$user->surname}}
                                 </h2>
                                 <div class="mb-4 mt-10 text-center">
-                                    <p class="rounded-xl border p-3 inline">
+                                    <p class="rounded border-t border-b p-3 inline">
                                         L'étudiant est en ordre
                                     </p>
                                 </div>

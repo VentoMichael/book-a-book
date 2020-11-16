@@ -15,7 +15,7 @@ class SearchController extends Controller
     {
         // TODO : https://laravel.com/docs/8.x/eloquent#query-scopes
         $search = Request::input('search');
-        $users = User::admin()->where('name', 'LIKE', '%' . $search . '%')->orWhere('surname', 'LIKE', '%' . $search . '%')->get();
+        $users = User::student()->where('name', 'LIKE', '%' . $search . '%')->orWhere('surname', 'LIKE', '%' . $search . '%')->get();
         $books = Book::where('title', 'LIKE', '%' . $search . '%')->get();
         if (count($users) || count($books)) {
             if (count($users)) {

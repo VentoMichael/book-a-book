@@ -9,7 +9,7 @@
                 </div>
                 <h2 class="mx-auto text-3xl mb-2">Détails
                     sur {{count($users) > 1 ? 'les utilisateurs' : 'l\'utilisateur'}}</h2>
-                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                <div class="-my-2 py-2 overflow-x-auto">
                     <div
                         class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-orange-200">
 
@@ -46,7 +46,7 @@
 
                                     <td class="px-6 py-4 text-right border-b border-orange-200 text-sm leading-5 font-medium">
                                         <a href="{{route('users.show',['user'=>$user])}}"
-                                           class="text-indigo-600 hover:text-indigo-900">Editer</a></td>
+                                           class="text-indigo-600 hover:text-indigo-900">Voir</a></td>
                                     </td>
                                 </tr>
                             @endforeach
@@ -64,7 +64,7 @@
 
             <div class="flex flex-col mt-8 mb-32">
                 <h2 class="mx-auto text-3xl mb-2">Détails sur {{count($books) > 1 ? 'les livres' : 'le livre'}}</h2>
-                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                <div class="-my-2 py-2 overflow-x-auto">
                     <div
                         class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-orange-200">
                         @if(count($books))
@@ -131,7 +131,7 @@
                                         <td class="px-6 py-4 border-b border-orange-200 text-sm leading-5 text-gray-900">{{$bookDetails->stock}}</td>
 
                                         <td class="px-6 py-4 text-right border-b border-orange-200 text-sm leading-5 font-medium">
-                                            <a class="text-indigo-600 hover:text-indigo-900" href="{{route('books.show',['book'=>$bookDetails->title])}}">Editer</a>
+                                            <a class="text-indigo-600 hover:text-indigo-900" href="{{route('books.show',['book'=>$bookDetails->title])}}">Voir</a>
                                         </td>
                                         </td>
                                     </tr>
