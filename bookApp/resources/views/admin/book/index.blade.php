@@ -6,7 +6,8 @@
             $firstLetterBook = '';
         @endphp
         @if (Session::has('message'))
-            <div id="sucessMessage" class="fixed top-0 bg-green-500 w-full p-4 right-0 text-center text-white">{{ Session::get('message') }}</div>
+            <div id="sucessMessage"
+                 class="fixed top-0 bg-green-500 w-full p-4 right-0 text-center text-white">{{ Session::get('message') }}</div>
         @endif
         <h2 class="hidden">
             Les livres de l'application
@@ -20,16 +21,21 @@
                 Ajouter
             </a>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ml-4 flex-wrap justify-between gap-12 mr-4">
-            @foreach($books as $book)
-                @if(strtoupper(substr($book->name,0,1)) !== $firstLetterBook)
+        <div class="grid grid-cols-1 sm:grid-cols-2 sm:mr-8 lg:grid-cols-3 ml-4 flex-wrap justify-between gap-12 mr-4">
+            @if(count($books))
+                @foreach($books as $book)
                     @php
-                        $firstLetterBook = strtoupper(substr($book->name,0,1));
+                        $firstLetterBook = '';
                     @endphp
-                    <section id="{{$firstLetterBook}}">
-                        @else
-                            <section class="border-2 rounded-xl p-4">
-                                @endif
+                    @if(strtoupper(substr($book->title,0,1)) !== $firstLetterBook)
+                        @php
+                            $firstLetterBook = strtoupper(substr($book->title,0,1));
+                        @endphp
+                    @else
+                        <section class="border-2 rounded-xl p-4">
+                            @endif
+                            <section id="{{$firstLetterBook}}" class="border-2 rounded-xl p-4">
+
                                 <div class="flex justify-between">
                                     <img src="{{ asset('storage/'.$book->picture) }}"
                                          alt="Photo de couverture de {{$book->title}}">
@@ -46,13 +52,14 @@
                                         <span>{{$book->title}}</span></a>
                                 </div>
                             </section>
-                    </section>
-                    @endforeach
-                @else
-                    <p>
-                        Aucun livre trouvé
-                    </p>
-                @endif
+                        </section>
+                        @endforeach
+                        @else
+                            <p>
+                                Aucun livre trouvé
+                            </p>
+                        @endif
+                    @endif
         </div>
         @include('partials.letters-links')
 @endsection

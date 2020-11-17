@@ -1,4 +1,4 @@
-<div class="hidden inline-block fixed right-0 lettersContainer mr-2 text-center">
+<div class="hidden sm:inline inline-block fixed right-0 lettersContainer mr-6 text-center">
     @if(\Request::route()->getName() === 'users.index')
         @php
             $firstLetters = $users->pluck('first_letter_of_name')->unique();
