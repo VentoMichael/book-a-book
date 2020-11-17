@@ -16,7 +16,7 @@
                 </div>
             @endif
             <label for="picture" class="label mb-2">Photo de couverture</label>
-            <input type="file" name="picture" class="whitespace-normal w-full border rounded-lg p-2 @error('picture')is danger @enderror input" id="picture">
+            <input type="file" name="picture" required class="whitespace-normal w-full border rounded-lg p-2 @error('picture')is danger @enderror input" id="picture">
             <p class="text-red-500 text-lg mb-4">{{$errors->first('picture')}}</p>
         </div>
         <div class="field my-6 flex flex-col sm:self-end sm:mb-0">

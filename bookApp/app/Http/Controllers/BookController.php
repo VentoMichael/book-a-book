@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -42,14 +43,19 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        // TODO : resize book
+        // TODO : mail notifications book
         // TODO : save fake book
-        // TODO : dans un erreur de form mettre le required ou pas ( car affiche pas erreur plus precise)
+        // TODO : Update resize don't work
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')){
-            $img = Image::make($book->picture)->resize(100, 160)->insert('public/books');
-            return $img->response('jpg');
+            Storage::makeDirectory('books');
+            $filename = request('picture')->hashName();
+            $img = Image::make($book->picture)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(storage_path('app/public/books/'.$filename));
+            $book->picture = 'books/' . $filename;
         }
+        $book->picture = request('picture')->store('books');
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
@@ -99,9 +105,14 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $validatedData = request($this->validateBook());
-        if ($request->hasfile("picture")) {
-            $book->picture = request('picture')->store('books');
-        } else {
+        if ($request->hasFile('picture')){
+            Storage::makeDirectory('books');
+            $filename = request('picture')->hashName();
+            Image::make($book->picture)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(storage_path('app/public/books/'.$filename));
+            $book->picture = 'books/' . $filename;
+        }else {
             $book->picture = Input::old('picture');
         }
         $book->picture = request('picture')->store('books');
@@ -116,7 +127,6 @@ class BookController extends Controller
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
-        // TODO: check the file
         $book->update($validatedData);
         Session::flash('message', 'Livre éditer avec succès');
         return redirect(route('books.index',['book'=>$book]));

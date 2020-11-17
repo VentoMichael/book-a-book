@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('author');
             $table->string('orientation');
             $table->string('publishing_house');
+            $table->boolean('is_draft')->default(false);
             $table->string('isbn');
             $table->text('presentation')->nullable();
             $table->smallInteger('public_price');

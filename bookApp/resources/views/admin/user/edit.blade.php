@@ -30,7 +30,7 @@
         </div>
         <div class="field">
             <label for="password" class="label">Mon mot de passe</label>
-            <input type="password" id="password" required autocomplete="current-password" name="password" class="@error('password')is danger @enderror input">
+            <input type="password" id="password" autocomplete="current-password" name="password" class="@error('password')is danger @enderror input">
             <p>{{$errors->first('password')}}</p>
         </div>
         <div class="field">

@@ -23,5 +23,6 @@ function hideMessage() {
         sM.style.transition = '.7s';
         sM.style.transitionDuration = 'opacity';
         sM.style.position = 'absolute';
+        sM.style.top = '-9999px';
     }, 5000);
 }

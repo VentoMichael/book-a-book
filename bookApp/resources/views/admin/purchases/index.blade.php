@@ -5,16 +5,21 @@
         <h2 class="hidden">
             Réservations
         </h2>
-        <ul>
-            @for($i = 1; $i <=3;$i++)
+        <ul class="flex justify-center flex-col sm:flex-row">
+            <li>
+                <a href="#bloc1" class="rounded-xl block my-2 border-2 bg-orange-900 text-white mx-4 p-3 sm:px-12 md:px-16">
+                    Bloc 1
+                </a>
+            </li>
+            @for($i = 2; $i <=3;$i++)
                 <li>
-                    <a href="#bloc{{$i}}">
+                    <a href="#bloc{{$i}}" class="rounded-xl block my-2 border-2 hover:text-white hover:bg-orange-900 mx-4 p-3 sm:px-12 md:px-16">
                         Bloc {{$i}}
                     </a>
                 </li>
             @endfor
         </ul>
-        <section id="bloc1">
+        <section id="bloc1" class="mt-6">
             @foreach($students as $student)
                 @foreach($student->orders as $order)
                     @foreach($order->books as $book)

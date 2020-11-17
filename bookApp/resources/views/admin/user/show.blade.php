@@ -18,16 +18,15 @@
                             <div class="rounded-xl bg-orange-900 p-3 text-center">
                                 <div class="containerBookSvg mb-4 self-center"></div>
                                 @if(count($user->orders) >= 1)
+                                    @php
+                                        $totalbooks = 0;
+                                    @endphp
                                     @foreach($user->orders as $order)
-                                        @if(count($order->books))
-                                            @foreach($order->books as $book)
-                                                <p class="text-xl text-white font-hairline">{{$book->pivot->count()}}</p>
-                                                @if(count($order->books) > 1)
-                                                @else
-                                                @endif
-                                            @endforeach
-                                        @endif
+                                        @php
+                                            $totalbooks += $order->books->count()
+                                        @endphp
                                     @endforeach
+                                    <p class="text-xl text-white font-hairline">{{$totalbooks}}</p>
                                 @else
                                     <p class="text-xl text-white font-hairline">0</p>
                                 @endif
@@ -66,33 +65,21 @@
                                             <h4 class="ml-4 text-xl font-bold">{{$book->title}}</h4>
                                         </div>
                                     @endforeach
-                                    @foreach($order->statuses as $statuses)
-                                        @switch($statuses['name'])
-                                            @case('paid')
-                                            <p>
-                                                Payé
+                                    @php
+                                        $statuses = [
+                                                'paid' => 'Payé',
+                                                'available' => 'Disponible au bureau',
+                                                'delivered' => 'Delivré',
+                                                'ordered' => 'Commandé',
+                                            ];
+                                    @endphp
+                                        @foreach($order->statuses as $status)
+                                        <div class="text-center text-2xl">
+                                            <p class="rounded border-t border-b p-3 inline">
+                                                {{$statuses[$status->name]}}
                                             </p>
-                                            @break
-
-                                            @case('available')
-                                            <p>
-                                                Disponible au bureau
-                                            </p>
-                                            @break
-
-                                            @case('delivered')
-                                            <p>
-                                                Delivré
-                                            </p>
-                                            @break
-
-                                            @case('ordered')
-                                            <p>
-                                                En ordre
-                                            </p>
-                                            @break
-                                        @endswitch
-                                    @endforeach
+                                        </div>
+                                        @endforeach
                                     <div class="h-2 bg-orange-900 block w-2/4 rounded-full mx-auto my-8"></div>
                                 </section>
                             </section>
@@ -101,7 +88,8 @@
                     <div class="sm:gap-12 grid sm:grid-cols-2">
                         <a href="#" class="rounded-xl mt-6 p-3 border hover:bg-orange-900 hover:text-white text-center">Noté
                             comme étudiant en ordre</a>
-                        <a href="#" class="rounded-xl mt-6 p-3 border bg-orange-900 text-white text-center">Envoyé une notification de rappel général</a>
+                        <a href="#" class="rounded-xl mt-6 p-3 border bg-orange-900 text-white text-center">Envoyé une
+                            notification de rappel général</a>
                     </div>
                 </section>
             </section>

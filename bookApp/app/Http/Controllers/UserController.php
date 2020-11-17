@@ -6,8 +6,10 @@ use App\Models\Order;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Symfony\Component\Console\Input\Input;
 
 class UserController extends Controller
@@ -18,12 +20,11 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     // TODO : verifier dans la vue/personnel le total de livres et faire la somme
+    // TODO : if order or not
     // TODO : mail notifications
     public function index()
     {
-        $users = User::with('orders.books', 'roles')->whereHas('roles', function ($query) {
-            $query->where('name', 'student');
-        })->orderBy('name')->get();
+        $users = User::student()->orderBy('name')->get();
 
         return view('admin.user.index', compact('users'));
     }
@@ -55,22 +56,31 @@ class UserController extends Controller
     {
         // TODO : taille image && redimensionnement
         $attributes = request()->validate([
-            'file_name' => 'image|mimes:jpeg,png,jpg,gif,svg|size:2048',
+            'file_name' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'email' => [
                 'string',
                 'email',
                 'max:255',
-            ],
-            'password' => [
-                'required',
-                'string',
-                'min:8',
-                'max:255',
-                'confirmed'
-            ],
+            ]
         ]);
-        if ($request->hasfile("file_name")) {
-            $attributes['file_name'] = request('file_name')->store('users');
+        if (request('password')){
+            request()->validate([
+                'password' => [
+                    'required',
+                    'string',
+                    'min:8',
+                    'max:255',
+                    'confirmed'
+                ],
+            ]);
+        }
+        if ($request->hasFile('file_name')){
+            Storage::makeDirectory('users');
+            $filename = request('file_name')->hashName();
+            $img = Image::make($user->file_name)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(storage_path('app/public/users/'.$filename));
+            $user->file_name = 'users/' . $filename;
         }
         $attributes['email'] = request('email');
         $attributes['password'] = Hash::make(request('password'));

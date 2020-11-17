@@ -35,11 +35,15 @@ class Book extends Model
     public function getFirstLetterOfBookAttribute(){
         return strtoupper(substr($this->title,0,1));
     }
-
+    public function scopeDraftBook($query)
+    {
+        return $query->where('name', '!=', 'Vento');
+    }
     public function academic_years()
     {
         return $this->belongsToMany('AcademicYear','Sales')->withPivot('price','public_price')->withTimestamps();
     }
+    //TODO : scope pour draft
 
     public function orders(){
         return $this->belongsToMany(Order::class,'reservations','book_id','order_id')

@@ -32,9 +32,9 @@
                             $firstLetterBook = strtoupper(substr($book->title,0,1));
                         @endphp
                     @else
-                        <section class="border-2 rounded-xl p-4">
+                        <section class="flex flex-col justify-between border-2 rounded-xl p-4">
                             @endif
-                            <section id="{{$firstLetterBook}}" class="border-2 rounded-xl p-4">
+                            <section id="{{$firstLetterBook}}" class="flex flex-col justify-between border-2 rounded-xl p-4">
 
                                 <div class="flex justify-between">
                                     <img src="{{ asset('storage/'.$book->picture) }}"

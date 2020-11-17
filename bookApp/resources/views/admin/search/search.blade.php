@@ -5,7 +5,7 @@
 
             <div class="flex flex-col mt-8 mb-32">
                 <div class="sm:w-2/4 w-full -mt-6 mb-8 border border-orange-900 inline-block mx-auto text-center rounded-full px-6 py-3">
-                    <p>Le resultat pour votre recherche "{{ $query }}" {{count($users) > 1 ? 'sont' : 'est'}}</p>
+                    <p>{{count($users) > 1 || count($books) > 1 ? 'Les resultats' : 'Le resultat'}} pour votre recherche "{{ $query }}" {{count($users) > 1 ? 'sont' : 'est'}}</p>
                 </div>
                 <h2 class="mx-auto text-3xl mb-2">Détails
                     sur {{count($users) > 1 ? 'les utilisateurs' : 'l\'utilisateur'}}</h2>
@@ -16,10 +16,10 @@
                         <table class="min-w-full">
                             <thead>
                             <tr>
-                                <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                     Nom
                                 </th>
-                                <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                     Groupe
                                 </th>
                                 <th class="px-6 py-3 border-b border-orange-200 bg-orange-50"><!-- --></th>
@@ -37,7 +37,7 @@
                                             <div class="ml-4">
                                                 <div
                                                     class="text-sm leading-5 font-medium text-orange-900">{{$user->name}} {{$user->surname}}</div>
-                                                <div class="text-sm leading-5 text-gray-500">{{$user->email}}</div>
+                                                <div class="text-sm leading-5 text-gray-900">{{$user->email}}</div>
                                             </div>
                                         </div>
                                     </td>
@@ -72,19 +72,19 @@
                             <table class="min-w-full">
                                 <thead>
                                 <tr>
-                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                         Titre
                                     </th>
-                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                         Maison d'édition
                                     </th>
-                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                         Prix
                                     </th>
-                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                         Présentation
                                     </th>
-                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-orange-500 uppercase tracking-wider">
+                                    <th class="px-6 py-3 border-b border-orange-200 bg-orange-50 text-left text-base leading-4 font-medium text-gray-900 uppercase tracking-wider">
                                         Stock
                                     </th>
                                     <th class="px-6 py-3 border-b border-orange-200 bg-orange-50"><!-- --></th>
@@ -104,7 +104,7 @@
                                                     <div
                                                         class="text-sm leading-5 font-medium text-orange-900">{{$bookDetails->title}}</div>
                                                     <div
-                                                        class="text-sm leading-5 text-gray-500">{{$bookDetails->author}}</div>
+                                                        class="text-sm leading-5 text-gray-900">{{$bookDetails->author}}</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -113,13 +113,13 @@
                                                 <div
                                                     class="text-sm leading-5 font-medium text-gray-900">{{$bookDetails->publishing_house}}</div>
                                                 <div
-                                                    class="text-sm leading-5 text-gray-500">{{$bookDetails->isbn}}</div>
+                                                    class="text-sm leading-5 text-gray-900">{{$bookDetails->isbn}}</div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 border-b border-orange-200">
                                             <div class="ml-4">
                                                 <div
-                                                    class="text-sm leading-5 text-orange-500">{{$bookDetails->proposed_price}}</div>
+                                                    class="text-xl leading-5 text-gray-900">{{$bookDetails->proposed_price}}</div>
                                                 <div
                                                     class="text-sm leading-5 font-medium text-gray-900">
                                                     <del>{{$bookDetails->public_price}}</del>
