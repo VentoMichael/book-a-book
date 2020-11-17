@@ -6,6 +6,22 @@
     <h2 class="hidden">
         Edit
     </h2>
+        <div class="justify-center flex mb-4 flex-col sm:flex-row sm:mr-8">
+            <a class="md:w-64 sm:self-center linkAction rounded-xl bg-orange-900 sm:mt-0 w-full text-white px-4 mt-4 py-4"
+               href="#">
+                Gérer
+            </a>
+            <a class="sm:self-center linkAction rounded-xl border-2 my-4 sm:my-0 w-full hover:bg-orange-900 md:w-64 sm:mx-8 hover:text-white duration-300 px-4 pt-4 pb-4"
+               href="{{route('books.create')}}">
+                Ajouter
+            </a>
+            @if($booksDraft)
+                <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
+                   href="{{route('books.draft')}}">
+                    Voir mes sauvegardes de livres
+                </a>
+            @endif
+        </div>
     <form method="POST" class="sm:gap-12 sm:grid sm:grid-cols-2" action="{{ route('books.show',['book'=>$book->title]) }}" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="_method" value="PUT">

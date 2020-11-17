@@ -35,9 +35,13 @@ class Book extends Model
     public function getFirstLetterOfBookAttribute(){
         return strtoupper(substr($this->title,0,1));
     }
-    public function scopeDraftBook($query)
+    public function scopeDraft($query)
     {
-        return $query->where('name', '!=', 'Vento');
+        return $query->where('is_draft', '=', '1');
+    }
+    public function scopeNoDraft($query)
+    {
+        return $query->where('is_draft', '=', '0');
     }
     public function academic_years()
     {

@@ -19,8 +19,6 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    // TODO : verifier dans la vue/personnel le total de livres et faire la somme
-    // TODO : if order or not
     // TODO : mail notifications
     public function index()
     {

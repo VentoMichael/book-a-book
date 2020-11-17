@@ -20,9 +20,18 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::orderBy('title')
+        $books = Book::noDraft()->orderBy('title')
             ->get();
-        return view('admin.book.index', compact('books'));
+        $booksDraft = Book::draft()->orderBy('title')
+            ->get();
+        return view('admin.book.index', compact('books', 'booksDraft'));
+    }
+
+    public function draft()
+    {
+        $booksDraft = Book::draft()->orderBy('title')
+            ->get();
+        return view('admin.book.draft', compact('booksDraft'));
     }
 
     /**
@@ -32,7 +41,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('admin.book.create');
+        $booksDraft = Book::draft()->orderBy('title')
+            ->get();
+        return view('admin.book.create', compact('booksDraft'));
     }
 
     /**
@@ -47,13 +58,13 @@ class BookController extends Controller
         // TODO : save fake book
         // TODO : Update resize don't work
         $book = new Book($this->validateBook());
-        if ($request->hasFile('picture')){
+        if ($request->hasFile('picture')) {
             Storage::makeDirectory('books');
             $filename = request('picture')->hashName();
             $img = Image::make($book->picture)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/public/books/'.$filename));
-            $book->picture = 'books/' . $filename;
+            $book->picture = 'books/'.$filename;
         }
         $book->picture = request('picture')->store('books');
         $book->title = request('title');
@@ -70,7 +81,7 @@ class BookController extends Controller
         $book->stock = request('stock');
         $book->save();
         Session::flash('message', 'Livre créer avec succès');
-        return \redirect(route('books.show',['book'=>$book->title]));
+        return \redirect(route('books.show', ['book' => $book->title]));
     }
 
     /**
@@ -81,7 +92,9 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        return view('admin.book.show', compact('book'));
+        $booksDraft = Book::draft()->orderBy('title')
+            ->get();
+        return view('admin.book.show', compact('book', 'booksDraft'));
     }
 
     /**
@@ -92,7 +105,9 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('admin.book.edit', compact('book'));
+        $booksDraft = Book::draft()->orderBy('title')
+            ->get();
+        return view('admin.book.edit', compact('book', 'booksDraft'));
     }
 
     /**
@@ -105,14 +120,14 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $validatedData = request($this->validateBook());
-        if ($request->hasFile('picture')){
+        if ($request->hasFile('picture')) {
             Storage::makeDirectory('books');
             $filename = request('picture')->hashName();
             Image::make($book->picture)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/public/books/'.$filename));
-            $book->picture = 'books/' . $filename;
-        }else {
+            $book->picture = 'books/'.$filename;
+        } else {
             $book->picture = Input::old('picture');
         }
         $book->picture = request('picture')->store('books');
@@ -129,7 +144,7 @@ class BookController extends Controller
         $book->stock = request('stock');
         $book->update($validatedData);
         Session::flash('message', 'Livre éditer avec succès');
-        return redirect(route('books.index',['book'=>$book]));
+        return redirect(route('books.index', ['book' => $book]));
 
     }
 

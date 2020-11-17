@@ -8,15 +8,21 @@
             <div id="sucessMessage"
                  class="fixed top-0 bg-green-500 w-full p-4 right-0 text-center text-white">{{ Session::get('message') }}</div>
         @endif
-        <div class="justify-center flex mb-4">
-            <a class="linkAction rounded-xl border-2 hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
-               href="{{route('books.index')}}">
+        <div class="justify-center flex mb-4 flex-col sm:flex-row sm:mr-8">
+            <a class="md:w-64 sm:self-center linkAction rounded-xl bg-orange-900 sm:mt-0 w-full text-white px-4 mt-4 py-4"
+               href="#">
                 Gérer
             </a>
-            <a class="linkAction rounded-xl bg-orange-900 text-white px-4 ml-8 pt-4 pb-4"
+            <a class="sm:self-center linkAction rounded-xl border-2 my-4 sm:my-0 w-full hover:bg-orange-900 md:w-64 sm:mx-8 hover:text-white duration-300 px-4 pt-4 pb-4"
                href="{{route('books.create')}}">
                 Ajouter
             </a>
+            @if($booksDraft)
+                <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
+                   href="{{route('books.draft')}}">
+                    Voir mes sauvegardes de livres
+                </a>
+            @endif
         </div>
         <section>
             <h2 class="hidden">
