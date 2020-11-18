@@ -21,7 +21,7 @@
                href="{{route('books.create')}}">
                 Ajouter
             </a>
-            @if($booksDraft)
+            @if($booksDraft->count())
                 <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
                    href="{{route('books.draft')}}">
                     Voir mes sauvegardes de livres

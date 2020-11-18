@@ -2,27 +2,33 @@
 
 @section('content')
     <div class="relative">
-        <a class="backLink text-transparent text-xl absolute" title="Retour en arrière" href="{{route('books.index')}}">Retour
-            en arrière</a>
+        @if($booksDraft)
+            <a class="backLink text-transparent text-xl absolute" title="Retour en arrière"
+               href="{{route('books.draft')}}">Retour
+                en arrière</a>
+        @else
+            <a class="backLink text-transparent text-xl absolute" title="Retour en arrière"
+               href="{{route('books.index')}}">Retour
+                en arrière</a>
+        @endif
+
         @if (Session::has('message'))
             <div id="sucessMessage"
                  class="fixed top-0 bg-green-500 w-full p-4 right-0 text-center text-white">{{ Session::get('message') }}</div>
         @endif
         <div class="justify-center flex mb-4 flex-col sm:flex-row sm:mr-8">
             <a class="md:w-64 sm:self-center linkAction rounded-xl bg-orange-900 sm:mt-0 w-full text-white px-4 mt-4 py-4"
-               href="#">
+               href="{{route('books.index')}}">
                 Gérer
             </a>
             <a class="sm:self-center linkAction rounded-xl border-2 my-4 sm:my-0 w-full hover:bg-orange-900 md:w-64 sm:mx-8 hover:text-white duration-300 px-4 pt-4 pb-4"
                href="{{route('books.create')}}">
                 Ajouter
             </a>
-            @if($booksDraft)
-                <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
-                   href="{{route('books.draft')}}">
-                    Voir mes sauvegardes de livres
-                </a>
-            @endif
+            <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
+               href="{{route('books.draft')}}">
+                Voir mes sauvegardes de livres
+            </a>
         </div>
         <section>
             <h2 class="hidden">
@@ -59,8 +65,16 @@
             </ul>
         </section>
         <div class="sm:gap-12 grid sm:grid-cols-2">
-            <a class="rounded-xl mt-6 p-3 border hover:bg-orange-900 hover:text-white text-center"
-               href="{{ route('books.edit',$book) }}">Modifier <span>{{$book->title}}</span></a>
+            @if($booksDraft)
+                <form method="POST" action="/admin/books/{{$book->title}}"
+                      enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <button class="w-full rounded-xl block mt-8 bg-orange-900 text-white p-3">
+                        Créer
+                    </button>
+                </form>
+            @endif
             <form method='POST' action="{{ route('books.destroy',$book) }}">
                 @csrf
                 @method('DELETE')

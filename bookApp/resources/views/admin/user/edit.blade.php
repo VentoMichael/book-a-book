@@ -29,12 +29,12 @@
             <p>{{$errors->first('email')}}</p>
         </div>
         <div class="field">
-            <label for="password" class="label">Mon mot de passe</label>
+            <label for="password" class="label">Mon nouveau mot de passe</label>
             <input type="password" id="password" autocomplete="current-password" name="password" class="@error('password')is danger @enderror input">
             <p>{{$errors->first('password')}}</p>
         </div>
         <div class="field">
-            <label for="password_confirmation" class="label">Confirmer mon mot de passe</label>
+            <label for="password_confirmation" class="label">Confirmer mon nouveau mot de passe</label>
             <input type="password" name="password_confirmation" class="@error('password_confirmation')is danger @enderror input" id="password_confirmation">
             <p>{{$errors->first('password_confirmation')}}</p>
         </div>

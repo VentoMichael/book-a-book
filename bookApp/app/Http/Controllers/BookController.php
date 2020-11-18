@@ -55,7 +55,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         // TODO : mail notifications book
-        // TODO : save fake book
+        // TODO : saveBook fake book
         // TODO : Update resize don't work
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')) {
@@ -79,6 +79,7 @@ class BookController extends Controller
         $book->public_price = request('public_price');
         $book->proposed_price = request('proposed_price');
         $book->stock = request('stock');
+        $book->is_draft = $request->has('save');
         $book->save();
         Session::flash('message', 'Livre créer avec succès');
         return \redirect(route('books.show', ['book' => $book->title]));
@@ -119,30 +120,33 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        $validatedData = request($this->validateBook());
-        if ($request->hasFile('picture')) {
-            Storage::makeDirectory('books');
-            $filename = request('picture')->hashName();
-            Image::make($book->picture)->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(storage_path('app/public/books/'.$filename));
-            $book->picture = 'books/'.$filename;
-        } else {
-            $book->picture = Input::old('picture');
-        }
-        $book->picture = request('picture')->store('books');
-        $book->title = request('title');
-        $book->author = request('author');
-        $book->publishing_house = request('publishing_house');
-        $book->isbn = request('isbn');
-        if (request('orientation')) {
-            $book->orientation = request('orientation');
-        }
-        $book->presentation = request('presentation');
-        $book->public_price = request('public_price');
-        $book->proposed_price = request('proposed_price');
-        $book->stock = request('stock');
-        $book->update($validatedData);
+        // name publish/not
+        //if ($book->is_draft) {
+        //    $book->is_draft = false;
+        //    $book->update();
+        //} else {
+            $validatedData = request($this->validateBook());
+            if ($request->hasFile('picture')) {
+                Storage::makeDirectory('books');
+                $filename = request('picture')->hashName();
+                Image::make($request->file('picture'))->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save(storage_path('app/public/books/'.$filename));
+                $book->picture = 'books/'.$filename;
+            }
+            $book->title = request('title');
+            $book->author = request('author');
+            $book->publishing_house = request('publishing_house');
+            $book->isbn = request('isbn');
+            if (request('orientation')) {
+                $book->orientation = request('orientation');
+            }
+            $book->presentation = request('presentation');
+            $book->public_price = request('public_price');
+            $book->proposed_price = request('proposed_price');
+            $book->stock = request('stock');
+            $book->update($validatedData);
+       // }
         Session::flash('message', 'Livre éditer avec succès');
         return redirect(route('books.index', ['book' => $book]));
 
@@ -151,7 +155,7 @@ class BookController extends Controller
     protected function validateBook()
     {
         return request()->validate([
-            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required',
             'author' => 'required',
             'publishing_house' => 'required',
@@ -169,7 +173,7 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return string
      */
-    //TODO: add a save book
+    //TODO: add a saveBook book PRIORITY HIGHT ADD SAVE BUTTON WORK AND SHOW OR NOT THE INFORMATIONS OF BOOKS SAVED ?
     public function destroy(Book $book, Request $request)
     {
         $book->delete();

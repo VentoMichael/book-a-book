@@ -75,7 +75,7 @@ class UserController extends Controller
         if ($request->hasFile('file_name')){
             Storage::makeDirectory('users');
             $filename = request('file_name')->hashName();
-            $img = Image::make($user->file_name)->resize(300, null, function ($constraint) {
+            $img = Image::make($request->file('file_name'))->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/public/users/'.$filename));
             $user->file_name = 'users/' . $filename;

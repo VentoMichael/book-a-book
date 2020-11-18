@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SaveBookController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
@@ -42,8 +43,9 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
     Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
     Route::get('/books/{book}/edit/', [BookController::class, 'edit'])->name('books.edit');
-    Route::put('/books/{book}', [BookController::class, 'update']);
+    Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
     Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
+
 
 //SEARCH
     Route::any('/search', [SearchController::class, 'index'])->name('search.index');

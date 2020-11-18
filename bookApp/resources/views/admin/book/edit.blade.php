@@ -15,7 +15,7 @@
                href="{{route('books.create')}}">
                 Ajouter
             </a>
-            @if($booksDraft)
+            @if($booksDraft->count())
                 <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
                    href="{{route('books.draft')}}">
                     Voir mes sauvegardes de livres
@@ -32,7 +32,7 @@
                 </div>
             @endif
             <label for="picture" class="label mb-2">Photo de couverture</label>
-            <input type="file" name="picture" required class="whitespace-normal w-full border rounded-lg p-2 @error('picture')is danger @enderror input" id="picture">
+            <input type="file" name="picture" class="whitespace-normal w-full border rounded-lg p-2 @error('picture')is danger @enderror input" id="picture">
             <p class="text-red-500 text-lg mb-4">{{$errors->first('picture')}}</p>
         </div>
         <div class="field my-6 flex flex-col sm:self-end sm:mb-0">
@@ -101,7 +101,7 @@
     <form method='POST' action="{{ route('books.destroy',$book) }}">
         @csrf
         @method('DELETE')
-        <input type="submit" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" value="Supprimer {{$book->title}}"/>
+        <input type="submit" onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" value="Supprimer {{$book->title}}"/>
     </form>
     </div>
 @endsection
