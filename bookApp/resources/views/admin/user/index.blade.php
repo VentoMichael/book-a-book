@@ -58,7 +58,7 @@
                                                         ];
                                                 @endphp
                                                 @foreach($order->statuses as $status)
-                                                    <p class="rounded border-t border-b p-3 inline">
+                                                    <p class="rounded border-orange-900 border-b-2 border-t-2 p-3 inline">
                                                         {{$statuses[$status->name]}}
                                                     </p>
                                                 @endforeach

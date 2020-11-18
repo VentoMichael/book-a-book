@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="relative">
-        <a class="backLink text-transparent text-xl absolute" title="Retour en arrière" href="{{route('books.index')}}">Retour
+        <a class="backLink text-transparent text-xl relative text-2xl" title="Retour en arrière" href="{{route('books.index')}}">Retour
             en arrière</a>
         <h2 class="hidden">
             Create a new book
@@ -64,7 +64,7 @@
             <div class="field my-6 flex flex-col">
                 <label for="orientation" class="label">Orientation :</label>
                 <select name="orientation" required
-                        class="border rounded-lg p-3 input @error('orientation')is danger @enderror" id="orientation">
+                        class="border bg-white rounded-lg p-3 input @error('orientation')is danger @enderror" id="orientation">
                     @if(!isset($book->orientation))
                         <option value="">--Choissisez une option--</option>
                     @else
@@ -113,9 +113,9 @@
                        id="stock" type="number">
                 @if($errors->first('stock'))<p class="text-red-500 text-lg mb-4">{{$errors->first('stock')}}</p>@endif
             </div>
-            <button name="publish" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" type="submit">Créer un nouveau livre
+            <button name="save" type="submit" class="duration-300 w-full rounded-xl mt-6 p-3 border hover:bg-orange-900 hover:text-white">Sauvegarder ce livre
             </button>
-            <button name="save" type="submit" class="w-full rounded-xl mt-6 p-3 border hover:bg-orange-900 hover:text-white">Sauvegarder ce livre
+            <button name="publish" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" type="submit">Créer un nouveau livre
             </button>
         </form>
     </div>

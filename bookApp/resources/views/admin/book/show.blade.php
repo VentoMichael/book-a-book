@@ -3,11 +3,11 @@
 @section('content')
     <div class="relative">
         @if($booksDraft)
-            <a class="backLink text-transparent text-xl absolute" title="Retour en arrière"
+            <a class="backLink text-transparent text-xl relative text-2xl" title="Retour en arrière"
                href="{{route('books.draft')}}">Retour
                 en arrière</a>
         @else
-            <a class="backLink text-transparent text-xl absolute" title="Retour en arrière"
+            <a class="backLink text-transparent text-xl relative text-2xl" title="Retour en arrière"
                href="{{route('books.index')}}">Retour
                 en arrière</a>
         @endif
@@ -70,18 +70,25 @@
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <button class="w-full rounded-xl block mt-8 bg-orange-900 text-white p-3">
-                        Créer
+                    <button name="publish" class="duration-300 p-3 inline hover:bg-orange-900 hover:text-white w-full rounded-xl border-2 border-orange-900 block mt-8 p-3">
+                        Créer {{$book->title}}
+                    </button>
+                </form>
+            @else
+                <form method="POST" action="/admin/books/{{$book->title}}/edit"
+                      enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <button class="duration-300 p-3 inline hover:bg-orange-900 hover:text-white w-full border-2 border-orange-900 rounded-xl block mt-8 p-3">
+                        Éditer {{$book->title}}
                     </button>
                 </form>
             @endif
-            <form method='POST' action="{{ route('books.destroy',$book) }}">
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="rounded-xl mt-6 bg-orange-900 text-white p-3 w-full"
-                       value="Supprimer {{$book->title}}"
-                       onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')"/>
-            </form>
+                <form method='POST' action="{{ route('books.destroy',$book) }}">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" value="Supprimer {{$book->title}}"/>
+                </form>
         </div>
     </div>
 @endsection

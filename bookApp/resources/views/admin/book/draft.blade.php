@@ -43,7 +43,7 @@
                             </h3>
                         </div>
                         <div class="mb-4 mt-10 text-center">
-                            <a class="rounded-xl border p-3 inline hover:bg-orange-900 hover:text-white"
+                            <a class="duration-300 rounded-xl border p-3 inline hover:bg-orange-900 hover:text-white"
                                href="{{route('books.edit',['book'=>$bookDraft->title])}}">Éditer
                                 <span>{{$bookDraft->title}}</span></a>
                             <a class="rounded-xl block mt-8 bg-orange-900 text-white p-3"

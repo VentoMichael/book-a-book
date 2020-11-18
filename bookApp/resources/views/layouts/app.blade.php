@@ -42,17 +42,17 @@
                     <div id="app" class="flex items-center m-auto">
                         <nav class="m-auto mt-4 mb-4 navbar navbar-expand-md navbar-light">
                             <ul class="container flex items-center">
-                                <li class="m-3 my-0 opacity-25 hover:opacity-100 {{ Request::is('*/users/*') || Request::is('*/users') || Request::is('*/dashboard/*') ? "current_page_item" : "" }}">
+                                <li class="m-3 my-0 duration-300 opacity-25 hover:opacity-100 {{ Request::is('*/users/*') || Request::is('*/users') || Request::is('*/dashboard/*') ? "current_page_item" : "" }}">
                                     <a class="text-xl" href="{{route('users.index')}}">
                                         Étudiants
                                     </a>
                                 </li>
-                                <li class="m-3 my-0 opacity-25 hover:opacity-100 {{ Request::is('*/books/*') || Request::is('*/books') ? "current_page_item" : "" }}">
+                                <li class="m-3 my-0 duration-300 opacity-25 hover:opacity-100 {{ Request::is('*/books/*') || Request::is('*/books') ? "current_page_item" : "" }}">
                                     <a class="text-xl" href="{{route('books.index')}}">
                                         Livres
                                     </a>
                                 </li>
-                                <li class="m-3 my-0 opacity-25 hover:opacity-100 {{ Request::is('*/purchases/*') || Request::is('*/purchases') ? "current_page_item" : "" }}">
+                                <li class="m-3 my-0 duration-300 opacity-25 hover:opacity-100 {{ Request::is('*/purchases/*') || Request::is('*/purchases') ? "current_page_item" : "" }}">
                                     <a class="text-xl" href="{{route('purchases.index')}}">
                                         Achats
                                     </a>

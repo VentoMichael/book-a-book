@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="relative">
-        <a class="backLink text-transparent text-xl absolute" title="Retour en arrière" href="{{route('books.index')}}">Retour en arrière</a>
+        <a class="backLink text-transparent text-xl relative text-2xl" title="Retour en arrière" href="{{route('books.index')}}">Retour en arrière</a>
     <h2 class="hidden">
         Edit
     </h2>
@@ -96,12 +96,14 @@
             <textarea name="presentation" class="border rounded-md p-3 pb-2 h-32" id="presentation">{{ $book->presentation }}</textarea>
             <p class="text-red-500 text-lg mb-4">{{$errors->first('presentation')}}</p>
         </div>
-            <button class="col-span-2 w-full rounded-xl mt-6 p-3 border hover:bg-orange-900 hover:text-white" type="submit">Mettre à jour <span>{{$book->title}}</span></button>
+        <button class="mx-auto max-w-2xl duration-300 col-span-2 w-full rounded-xl mt-6 p-3 border hover:bg-orange-900 hover:text-white" type="submit">
+            Mettre à jour <span>{{$book->title}}</span></button>
+        </button>
     </form>
-    <form method='POST' action="{{ route('books.destroy',$book) }}">
+    <form method='POST' class="justify-center flex" action="{{ route('books.destroy',$book) }}">
         @csrf
         @method('DELETE')
-        <input type="submit" onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" value="Supprimer {{$book->title}}"/>
+        <input type="submit" onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')" class="cursor-pointer max-w-2xl w-full rounded-xl mt-6 bg-orange-900 text-white p-3" value="Supprimer {{$book->title}}"/>
     </form>
     </div>
 @endsection

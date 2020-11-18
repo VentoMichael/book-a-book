@@ -81,7 +81,11 @@ class BookController extends Controller
         $book->stock = request('stock');
         $book->is_draft = $request->has('save');
         $book->save();
-        Session::flash('message', 'Livre créer avec succès');
+        if ($book->is_draft) {
+            Session::flash('message', 'Livre sauvegardé avec succès');
+        } else {
+            Session::flash('message', 'Livre créer avec succès');
+        }
         return \redirect(route('books.show', ['book' => $book->title]));
     }
 
@@ -95,7 +99,9 @@ class BookController extends Controller
     {
         $booksDraft = Book::draft()->orderBy('title')
             ->get();
-        return view('admin.book.show', compact('book', 'booksDraft'));
+        $booksNoDraft = Book::noDraft()->orderBy('title')
+            ->get();
+        return view('admin.book.show', compact('book', 'booksDraft', 'booksNoDraft'));
     }
 
     /**
@@ -120,34 +126,37 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        // name publish/not
-        //if ($book->is_draft) {
-        //    $book->is_draft = false;
-        //    $book->update();
-        //} else {
-            $validatedData = request($this->validateBook());
-            if ($request->hasFile('picture')) {
-                Storage::makeDirectory('books');
-                $filename = request('picture')->hashName();
-                Image::make($request->file('picture'))->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })->save(storage_path('app/public/books/'.$filename));
-                $book->picture = 'books/'.$filename;
-            }
-            $book->title = request('title');
-            $book->author = request('author');
-            $book->publishing_house = request('publishing_house');
-            $book->isbn = request('isbn');
-            if (request('orientation')) {
-                $book->orientation = request('orientation');
-            }
-            $book->presentation = request('presentation');
-            $book->public_price = request('public_price');
-            $book->proposed_price = request('proposed_price');
-            $book->stock = request('stock');
-            $book->update($validatedData);
-       // }
-        Session::flash('message', 'Livre éditer avec succès');
+        if ($request->has('publish')) {
+            $book->is_draft = false;
+            $book->update();
+        } else {
+        $validatedData = request($this->validateBook());
+        if ($request->hasFile('picture')) {
+            Storage::makeDirectory('books');
+            $filename = request('picture')->hashName();
+            Image::make($request->file('picture'))->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(storage_path('app/public/books/'.$filename));
+            $book->picture = 'books/'.$filename;
+        }
+        $book->title = request('title');
+        $book->author = request('author');
+        $book->publishing_house = request('publishing_house');
+        $book->isbn = request('isbn');
+        if (request('orientation')) {
+            $book->orientation = request('orientation');
+        }
+        $book->presentation = request('presentation');
+        $book->public_price = request('public_price');
+        $book->proposed_price = request('proposed_price');
+        $book->stock = request('stock');
+        $book->update($validatedData);
+        }
+        if ($book->is_draft) {
+            Session::flash('message', 'Livre sauvegardé avec succès');
+        } else {
+            Session::flash('message', 'Livre créer avec succès');
+        }
         return redirect(route('books.index', ['book' => $book]));
 
     }

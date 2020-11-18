@@ -47,8 +47,6 @@ class Book extends Model
     {
         return $this->belongsToMany('AcademicYear','Sales')->withPivot('price','public_price')->withTimestamps();
     }
-    //TODO : scope pour draft
-
     public function orders(){
         return $this->belongsToMany(Order::class,'reservations','book_id','order_id')
             ->withPivot('quantity')

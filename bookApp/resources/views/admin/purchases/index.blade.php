@@ -5,17 +5,17 @@
         <h2 class="hidden">
             Réservations
         </h2>
-        <ul class="flex justify-center flex-col sm:flex-row">
+        <ul class="flex justify-around flex-col sm:flex-row">
             <li>
                 <a href="#bloc1"
-                   class="rounded-xl block my-2 border-2 bg-orange-900 text-white mx-4 p-3 sm:px-12 md:px-16">
+                   class="rounded-xl block my-2 border-2 bg-orange-900 text-white text-center sm:mx-4 p-3 sm:px-12 md:px-16">
                     Bloc 1
                 </a>
             </li>
             @for($i = 2; $i <=3;$i++)
                 <li>
                     <a href="#bloc{{$i}}"
-                       class="rounded-xl block my-2 border-2 hover:text-white hover:bg-orange-900 mx-4 p-3 sm:px-12 md:px-16">
+                       class="rounded-xl block my-2 border-2 hover:text-white hover:bg-orange-900 text-center sm:mx-4 p-3 sm:px-12 md:px-16">
                         Bloc {{$i}}
                     </a>
                 </li>
@@ -23,9 +23,9 @@
         </ul>
         <div>
             <section>
-                <h2 class="rounded-xl my-2 inline-block border-2 p-3 sm:px-12 md:px-16 mt-4 mb-2 w-2/4 text-center text-md">
+                <h2 class="rounded-xl my-2 block p-3 sm:px-12 md:px-16 mt-4 mb-2 mx-auto sm:w-2/4 w-full text-center text-md border-orange-900 border-b-2 border-t-2 ">
                     2D</h2>
-                <div class="flex justify-between gap-8">
+                <div class="flex justify-around gap-8">
                 <section class="mb-16">
                     <h3 class="text-xl mb-2">
                         Title 1

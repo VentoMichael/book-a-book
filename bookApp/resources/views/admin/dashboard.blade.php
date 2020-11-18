@@ -3,7 +3,7 @@
     <div class="mt-4">
         <div class="flex flex-wrap -mx-6 justify-around mb-6">
             <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
-                <div class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
+                <div class="border-2  rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
                     <div class="p-3 rounded-full bg-orange-900 bg-opacity-100">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 28 30" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@
             </div>
 
             <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
-                <div class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
+                <div class="border-2  rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
                     <div class="p-3 rounded-full bg-orange-900 bg-opacity-100">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
