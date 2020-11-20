@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="card mx-4 my-0 mt-12">
+        <div class="card mx-auto my-0 mt-12">
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf

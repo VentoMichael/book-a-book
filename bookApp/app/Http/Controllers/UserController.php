@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
@@ -47,12 +48,11 @@ class UserController extends Controller
     public function edit()
     {
         $user = User::admin()->get();
-        return view('admin.user.edit',compact('user'));
+        return view('admin.user.edit', compact('user'));
     }
 
     public function update(Request $request, User $user)
     {
-        // TODO : taille image && redimensionnement
         $attributes = request()->validate([
             'file_name' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'email' => [
@@ -61,30 +61,33 @@ class UserController extends Controller
                 'max:255',
             ]
         ]);
-        if (request('password')){
+        if (request('password')) {
             request()->validate([
                 'password' => [
                     'required',
                     'string',
                     'min:8',
-                    'max:255',
+                    'regex:/[a-z]/',
+                    'regex:/[A-Z]/',
+                    'regex:/[0-9]/',
                     'confirmed'
                 ],
             ]);
         }
-        if ($request->hasFile('file_name')){
+        if ($request->hasFile('file_name')) {
             Storage::makeDirectory('users');
             $filename = request('file_name')->hashName();
             $img = Image::make($request->file('file_name'))->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/public/users/'.$filename));
-            $user->file_name = 'users/' . $filename;
+            $user->file_name = 'users/'.$filename;
+            $attributes['file_name'] = $img;
         }
+//TODO : file_name -> private folder why ?
         $attributes['email'] = request('email');
         $attributes['password'] = Hash::make(request('password'));
 
         $user->update($attributes);
-
         return redirect(route('users.show', ['user' => $user->name]));
     }
 

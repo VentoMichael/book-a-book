@@ -23,7 +23,7 @@
         </ul>
         <div>
             <section>
-                <h2 class="rounded-xl my-2 block p-3 sm:px-12 md:px-16 mt-4 mb-2 mx-auto sm:w-2/4 w-full text-center text-md border-orange-900 border-b-2 border-t-2 ">
+                <h2 class="rounded-xl my-2 block p-3 sm:px-12 md:px-16 mt-4 mb-2 mx-auto sm:w-2/4 w-full text-center text-md border-orange-900 border-b-2 border-t-2">
                     2D</h2>
                 <div class="flex justify-around gap-8">
                 <section class="mb-16">

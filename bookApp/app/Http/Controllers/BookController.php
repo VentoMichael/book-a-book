@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -55,18 +57,15 @@ class BookController extends Controller
     public function store(Request $request)
     {
         // TODO : mail notifications book
-        // TODO : saveBook fake book
-        // TODO : Update resize don't work
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')) {
             Storage::makeDirectory('books');
             $filename = request('picture')->hashName();
-            $img = Image::make($book->picture)->resize(300, null, function ($constraint) {
+            $img = Image::make($request->file('picture'))->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/public/books/'.$filename));
             $book->picture = 'books/'.$filename;
         }
-        $book->picture = request('picture')->store('books');
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
@@ -84,6 +83,7 @@ class BookController extends Controller
         if ($book->is_draft) {
             Session::flash('message', 'Livre sauvegardé avec succès');
         } else {
+
             Session::flash('message', 'Livre créer avec succès');
         }
         return \redirect(route('books.show', ['book' => $book->title]));
@@ -130,27 +130,27 @@ class BookController extends Controller
             $book->is_draft = false;
             $book->update();
         } else {
-        $validatedData = request($this->validateBook());
-        if ($request->hasFile('picture')) {
-            Storage::makeDirectory('books');
-            $filename = request('picture')->hashName();
-            Image::make($request->file('picture'))->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(storage_path('app/public/books/'.$filename));
-            $book->picture = 'books/'.$filename;
-        }
-        $book->title = request('title');
-        $book->author = request('author');
-        $book->publishing_house = request('publishing_house');
-        $book->isbn = request('isbn');
-        if (request('orientation')) {
-            $book->orientation = request('orientation');
-        }
-        $book->presentation = request('presentation');
-        $book->public_price = request('public_price');
-        $book->proposed_price = request('proposed_price');
-        $book->stock = request('stock');
-        $book->update($validatedData);
+            $validatedData = request($this->validateBook());
+            if ($request->hasFile('picture')) {
+                Storage::makeDirectory('books');
+                $filename = request('picture')->hashName();
+                Image::make($request->file('picture'))->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save(storage_path('app/public/books/'.$filename));
+                $book->picture = 'books/'.$filename;
+            }
+            $book->title = request('title');
+            $book->author = request('author');
+            $book->publishing_house = request('publishing_house');
+            $book->isbn = request('isbn');
+            if (request('orientation')) {
+                $book->orientation = request('orientation');
+            }
+            $book->presentation = request('presentation');
+            $book->public_price = request('public_price');
+            $book->proposed_price = request('proposed_price');
+            $book->stock = request('stock');
+            $book->update($validatedData);
         }
         if ($book->is_draft) {
             Session::flash('message', 'Livre sauvegardé avec succès');
@@ -182,7 +182,6 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return string
      */
-    //TODO: add a saveBook book PRIORITY HIGHT ADD SAVE BUTTON WORK AND SHOW OR NOT THE INFORMATIONS OF BOOKS SAVED ?
     public function destroy(Book $book, Request $request)
     {
         $book->delete();
