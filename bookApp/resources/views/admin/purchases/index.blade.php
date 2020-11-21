@@ -27,7 +27,7 @@
                     2D</h2>
                 <div class="flex justify-around gap-8">
                 <section class="mb-16">
-                    <h3 class="text-xl mb-2">
+                    <h3 class="text-xl mb-2 hidden">
                         Title 1
                     </h3>
                     <div class="mb-8">
@@ -45,7 +45,7 @@
                     </div>
                 </section>
                 <section class="mb-16">
-                    <h3 class="text-xl mb-2">
+                    <h3 class="text-xl mb-2 hidden">
                         Title 2
                     </h3>
                     <div class="mb-8">
