@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcaf3adf-f13c-4d28-ba09-6d6c7755f05a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Mail/AccountChanged.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/account/changed.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/books/added.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/BookCreated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/books/new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ReservationSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ReservationSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/purchases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/purchases/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/books/added.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +211,7 @@
       <workItem from="1605260931724" duration="58419000" />
       <workItem from="1605614795763" duration="38757000" />
       <workItem from="1605858302159" duration="279000" />
-      <workItem from="1605858583433" duration="11422000" />
+      <workItem from="1605858583433" duration="14628000" />
     </task>
     <servers />
   </component>
@@ -229,11 +230,11 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1124" y="306" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605691683120" />
-    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605889279977">
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605951631215">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-1353" y="219" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605691717352" />
-    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605631252388" />
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605951631215" />
     <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1605889279977" />
     <state width="1238" height="222" key="GridCell.Tab.0.bottom" timestamp="1604653155737">
       <screen x="0" y="0" width="1280" height="800" />
@@ -305,11 +306,11 @@
     <state x="-1311" y="274" width="700" height="530" key="recent.locations.popup/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605019562390" />
     <state x="406" y="203" width="598" height="448" key="recent.locations.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605693281822" />
     <state x="406" y="203" width="598" height="448" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1605034782922" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1605949029162">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1605951990317">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-1462" y="167" width="1005" height="913" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1605697011870" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605949029162" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1605951990317" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1057/0.0.1280.800@0.0.1280.800" timestamp="1605199489073" />
     <state x="305" y="143" width="670" height="657" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1605687272646" />
     <state x="305" y="124" width="670" height="677" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1605945296103" />

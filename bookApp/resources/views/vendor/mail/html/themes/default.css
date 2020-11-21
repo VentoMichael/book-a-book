@@ -11,7 +11,7 @@ body *:not(html):not(style):not(br):not(tr):not(code) {
 body {
     -webkit-text-size-adjust: none;
     background-color: #ffffff;
-    color: #718096;
+    color: #61463B;
     height: 100%;
     line-height: 1.4;
     margin: 0;
@@ -103,7 +103,7 @@ img {
 }
 
 .header a {
-    color: #3d4852;
+    color: black;
     font-size: 19px;
     font-weight: bold;
     text-decoration: none;
@@ -231,11 +231,11 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #2d3748;
-    border-bottom: 8px solid #2d3748;
-    border-left: 18px solid #2d3748;
-    border-right: 18px solid #2d3748;
-    border-top: 8px solid #2d3748;
+    background-color: #6C3725;
+    border-bottom: 8px solid #6C3725;
+    border-left: 18px solid #6C3725;
+    border-right: 18px solid #6C3725;
+    border-top: 8px solid #6C3725;
 }
 
 .button-green,
@@ -259,7 +259,7 @@ img {
 /* Panels */
 
 .panel {
-    border-left: #2d3748 solid 4px;
+    border-left: #6C3725 solid 4px;
     margin: 21px 0;
 }
 

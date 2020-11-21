@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BookCreated;
 use App\Models\Book;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use Symfony\Component\Console\Input\Input;
 
 class BookController extends Controller
 {
@@ -83,7 +82,11 @@ class BookController extends Controller
         if ($book->is_draft) {
             Session::flash('message', 'Livre sauvegardé avec succès');
         } else {
-
+            $users = User::student()->with('orders')->orderBy('name')->get();
+            foreach ($users as $user){
+                $emails = $user->email;
+                Mail::to($emails)->send(new BookCreated());
+            }
             Session::flash('message', 'Livre créer avec succès');
         }
         return \redirect(route('books.show', ['book' => $book->title]));

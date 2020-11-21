@@ -41,6 +41,7 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'throttleToMessagesPerMin' => env('MAIL_THROTTLE_TO_MESSAGES_PER_MIN', null),
             'timeout' => null,
             'auth_mode' => null,
         ],
