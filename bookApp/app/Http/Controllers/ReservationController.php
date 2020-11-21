@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -15,10 +16,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        $students = \App\Models\User::with('orders.books', 'roles')->whereHas('roles', function ($query) {
-            $query->where('name', 'student');
-        })->get();
-        return view('admin.purchases.index',compact('students'));
+        $users = User::student()->with('orders')->orderBy('name')->get();
+        return view('admin.purchases.index',compact('users'));
     }
 
     /**

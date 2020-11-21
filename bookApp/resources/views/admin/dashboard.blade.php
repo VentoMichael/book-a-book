@@ -3,7 +3,8 @@
     <div class="mt-4">
         <div class="flex flex-wrap -mx-6 justify-around mb-6">
             <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
-                <div class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
+                <div
+                    class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
                     <div class="p-3 rounded-full bg-orange-900 bg-opacity-100">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 28 30" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -35,8 +36,9 @@
                 </div>
             </div>
 
-            <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
-                <div class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
+            <div class="w-full sm:mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+                <div
+                    class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
                     <div class="p-3 rounded-full bg-orange-900 bg-opacity-100">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -59,9 +61,6 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ml-4 flex-wrap justify-between gap-12 mr-4 sm:mr-8">
         @if(count($users))
             @foreach($users as $user)
-                @php
-                    $firstLetter = '';
-                @endphp
                 @if(strtoupper(substr($user->name,0,1)) !== $firstLetter)
                     @php
                         $firstLetter = strtoupper(substr($user->name,0,1));
@@ -76,14 +75,6 @@
                                         class="flex flex-col rounded-xl mr-2 bg-orange-900 p-4 pt-3 relative justify-around text-center">
                                         <div class="containerBookSvg mb-4 self-center"></div>
                                         @if(count($user->orders) >= 1)
-                                            @php
-                                                $totalbooks = 0;
-                                            @endphp
-                                            @foreach($user->orders as $order)
-                                                @php
-                                                    $totalbooks += $order->books->count()
-                                                @endphp
-                                            @endforeach
                                             <p class="text-xl text-white font-hairline">{{$totalbooks}}</p>
                                         @else
                                             <p class="text-xl text-white font-hairline">0</p>
@@ -105,18 +96,8 @@
                                                 <h3 class="mt-6 mb-4">
                                                     La commande n°{{$loop->iteration}} :
                                                 </h3>
-                                                @php
-                                                    $statuses = [
-                                                            'paid' => 'Payé',
-                                                            'available' => 'Disponible au bureau',
-                                                            'delivered' => 'Delivré',
-                                                            'ordered' => 'Commandé',
-                                                        ];
-                                                @endphp
                                                 @foreach($order->statuses as $status)
-                                                    <p class="rounded border-t border-b p-3 inline">
-                                                        {{$statuses[$status->name]}}
-                                                    </p>
+                                                    @include('partials.status')
                                                 @endforeach
                                             </section>
                                         @endforeach

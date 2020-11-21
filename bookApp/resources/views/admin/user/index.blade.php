@@ -49,18 +49,8 @@
                                                 <h3 class="mt-6 mb-4">
                                                     La commande n°{{$loop->iteration}} :
                                                 </h3>
-                                                @php
-                                                    $statuses = [
-                                                            'paid' => 'Payé',
-                                                            'available' => 'Disponible au bureau',
-                                                            'delivered' => 'Delivré',
-                                                            'ordered' => 'Commandé',
-                                                        ];
-                                                @endphp
                                                 @foreach($order->statuses as $status)
-                                                    <p class="rounded border-orange-900 border-b-2 border-t-2 p-3 inline">
-                                                        {{$statuses[$status->name]}}
-                                                    </p>
+                                                    @include('partials.status')
                                                 @endforeach
                                             </section>
                                         @endforeach

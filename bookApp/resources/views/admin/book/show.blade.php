@@ -16,20 +16,7 @@
             <div id="sucessMessage"
                  class="fixed top-0 bg-green-500 w-full p-4 right-0 text-center text-white">{{ Session::get('message') }}</div>
         @endif
-        <div class="justify-center flex mb-4 flex-col sm:flex-row sm:mr-8">
-            <a class="md:w-64 sm:self-center linkAction rounded-xl bg-orange-900 sm:mt-0 w-full text-white px-4 mt-4 py-4"
-               href="{{route('books.index')}}">
-                Gérer
-            </a>
-            <a class="sm:self-center linkAction rounded-xl border-2 my-4 sm:my-0 w-full hover:bg-orange-900 md:w-64 sm:mx-8 hover:text-white duration-300 px-4 pt-4 pb-4"
-               href="{{route('books.create')}}">
-                Ajouter
-            </a>
-            <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
-               href="{{route('books.draft')}}">
-                Voir mes sauvegardes de livres
-            </a>
-        </div>
+            @include('partials.cta-menu')
         <section>
             <h2 class="hidden">
                 Informations de {{$book->title}}
@@ -70,8 +57,8 @@
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <button name="publish" class="duration-300 p-3 inline hover:bg-orange-900 hover:text-white w-full rounded-xl border-2 border-orange-900 block mt-8 p-3">
-                        Créer {{$book->title}}
+                    <button name="publish" class="duration-300 p-3 inline hover:bg-orange-900 hover:text-white w-full rounded-xl sm:mt-6 border-2 border-orange-900 block mt-8 p-3">
+                        Publié {{$book->title}}
                     </button>
                 </form>
             @else
@@ -79,7 +66,7 @@
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <button class="duration-300 p-3 inline hover:bg-orange-900 hover:text-white w-full border-2 border-orange-900 rounded-xl block mt-8 p-3">
+                    <button class="duration-300 p-3 inline bg-orange-900 w-full rounded-xl sm:mt-6 border-2 border-orange-900 block mt-8 p-3">
                         Éditer {{$book->title}}
                     </button>
                 </form>
@@ -87,7 +74,7 @@
                 <form method='POST' action="{{ route('books.destroy',$book) }}">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')" class="w-full rounded-xl mt-6 bg-orange-900 text-white p-3" value="Supprimer {{$book->title}}"/>
+                    <input type="submit" onclick="return confirm('Cette action ne peut pas être annulée. Cela supprimera définitivement le livre et les commandes liés. Étes-vous sûr de supprimer le livre suivant : {{$book->title}}')" class="duration-300 p-3 inline bg-orange-900 w-full rounded-xl sm:mt-6 border-2 text-white border-orange-900 block mt-8 p-3" value="Supprimer {{$book->title}}"/>
                 </form>
         </div>
     </div>

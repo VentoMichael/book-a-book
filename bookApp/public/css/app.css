@@ -30,6 +30,11 @@ body>div>nav{
 .backLink:hover{
     margin-left: -5px;
 }
+.orderSvg{
+    max-width: 50px;
+    top: -15px;
+    left: -65px;
+}
 .backLink{
     transition: .3s;
     background-image: url('../svg/arrow.svg');

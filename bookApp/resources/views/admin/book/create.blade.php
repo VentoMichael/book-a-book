@@ -7,22 +7,7 @@
         <h2 class="hidden">
             Create a new book
         </h2>
-        <div class="justify-center flex mb-4 flex-col sm:flex-row sm:mr-8">
-            <a class="md:w-64 sm:self-center hover:bg-orange-900 hover:text-white linkAction rounded-xl sm:mt-0 w-full duration-300 border-2 px-4 mt-4 py-4"
-               href="{{route('books.index')}}">
-                Gérer
-            </a>
-            <a class="sm:self-center text-white linkAction rounded-xl my-4 sm:my-0 w-full md:w-64 sm:mx-8 bg-orange-900 duration-300 px-4 pt-4 pb-4"
-               href="{{route('books.create')}}">
-                Ajouter
-            </a>
-            @if($booksDraft->count())
-                <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 w-full hover:bg-orange-900 hover:text-white duration-300 px-4 pt-4 pb-4"
-                   href="{{route('books.draft')}}">
-                    Voir mes sauvegardes de livres
-                </a>
-            @endif
-        </div>
+        @include('partials.cta-menu')
         <form method="POST" action="{{route('books.index')}}" class="sm:gap-12 sm:grid sm:grid-cols-2"
               enctype="multipart/form-data">
             @csrf

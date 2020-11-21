@@ -12,22 +12,7 @@
         <h2 class="hidden">
             Les livres de l'application
         </h2>
-        <div class="justify-center flex mb-4 flex-col sm:flex-row sm:mr-8">
-            <a class="md:w-64 sm:self-center linkAction rounded-xl border-2 hover:bg-orange-900 hover:text-white duration-300 sm:mt-0 w-full px-4 mt-4 py-4"
-               href="{{route('books.index')}}">
-                Gérer
-            </a>
-            <a class="sm:self-center linkAction rounded-xl border-2 my-4 sm:my-0 w-full hover:bg-orange-900 md:w-64 sm:mx-8 hover:text-white duration-300 px-4 pt-4 pb-4"
-               href="{{route('books.create')}}">
-                Ajouter
-            </a>
-            @if($booksDraft->count())
-                <a class="md:w-64 sm:self-center text-white linkAction bg-orange-900 rounded-xl border-2 w-full px-4 pt-4 pb-4"
-                   href="{{route('books.draft')}}">
-                    Voir mes sauvegardes de livres
-                </a>
-            @endif
-        </div>
+        @include('partials.cta-menu')
         <div
             class="grid mt-12 grid-cols-1 sm:grid-cols-2 sm:mr-8 lg:grid-cols-3 ml-4 flex-wrap justify-between gap-12 mr-4">
             @if(count($booksDraft))
