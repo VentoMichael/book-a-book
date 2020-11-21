@@ -1,12 +1,12 @@
 @component('mail::message')
-# Introduction
+# Un nouveau livre est dans le marché
 
-The body of your message.
+{{$book->title}} vient d'étre créer !
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'http://127.0.0.1:8000/admin/books'])
+Je viens voir
 @endcomponent
 
-Thanks,<br>
+Merci,<br>
 {{ config('app.name') }}
 @endcomponent

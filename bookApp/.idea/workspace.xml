@@ -5,30 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcaf3adf-f13c-4d28-ba09-6d6c7755f05a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/cta-menu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/status.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/OrderSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/OrderSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ReservationSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ReservationSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/StatusChangeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/StatusChangeSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/StatusSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/StatusSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/available.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/delivered.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/ordered.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/paid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/shopping-bag.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/draft.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/draft.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/BookCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/BookCreated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/purchases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/purchases/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/books/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/books/new.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +207,7 @@
       <workItem from="1605260931724" duration="58419000" />
       <workItem from="1605614795763" duration="38757000" />
       <workItem from="1605858302159" duration="279000" />
-      <workItem from="1605858583433" duration="24499000" />
+      <workItem from="1605858583433" duration="25152000" />
     </task>
     <servers />
   </component>
