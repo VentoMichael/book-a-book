@@ -16,8 +16,19 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        $users = User::student()->with('orders')->orderBy('name')->get();
-        return view('admin.purchases.index',compact('users'));
+        //$books = Book::with('orders')->whereHas('orders',function ($order){
+        //    return $order;
+        //})->get();
+        
+//add title
+        $books = Book::selectRaw('SUM(reservations.quantity) as total_quantity, books.title')
+            ->join('reservations','reservations.book_id', '=', 'books.id')
+            ->groupBy('title')
+            ->whereHas('orders', function ($order) {
+                return $order;
+            })->get();
+        dd($books);
+        return view('admin.purchases.index', compact('books'));
     }
 
     /**

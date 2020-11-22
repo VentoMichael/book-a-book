@@ -63,6 +63,22 @@
                     class="text-red-500 text-lg mb-4">{{$errors->first('orientation')}}</p>@endif
             </div>
             <div class="field my-6 flex flex-col">
+                <label for="academic_years" class="label">Année académique :</label>
+                <select name="academic_years" required
+                        class="border bg-white rounded-lg p-3 input @error('academic_years')is danger @enderror" id="academic_years">
+                    @if(!isset($book->academic_years))
+                        <option value="">--Choissisez une option--</option>
+                    @else
+                        <option value="{{ $book->academic_years }}">{{ $book->academic_years }}</option>
+                    @endif
+                    <option value="1">1<sup>ére</sup></option>
+                    <option value="2">2<sup>éme</sup></option>
+                    <option value="3">3<sup>éme</sup></option>
+                </select>
+                @if($errors->first('academic_years'))<p
+                    class="text-red-500 text-lg mb-4">{{$errors->first('academic_years')}}</p>@endif
+            </div>
+            <div class="field my-6 flex flex-col">
                 <label for="isbn" class="label">ISBN :</label>
                 <input name="isbn" type="number" required value="{{ old('isbn') }}"
                        class="border rounded-lg p-3 pb-2 input @error('isbn')is danger @enderror" id="isbn">

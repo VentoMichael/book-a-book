@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if(count($students))
+    @if(count($books))
         <h2 class="hidden">
             Réservations
         </h2>
@@ -23,146 +23,67 @@
         </ul>
         <div>
             <section>
-                <h2 class="rounded-xl my-2 block p-3 sm:px-12 md:px-16 mt-4 mb-2 mx-auto sm:w-2/4 w-full text-center text-md border-orange-900 border-b-2 border-t-2">
+                <h2 class="rounded-xl my-2 block p-3 sm:px-12 md:px-16 mt-8 mb-2 mx-auto sm:w-2/4 w-full text-center text-md border-orange-900 border-b-2 border-t-2">
                     2D</h2>
-                <div class="flex justify-around gap-8">
-                <section class="mb-16">
-                    <h3 class="text-xl mb-2 hidden">
-                        Title 1
-                    </h3>
-                    <div class="mb-8">
-                        <div class="flex">
-                            <img src="{{asset('storage/books/default.svg')}}" alt="">
-                            <div class="ml-2">
-                                <p class="text-md">titlefezf</p>
-                                <p class="text-md">Commandes</p>
+                <div class="flex flex-col justify-around gap-8 sm:flex-row">
+                    <section class="mb-12 mt-4">
+                        <h3 class="text-xl mb-2 hidden">
+                            Title 1
+                        </h3>
+                        <div class="mb-8">
+                            <div class="flex flex-col">
+                                <img class="self-center max-w-xs" src="{{asset('storage/books/default.svg')}}" alt="">
+                                <div class="sm:ml-2 mt-4">
+                                    <p class="text-xl">titlefezf</p>
+                                    <p class="text-md">3242 commandes</p>
+                                </div>
                             </div>
+                            <button
+                                class="md:w-64 sm:self-center hover:bg-orange-900 hover:text-white linkAction rounded-xl w-full duration-300 border-2 px-4 mt-4 py-4">
+                                Envoyer une notification de disponibilité
+                            </button>
                         </div>
-                        <button
-                            class="md:w-64 sm:self-center hover:bg-orange-900 hover:text-white linkAction rounded-xl w-full duration-300 border-2 px-4 mt-4 py-4">
-                            Envoyer une notification de disponibilité
-                        </button>
-                    </div>
-                </section>
-                <section class="mb-16">
-                    <h3 class="text-xl mb-2 hidden">
-                        Title 2
-                    </h3>
-                    <div class="mb-8">
-                        <div class="flex">
-                            <img src="{{asset('storage/books/default.svg')}}" alt="">
-                            <div class="ml-2">
-                                <p class="text-md">titlefezf</p>
-                                <p class="text-md">Commandes</p>
-                            </div>
+                    </section>
+                    <section>
+                        <div class="flex flex-col justify-around gap-8">
+                            <section class="mb-12 mt-4">
+                                <h3 class="text-xl mb-2 hidden">
+                                    Title 2
+                                </h3>
+                                <div class="mb-8">
+                                    <div class="flex flex-col">
+                                        <img class="self-center max-w-xs" src="{{asset('storage/books/default.svg')}}"
+                                             alt="">
+                                        <div class="sm:ml-2 mt-4">
+                                            <p class="text-xl">titlefezf</p>
+                                            <p class="text-md">3242 commandes</p>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="md:w-64 sm:self-center hover:bg-orange-900 hover:text-white linkAction rounded-xl w-full duration-300 border-2 px-4 mt-4 py-4">
+                                        Envoyer une notification de disponibilité
+                                    </button>
+                                </div>
+                            </section>
                         </div>
-                        <button
-                            class="md:w-64 sm:self-center hover:bg-orange-900 hover:text-white linkAction rounded-xl w-full duration-300 border-2 px-4 mt-4 py-4">
-                            Envoyer une notification de disponibilité
-                        </button>
-                    </div>
-                </section>
+                    </section>
                 </div>
+                <section id="bloc1" class="mt-6">
+                    @foreach($books as $book)
+
+                        @foreach($book->orders as $order)
+                            @dd($order->pivot)
+                            @foreach($order->pivot as $reservation)
+                                {{dd($reservation)}}
+                            @endforeach
+                        @endforeach
+                    @endforeach
+                </section>
+                @else
+                    <p>
+                        Aucun achat trouvé vus qu'il n'y a pas d'étudiant
+                    </p>
             </section>
         </div>
-        <section id="bloc1" class="mt-6">
-            @foreach($students as $student)
-                @foreach($student->orders as $order)
-                    @foreach($order->books as $book)
-                        @if($book['id'] === $book->pivot['book_id'])
-
-                            @switch($book['orientation'])
-                                @case('Web')
-                                @if($book['orientation'] === 'Web')
-                                    <li>
-                                        web
-                                    </li>
-                                    <ul>
-                                        <li>
-                                            Bloc 1 - web
-                                        </li>
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    {{$book->title}}
-                                                </li>
-                                                <li>
-                                                    {{count($order->books)}}
-                                                </li>
-                                                <li>
-                                                    <a href="#">Envoyer une notification de disponibilité</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                @endif
-                                @break
-                                @case('2D')
-                                @if($book['orientation'] === '2D')
-                                    <li>
-                                        2D
-                                    </li>
-                                    <ul>
-                                        <li>
-                                            Bloc 1 - 2D
-                                        </li>
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    {{$book->title}}
-                                                </li>
-                                                @if($book->pivot['book_id'])
-                                                    @if($book->pivot->count(['quantity']) > 1)
-                                                        <li>
-                                                            {{$book->pivot->count(['quantity'])}} livres ont été
-                                                            commandés
-                                                            au total.
-                                                        </li>
-                                                    @endif
-                                                @endif
-                                                <li>
-                                                    <a href="#">Envoyer une notification de disponibilité</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                    </ul>
-                                @endif
-                                @break
-                                @case('3D')
-                                @if($book['orientation'] === '3D')
-                                    <li>
-                                        3D
-                                    </li>
-                                    <ul>
-                                        <li>
-                                            Bloc 1 - 3D
-                                        </li>
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    {{$book->title}}
-                                                </li>
-                                                <li>
-                                                    Livre 1 COMMANDES TOTAL
-                                                </li>
-                                                <li>
-                                                    <a href="#">Envoyer une notification de disponibilité</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                @endif
-                                @break
-                            @endswitch
-                        @endif
-                    @endforeach
-                @endforeach
-            @endforeach
-        </section>
-    @else
-        <p>
-            Aucun achat trouvé vus qu'il n'y a pas d'étudiant
-        </p>
     @endif
 @endsection

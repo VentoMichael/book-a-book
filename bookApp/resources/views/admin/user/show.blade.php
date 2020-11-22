@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="relative">
-        <a class="backLink text-transparent text-xl relative text-2xl" title="Retour en arrière" href="{{route('users.index')}}">Retour
+        <a class="backLink text-transparent text-xl relative text-2xl" title="Retour en arrière"
+           href="{{route('users.index')}}">Retour
             en arrière</a>
         <section class="rounded-xl p-4 max-w-5xl m-auto">
             <div>
@@ -65,29 +66,19 @@
                                             <h4 class="ml-4 text-xl font-bold">{{$book->title}}</h4>
                                         </div>
                                     @endforeach
-                                    @php
-                                        $statuses = [
-                                                'paid' => 'Payé',
-                                                'available' => 'Disponible au bureau',
-                                                'delivered' => 'Delivré',
-                                                'ordered' => 'Commandé',
-                                            ];
-                                    @endphp
-                                        @foreach($order->statuses as $status)
+                                    @foreach($order->statuses as $status)
                                         <div class="text-center text-2xl">
                                             <p class="rounded border-orange-900 border-b-2 border-t-2 p-3 inline">
-                                                {{$statuses[$status->name]}}
+                                                {{$status['name']}}
                                             </p>
                                         </div>
-                                        @endforeach
+                                    @endforeach
                                     <div class="h-2 bg-orange-900 block w-2/4 rounded-full mx-auto my-8"></div>
                                 </section>
                             </section>
                         @endforeach
                     @endif
                     <div class="sm:gap-12 grid sm:grid-cols-2">
-                        <a href="#" class="rounded-xl duration-300 mt-6 p-3 border hover:bg-orange-900 hover:text-white text-center">Noté
-                            comme étudiant en ordre</a>
                         <a href="#" class="rounded-xl mt-6 p-3 border bg-orange-900 text-white text-center">Envoyé une
                             notification de rappel général</a>
                     </div>

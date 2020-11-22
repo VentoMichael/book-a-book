@@ -46,6 +46,7 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
     Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 
+    Route::put('/orders/{user}', [\App\Http\Controllers\StatusChangeController::class, 'update'])->name('status.update');
 
 //SEARCH
     Route::any('/search', [SearchController::class, 'index'])->name('search.index');

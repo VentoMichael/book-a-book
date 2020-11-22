@@ -34,7 +34,22 @@ class BookController extends Controller
             ->get();
         return view('admin.book.draft', compact('booksDraft'));
     }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Book  $book
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function show(Book $book)
+    {
+        //sauvegardes
+        $booksDraft = $book->get();
 
+        //non sauvegardes
+        $booksNoDraft = Book::noDraft()
+            ->get();
+        return view('admin.book.show', compact('book', 'booksDraft', 'booksNoDraft'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -68,6 +83,7 @@ class BookController extends Controller
         $book->title = request('title');
         $book->author = request('author');
         $book->publishing_house = request('publishing_house');
+        $book->academic_years = request('academic_years');
         $book->isbn = request('isbn');
         if (request('orientation')) {
             $book->orientation = request('orientation');
@@ -85,27 +101,13 @@ class BookController extends Controller
             $users = User::student()->with('orders')->orderBy('name')->get();
             foreach ($users as $user){
                 $emails = $user->email;
-                Mail::to($emails)->send(new BookCreated());
+                Mail::to($emails)->send(new BookCreated($book));
             }
             Session::flash('message', 'Livre créer avec succès');
         }
         return \redirect(route('books.show', ['book' => $book->title]));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
-    public function show(Book $book)
-    {
-        $booksDraft = Book::draft()->orderBy('title')
-            ->get();
-        $booksNoDraft = Book::noDraft()->orderBy('title')
-            ->get();
-        return view('admin.book.show', compact('book', 'booksDraft', 'booksNoDraft'));
-    }
 
     /**
      * Show the form for editing the specified resource.

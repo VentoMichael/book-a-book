@@ -9,5 +9,4 @@ class StatusChanges extends Model
 {
     protected $table = 'status-changes';
     public $timestamps = true;
-    use SoftDeletes;
 }

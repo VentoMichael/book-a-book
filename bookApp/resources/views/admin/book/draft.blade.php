@@ -20,7 +20,7 @@
                     <section
                         class="flex flex-col justify-between border-2 rounded-xl p-4">
 
-                        <div class="flex justify-between">
+                        <div class="justify-between">
                             <img src="{{ asset('storage/'.$bookDraft->picture) }}"
                                  alt="Photo de couverture de {{$bookDraft->title}}">
                             <h3 class="text-2xl break-all ml-4">

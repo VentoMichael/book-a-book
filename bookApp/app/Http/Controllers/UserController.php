@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Mail\AccountChanged;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -25,7 +28,7 @@ class UserController extends Controller
             'delivered' => 'Delivré',
             'ordered' => 'Commandé',
         ];
-        return view('admin.user.index', compact('users','statuses'));
+        return view('admin.user.index', compact('users', 'statuses'));
     }
 
     /**
@@ -36,7 +39,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.user.show', compact('user'));
+        $statuses = Status::all();
+        return view('admin.user.show', compact('user', 'statuses'));
     }
 
     /**
@@ -74,22 +78,22 @@ class UserController extends Controller
                 ],
             ]);
         }
-        //if ($request->hasFile('file_name')) {
-        //    Storage::makeDirectory('users');
-        //    $filename = request('file_name')->hashName();
-        //    $img = Image::make($request->file('file_name'))->resize(300, null, function ($constraint) {
-        //        $constraint->aspectRatio();
-        //    })->save(storage_path('app/public/users/'.$filename));
-        //    $user->file_name = 'users/'.$filename;
-        //    $attributes['file_name'] = $img;
-        //}
-//TODO : file_name -> private folder why ?
+        if ($request->hasFile('file_name')) {
+            Storage::makeDirectory('users');
+            $filename = request('file_name')->hashName();
+            $img = Image::make($request->file('file_name'))
+                ->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+                ->save(storage_path('app/storage/users'.$filename));
+            $attributes['file_name'] = 'users/'.$filename;
+        }
         $attributes['email'] = request('email');
         $attributes['password'] = Hash::make(request('password'));
 
         $user->update($attributes);
-        Mail::to(request('email'))
-            ->send(new AccountChanged());
+        //Mail::to(request('email'))
+        //    ->send(new AccountChanged());
         return redirect(route('users.show', ['user' => $user->name]));
     }
 
