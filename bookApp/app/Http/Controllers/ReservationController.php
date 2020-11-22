@@ -16,18 +16,12 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        //$books = Book::with('orders')->whereHas('orders',function ($order){
-        //    return $order;
-        //})->get();
-        
-//add title
-        $books = Book::selectRaw('SUM(reservations.quantity) as total_quantity, books.title')
+        $books = Book::selectRaw('SUM(reservations.quantity) as total_quantity,books.title,books.orientation,books.academic_years')
             ->join('reservations','reservations.book_id', '=', 'books.id')
             ->groupBy('title')
             ->whereHas('orders', function ($order) {
                 return $order;
             })->get();
-        dd($books);
         return view('admin.purchases.index', compact('books'));
     }
 

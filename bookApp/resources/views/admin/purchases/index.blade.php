@@ -70,13 +70,7 @@
                 </div>
                 <section id="bloc1" class="mt-6">
                     @foreach($books as $book)
-
-                        @foreach($book->orders as $order)
-                            @dd($order->pivot)
-                            @foreach($order->pivot as $reservation)
-                                {{dd($reservation)}}
-                            @endforeach
-                        @endforeach
+                        {{$book}}
                     @endforeach
                 </section>
                 @else
