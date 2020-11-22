@@ -19,6 +19,8 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     // TODO : mail notifications
+    // TODO : Inscription add mdp visible
+    // TODO : setting css
     public function index()
     {
         $users = User::student()->with('orders')->orderBy('name')->get();
@@ -83,8 +85,8 @@ class UserController extends Controller
             $filename = request('file_name')->hashName();
             $img = Image::make($request->file('file_name'))
                 ->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })
+                    $constraint->aspectRatio();
+                })
                 ->save(storage_path('app/storage/users'.$filename));
             $attributes['file_name'] = 'users/'.$filename;
         }
@@ -92,8 +94,8 @@ class UserController extends Controller
         $attributes['password'] = Hash::make(request('password'));
 
         $user->update($attributes);
-        //Mail::to(request('email'))
-        //    ->send(new AccountChanged());
+        Mail::to(request('email'))
+            ->send(new AccountChanged());
         return redirect(route('users.show', ['user' => $user->name]));
     }
 

@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        //TODO : firstletter variable -> clean
+        //TODO : firstletter variable -> clean code
         $users = User::student()->with('orders.books')->orderBy('name')->get();
         $orders = Order::all();
         $firstLetter = '';

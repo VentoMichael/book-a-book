@@ -71,6 +71,10 @@ class BookController extends Controller
     public function store(Request $request)
     {
         // TODO : mail notifications book
+        // TODO : style confirm js
+        // TODO : changé le status des commandes via le user
+        // TODO : styler le select
+        // TODO: change la valeur en true strict database.php
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')) {
             Storage::makeDirectory('books');

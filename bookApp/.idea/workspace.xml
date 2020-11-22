@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcaf3adf-f13c-4d28-ba09-6d6c7755f05a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ReservationSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ReservationSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/purchases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/purchases/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,7 @@
       <workItem from="1605260931724" duration="58419000" />
       <workItem from="1605614795763" duration="38757000" />
       <workItem from="1605858302159" duration="279000" />
-      <workItem from="1605858583433" duration="51171000" />
+      <workItem from="1605858583433" duration="52369000" />
     </task>
     <servers />
   </component>
@@ -314,14 +312,14 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="483" y="184" key="refactoring.ChangeSignatureDialog/0.0.1280.800@0.0.1280.800" timestamp="1606052605178" />
-    <state x="305" y="124" width="670" height="677" key="search.everywhere.popup" timestamp="1606070446930">
+    <state x="305" y="124" width="670" height="677" key="search.everywhere.popup" timestamp="1606072658853">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-1462" y="167" width="1005" height="913" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@-1920.0.1920.1080" timestamp="1606062070789" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1280.800@0.0.1280.800" timestamp="1606063524973" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1057/0.0.1280.800@0.0.1280.800" timestamp="1605199489073" />
     <state x="305" y="143" width="670" height="657" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1280.777@0.23.1280.777" timestamp="1605687272646" />
-    <state x="305" y="124" width="670" height="677" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1606070446930" />
+    <state x="305" y="124" width="670" height="677" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1606072658853" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
