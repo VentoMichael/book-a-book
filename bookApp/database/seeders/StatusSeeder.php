@@ -14,9 +14,9 @@ class StatusSeeder extends Seeder
      */
     public function run()
     {
-        Status::create(['name' => 'ordered', 'file_name' => 'ordered.public']);
-        Status::create(['name' => 'paid', 'file_name' => 'paid.public']);
-        Status::create(['name' => 'available', 'file_name' => 'available.public']);
-        Status::create(['name' => 'delivered', 'file_name' => 'delivered.public']);
+        Status::create(['name' => 'ordered', 'file_name' => 'ordered.svg']);
+        Status::create(['name' => 'paid', 'file_name' => 'paid.svg']);
+        Status::create(['name' => 'available', 'file_name' => 'available.svg']);
+        Status::create(['name' => 'delivered', 'file_name' => 'delivered.svg']);
     }
 }

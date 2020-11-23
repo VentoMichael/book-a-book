@@ -16,7 +16,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        $books = Book::selectRaw('SUM(reservations.quantity) as total_quantity,books.title,books.orientation,books.academic_years')
+        $books = Book::selectRaw('SUM(reservations.quantity) as total_quantity,books.title,books.orientation,books.academic_years,books.picture')
             ->join('reservations','reservations.book_id', '=', 'books.id')
             ->groupBy('title')
             ->whereHas('orders', function ($order) {

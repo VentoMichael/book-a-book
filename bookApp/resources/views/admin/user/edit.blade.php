@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-12">
             <div>
                 <div class="self-center mx-auto userContainer my-4">
-                    <img src="{{asset('storage')}}/{{$user->first()->file_name ?? 'default.public'}}"
+                    <img src="{{asset('storage')}}/{{$user->first()->file_name ?? 'default.svg'}}"
                          alt="Photo de profil de {{$user->first()->name}}"/>
                 </div>
             </div>

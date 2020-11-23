@@ -58,7 +58,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $attributes = request()->validate([
-            'file_name' => 'image|mimes:jpeg,png,jpg,gif,public|max:2048',
+            'file_name' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'email' => [
                 'string',
                 'email',

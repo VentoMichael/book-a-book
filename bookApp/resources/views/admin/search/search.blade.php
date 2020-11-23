@@ -122,7 +122,7 @@
                                                     class="text-xl leading-5 text-gray-900">{{$bookDetails->proposed_price}}</div>
                                                 <div
                                                     class="text-sm leading-5 font-medium text-gray-900">
-                                                    <del>{{$bookDetails->public_price}}</del>
+                                                    <p>{{$bookDetails->public_price}}</p>
                                                 </div>
                                             </div>
                                         </td>
