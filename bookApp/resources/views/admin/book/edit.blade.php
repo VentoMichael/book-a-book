@@ -34,7 +34,7 @@
         </div>
         <div class="field my-6 flex flex-col">
             <label for="orientation" class="label">Orientation</label>
-            <select name="orientation" class="bg-white border rounded-lg p-3 input @error('orientation')is danger @enderror" id="orientation">
+            <select name="orientation" class="bg-white border rounded-lg p-3 minimal input @error('orientation')is danger @enderror" id="orientation">
                 @if(!isset($book->orientation))
                     <option value="">--Choissisez une option--</option>
                 @else

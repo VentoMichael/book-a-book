@@ -73,8 +73,6 @@ class BookController extends Controller
         // TODO : mail notifications book
         // TODO : style confirm js
         // TODO : changé le status des commandes via le user
-        // TODO : styler le select
-        // TODO: change la valeur en true strict database.php
         $book = new Book($this->validateBook());
         if ($request->hasFile('picture')) {
             Storage::makeDirectory('books');
@@ -173,7 +171,7 @@ class BookController extends Controller
     protected function validateBook()
     {
         return request()->validate([
-            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,public|max:2048',
             'title' => 'required',
             'author' => 'required',
             'publishing_house' => 'required',

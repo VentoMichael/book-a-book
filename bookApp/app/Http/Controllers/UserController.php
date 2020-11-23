@@ -19,8 +19,6 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     // TODO : mail notifications
-    // TODO : Inscription add mdp visible
-    // TODO : setting css
     public function index()
     {
         $users = User::student()->with('orders')->orderBy('name')->get();
@@ -60,7 +58,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $attributes = request()->validate([
-            'file_name' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file_name' => 'image|mimes:jpeg,png,jpg,gif,public|max:2048',
             'email' => [
                 'string',
                 'email',
@@ -87,7 +85,7 @@ class UserController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(storage_path('app/storage/users'.$filename));
+                ->save(storage_path('app/public/users/'.$filename));
             $attributes['file_name'] = 'users/'.$filename;
         }
         $attributes['email'] = request('email');

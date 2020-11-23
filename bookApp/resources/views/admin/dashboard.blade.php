@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="w-full sm:mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+            <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
                 <div
                     class="border-orange-900 border-b-2 border-t-2 rounded-lg flex items-center px-5 py-6 rounded-md bg-white justify-center">
                     <div class="p-3 rounded-full bg-orange-900 bg-opacity-100">

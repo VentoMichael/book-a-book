@@ -50,7 +50,7 @@
             <div class="field my-6 flex flex-col">
                 <label for="orientation" class="label">Orientation :</label>
                 <select name="orientation" required
-                        class="border bg-white rounded-lg p-3 input @error('orientation')is danger @enderror"
+                        class="border bg-white rounded-lg p-3 minimal input @error('orientation')is danger @enderror"
                         id="orientation">
                     @if(!isset($book->orientation))
                         <option value="">--Choissisez une option--</option>
@@ -67,7 +67,7 @@
             <div class="field my-6 flex flex-col">
                 <label for="academic_years" class="label">Année académique :</label>
                 <select name="academic_years" required
-                        class="border bg-white rounded-lg p-3 input @error('academic_years')is danger @enderror"
+                        class="border bg-white rounded-lg p-3 minimal input @error('academic_years')is danger @enderror"
                         id="academic_years">
                     @if(!isset($book->academic_years))
                         <option value="">--Choissisez une option--</option>

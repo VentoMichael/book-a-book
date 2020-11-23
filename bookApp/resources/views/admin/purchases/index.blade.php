@@ -32,7 +32,7 @@
                         </h3>
                         <div class="mb-8">
                             <div class="flex flex-col">
-                                <img class="self-center max-w-xs" src="{{asset('storage/books/default.svg')}}" alt="">
+                                <img class="self-center max-w-xs" src="{{asset('storage/books/default.public')}}" alt="">
                                 <div class="sm:ml-2 mt-4">
                                     <p class="text-xl">titlefezf</p>
                                     <p class="text-md">3242 commandes</p>
@@ -52,7 +52,7 @@
                                 </h3>
                                 <div class="mb-8">
                                     <div class="flex flex-col">
-                                        <img class="self-center max-w-xs" src="{{asset('storage/books/default.svg')}}"
+                                        <img class="self-center max-w-xs" src="{{asset('storage/books/default.public')}}"
                                              alt="">
                                         <div class="sm:ml-2 mt-4">
                                             <p class="text-xl">titlefezf</p>

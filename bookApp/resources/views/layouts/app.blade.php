@@ -1,5 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
+@if(!auth())
 <html lang="fr" class="bg-orange-900">
+@endif
+<html lang="fr" class="bg-orange-900 pb-20">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,11 +26,11 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 @if(!auth())
-    <body onload="hideMessage()" class="bg-white m-3 mb-0 rounded-xl">
+    <body onload="hideMessage()" class="bg-white m-3 mb-0 rounded-xl mb-24">
 
     <div class="flex flex-col sm:max-w-3xl md:m-auto pb-6 justify-between md:w-3/4">
         @endif
-        <body onload="hideMessage()" class="bg-white m-3 mb-0 rounded-xl mb-24">
+        <body onload="hideMessage()" class="bg-white m-3 mb-0 rounded-xl pb-2">
 
         <div>
             <div class="inline-block">
@@ -79,7 +82,7 @@
             </main>
             @if(Illuminate\Support\Facades\Auth::check())
                 <nav>
-                    <ul class="flex justify-around relative navSecondary mb-4">
+                    <ul class="flex justify-around relative navSecondary">
                         <li>
                             <a class="text-transparent homeSvg" href="{{route('dashboard.index')}}">
                                 Home

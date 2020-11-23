@@ -15,6 +15,66 @@ svg{
     min-width: 100px;
     max-width: 200px;
 }
+select {
+
+    /* styling */
+    background-color: white;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+/* arrows */
+select.minimal {
+    padding: 0.5em 3.5em 0.5em 1em;
+    background-image:
+        linear-gradient(45deg, transparent 50%, saddlebrown 50%),
+        linear-gradient(135deg, saddlebrown 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+    background-image:
+        linear-gradient(45deg, saddlebrown 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, saddlebrown 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+}
+
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
 body>div>nav{
     margin-top: -30px;
 }
@@ -112,7 +172,7 @@ body>div>nav{
 input[type='radio'] {
     --active: #6C3725;
     --active-inner: #fff;
-    --focus: 2px rgba(108, 55, 37, .3);
+    --focus: 2px saddlebrown;
     --border: #bbc1e1;
     --border-hover: #6C3725;
     --background: #fff;
@@ -169,6 +229,11 @@ input[type='radio']:not(.switch) {
 }
 input[type='radio']:not(.switch):after {
     opacity: var(--o, 0);
+}
+.password{
+    position: absolute;
+    right: 15px;
+    bottom: 9px;
 }
 input[type='radio']:not(.switch):checked {
     --o: 1;
